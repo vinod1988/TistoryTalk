@@ -15,6 +15,7 @@
 
 @implementation MessengerViewController
 @synthesize searchToolbar, mainView, currentMainView;
+@synthesize editButton, closeButton;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -62,7 +63,7 @@
         {
             for(int i=0; i<blogDataFromFile.count; i++)
             {
-                NSString *json = [blogDataFromFile objectAtIndex:i]; 
+                NSString *json = [blogDataFromFile objectAtIndex:i];
                 
                 NSDictionary *dictFromJson = [json objectFromJSONString];
                 
@@ -150,7 +151,24 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
+    [self registerNotificationCenter];
+        
+    
 }
+
+-(void)registerNotificationCenter
+{
+    NSNotificationCenter *nc = [NSNotificationCenter defaultCenter];
+    [nc addObserver:self selector:@selector(changeBubble:) name:@"CHANGE_BUBBLE" object:nil];
+}
+
+-(void) changeBubble:(NSNotification *)noti
+{
+    NSLog(@"changeBubble : %d", noti.userInfo.count);
+    
+    
+}
+
 
 - (void)didReceiveMemoryWarning
 {
@@ -165,15 +183,12 @@
 -(void)didDoubleTap:(UIGestureRecognizer *)gestureRecognizer
 {
     
-    bubbleTableView.frame = CGRectMake(0, 44, 320,480-44-searchToolbar.frame.size.height);
-    
     [searchToolbar.searchTextField resignFirstResponder];
 }
 
 
 -(void)didLeftSwipe:(UIGestureRecognizer *)gestureRecognizer
 {
-    NSLog(@"left swipe");
     
     if( currentMainView == MainView)
     {
@@ -206,7 +221,7 @@
 
 -(void)didRightSwipe:(UIGestureRecognizer *)gestureRecognizer
 {
-    NSLog(@"right swipe");
+
     if( currentMainView == MainView)
     {
         
@@ -253,27 +268,33 @@
 }
 
 
+
 #pragma mark - Keyboard action
 
 -(void) keyboardWillShow
 {
-    
+    //move keyboard up
     [UIView beginAnimations:nil context:NULL];
     [UIView setAnimationDuration:0.2];
     self.searchToolbar.frame = CGRectMake(0, 200, 320, 44);
-    
     [UIView commitAnimations];
+    
+    //
+    bubbleTableView.frame = CGRectMake(0, 44, 320,157);
     
 }
 -(void) keyboardWillHide
 {
     
+    //move keyboard down
     [UIView beginAnimations:nil context:NULL];
     [UIView setAnimationDuration:0.2];
     self.searchToolbar.frame = CGRectMake(0, 416, 320, 44);
-    
-    
     [UIView commitAnimations];
+    
+    //
+    bubbleTableView.frame = CGRectMake(0, 44, 320,480-44-searchToolbar.frame.size.height);
+    
 }
 
 
@@ -341,13 +362,36 @@
 
 -(IBAction)clickEditBtn
 {
+    
     if(bubbleTableView.isEditing==YES)
     {
+        
+        
         [bubbleTableView setEditing:NO];
+        editButton.title = @"편집";
+        editButton.tintColor = [UIColor colorWithRed:33.0/255.0 green:69.0/255.0 blue:105.0/255.0 alpha:1.0];
+        
+        
     }
     else
     {
-        [bubbleTableView setEditing:YES];
+        if(bubbleData.count >0)
+        {
+            [bubbleTableView setEditing:YES];
+            
+            editButton.title = @"완료";
+            editButton.tintColor = [UIColor colorWithRed:47.0/255.0 green:155.0/255.0 blue:203.0/255.0 alpha:1.0];
+            
+            
+        }
+        else
+        {
+            
+            UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"데이터가 없습니다." message:@"" delegate:self cancelButtonTitle:@"확인" otherButtonTitles:nil, nil];
+            [alert show];
+            [alert release];
+        }
+        
     }
 }
 
@@ -377,7 +421,6 @@
         textField.text = @"";
         prevNSBubbleTypingType = currentNSBubbleTypingType;
         
-        bubbleTableView.frame = CGRectMake(0, 44, 320,157);
         
         [bubbleTableView reloadData];
     }

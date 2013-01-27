@@ -234,11 +234,11 @@
 			children = (
 				7EE81FD016B184B700E87998 /* AuthViewController */,
 				7EE81F1D16AD539200E87998 /* MessengerWriterController */,
+				7EE81EEF16ABA05B00E87998 /* WritterViewContoller */,
 				7EE81EF816AC27DD00E87998 /* FeedbackViewController */,
 				7EE81EF016ABA06600E87998 /* TistoryViewContoller */,
 				7EE81EEE16ABA04A00E87998 /* MyblogViewController */,
 				7EE81EF716AC270E00E87998 /* InfoViewController */,
-				7EE81EEF16ABA05B00E87998 /* WritterViewContoller */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";

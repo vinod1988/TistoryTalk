@@ -33,6 +33,9 @@
 - (void)setFrame:(CGRect)frame
 {
     [super setFrame:frame];
+    [self.contentView addObserver:self forKeyPath:@"frame" options:NSKeyValueObservingOptionOld context:nil];
+
+    
 	[self setupInternalData];
 }
 
@@ -43,6 +46,9 @@
     self.customView = nil;
     self.bubbleImage = nil;
     self.avatarImage = nil;
+    
+    [self.contentView removeObserver:self forKeyPath:@"frame"];
+    
     [super dealloc];
 }
 #endif
@@ -74,7 +80,7 @@
 
     CGFloat x = (type == BubbleTypeSomeoneElse) ? 0 : self.frame.size.width - width - self.data.insets.left - self.data.insets.right;
     CGFloat y = 0;
-    
+    /*
     // Adjusting the x coordinate for avatar
     if (self.showAvatar)
     {
@@ -101,6 +107,7 @@
         if (type == BubbleTypeSomeoneElse) x += 54;
         if (type == BubbleTypeMine) x -= 54;
     }
+     */
 
     [self.customView removeFromSuperview];
     self.customView = self.data.view;
@@ -120,5 +127,20 @@
     
     
 }
+
+-(void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
+{
+   // NSLog(@"observed value for kp %@ changed: %@",keyPath,change);
+    if ( [keyPath isEqual:@"frame"] && object == self.contentView )
+    {
+        CGRect newFrame = self.contentView.frame;
+        CGRect oldFrame = [[change objectForKey:NSKeyValueChangeOldKey] CGRectValue];
+       // NSLog(@"frame old: %@  new: %@",NSStringFromCGRect(oldFrame),NSStringFromCGRect(newFrame));
+        
+        if ( newFrame.origin.x != 0 ) self.contentView.frame = oldFrame;
+    }
+}
+
+
 
 @end

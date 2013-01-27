@@ -52,12 +52,12 @@ static TagManager * singleTon = nil;
 
 -(NSString*) convertHtmlDocument:(NSMutableArray*) jsonData
 {
-    NSString *p_stTag = @"<p>";
+    NSString *p_stTag = @"<p style=\"lineh-height:2; text-align:justify;\">";
     NSString *p_edTag = @"</p>";
     
     NSString* totalHTMLString = [[NSString alloc] initWithFormat:@"<html>"];
     
-    totalHTMLString = [totalHTMLString stringByAppendingString:@"<body style=\"border-radius: 16px; moz-border-radius: 16px; -webkit-border-radius: 16px; border: 1px dotted #807B6E; padding-left:10px; padding-top:10px;\">"];
+    totalHTMLString = [totalHTMLString stringByAppendingString:@"<body style=\"border-radius: 10px; moz-border-radius: 10px; -webkit-border-radius: 10px; border: 1px dotted #807B6E; padding-left:10px; padding-top:10px; padding-bottom:10px; padding-right:10px;\">"];
     
     NSLog(@"Count : %d", jsonData.count);
     
@@ -68,8 +68,7 @@ static TagManager * singleTon = nil;
         
         NSDictionary *dictFromJson = [json objectFromJSONString];
         
-        
-        
+                
         
         totalHTMLString = [totalHTMLString stringByAppendingString:p_stTag];
         
@@ -104,7 +103,7 @@ static TagManager * singleTon = nil;
 -(NSString*) addTagAtText:(NSString*) text
 {
     //TODO:
-    NSString *span_stTag = @"<span style=\"font-size: 14pt; lineh-height:2\">";
+    NSString *span_stTag = @"<span style=\"font-size: 14pt;\">";
     
     NSString *span_enTag = @"</span>";
     

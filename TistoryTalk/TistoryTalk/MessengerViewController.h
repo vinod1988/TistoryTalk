@@ -29,7 +29,10 @@ typedef enum _NSCurrentMainView
      NSMutableArray *bubbleData;
     int prevNSBubbleTypingType;
     
-    IBOutlet  UIView *mainView; 
+    IBOutlet  UIView *mainView;
+    IBOutlet UIBarButtonItem *editButton;
+    IBOutlet UIBarButtonItem *closeButton;
+    
     SearchModuleView *searchModuleView ;
     MapModuleView *mapModuleView;
 }
@@ -37,6 +40,11 @@ typedef enum _NSCurrentMainView
 @property(nonatomic, retain) SearchToolBar* searchToolbar;
 @property(nonatomic, retain) IBOutlet UIView *mainView;
 @property NSCurrentMainView currentMainView;
+
+@property(nonatomic, retain)
+IBOutlet UIBarButtonItem *editButton;
+@property(nonatomic, retain)
+IBOutlet UIBarButtonItem *closeButton;
 
 -(IBAction)closeViewController;
 -(IBAction)clickEditBtn; 

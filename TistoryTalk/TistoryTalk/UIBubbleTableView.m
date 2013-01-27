@@ -172,6 +172,7 @@
 
 - (float)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+     
     // Now typing
 	if (indexPath.section >= [self.bubbleSection count])
     {
@@ -183,13 +184,14 @@
     {
         return [UIBubbleHeaderTableViewCell height];
     }
+  
     
     NSBubbleData *data = [[self.bubbleSection objectAtIndex:indexPath.section] objectAtIndex:indexPath.row - 1];
     return MAX(data.insets.top + data.view.frame.size.height + data.insets.bottom, self.showAvatars ? 52 : 0);
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
+{    
     // Now typing
 	if (indexPath.section >= [self.bubbleSection count])
     {
@@ -199,7 +201,7 @@
         if (cell == nil)
         {
             
-            cell = [[UIBubbleTypingTableViewCell alloc] init]; 
+            cell = [[UIBubbleTypingTableViewCell alloc] init];
         }
         
         cell.type = self.typingBubble;
@@ -209,6 +211,7 @@
     }
     
     // Header with date and time
+ 
     if (indexPath.row == 0)
     {
         static NSString *cellId = @"tblBubbleHeaderCell";
@@ -221,22 +224,122 @@
         
         return cell;
     }
+ 
     
     // Standard bubble
     static NSString *cellId = @"tblBubbleCell";
     UIBubbleTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellId];
     NSBubbleData *data = [[self.bubbleSection objectAtIndex:indexPath.section] objectAtIndex:indexPath.row - 1];
+    NSLog(@"cellforIndex : %@", data.date);
+    
     
     if (cell == nil) cell = [[UIBubbleTableViewCell alloc] init];
     
     cell.data = data;
     cell.showAvatar = self.showAvatars;
-   
+    
     
     return cell;
 }
+// Determine whether a given row is eligible for reordering or not.
+- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    
+    if(indexPath.row !=0)
+    {
+        return YES;
+        
+    }
+    else
+    {
+        return NO;
+    }
+}
+// Process the row move. This means updating the data model to correct the item indices.
+- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
+{
+    
+    NSLog(@"scetion: count :%d", [tableView numberOfSections]);
+    int sectionCount = [tableView numberOfSections];
+    
+    UITableViewCell *fromCell = [tableView cellForRowAtIndexPath:fromIndexPath];
+
+    UITableViewCell *toCell = [tableView cellForRowAtIndexPath:toIndexPath];
+
+    if ([fromCell isKindOfClass:[UIBubbleTableViewCell class]] && [toCell isKindOfClass:[UIBubbleTableViewCell class]])
+    {
+        NSLog(@"from date :%@", ((UIBubbleTableViewCell*)fromCell).data.date);
+        NSLog(@"to date :%@", ((UIBubbleTableViewCell*)toCell).data.date);
+        
+        
+        
+    }
+    
+    
+    /*
+    
+    NSMutableDictionary *changedBubbleDataInfo = [[NSMutableDictionary alloc] init];
+    int index = 0;
+    
+    for(int i =0; i<sectionCount; i++)
+    {
+        int rowCount = [tableView numberOfRowsInSection:i];
+        
+        for(int j=0; j<rowCount; j++)
+        {
+            //NSLog(@"section : %d row : %d", i, j);
+            
+            NSIndexPath * indexPath = [NSIndexPath indexPathForRow:j inSection:i];
+            UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+            
+            if ([cell isKindOfClass:[UIBubbleTableViewCell class]])
+            {                 
+                
+                NSBubbleData *gettedData = ((UIBubbleTableViewCell*)[tableView cellForRowAtIndexPath:indexPath]).data;
+                NSString *indexStr = [[NSString alloc] initWithFormat:@"%d",index];
+                 
+                [changedBubbleDataInfo setObject:gettedData forKey:indexStr]; 
+                index++;
+            } 
+        }
+    }
+    
+    
+    for(int i=0; i<changedBubbleDataInfo.count; i++)
+    {
+        NSBubbleData *data = [changedBubbleDataInfo objectForKey: [NSString stringWithFormat:@"%d", i]];
+        NSLog(@"%@", [data toJson]);
+        
+    }
+    
+    */
+    
+    
+    //
+    //        NSNotificationCenter *nc = [NSNotificationCenter defaultCenter];
+    //        [nc postNotificationName:@"CHANGE_BUBBLE" object:self userInfo:changedDateInfo];
+    
+    
+    
+    
+}
 
 
+
+// The editing style for a row is the kind of button displayed to the left of the cell when in editing mode.
+- (UITableViewCellEditingStyle)tableView:(UITableView *)aTableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if(indexPath.row != 0)
+    {
+        return UITableViewCellEditingStyleDelete;
+    }
+    else
+    {
+        return UITableViewCellEditingStyleNone;
+    }
+    
+    
+}
 
 
 
