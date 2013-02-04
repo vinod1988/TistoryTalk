@@ -9,5 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface FeedbackViewController : UIViewController
-
+{
+    IBOutlet UIWebView * webView;
+}
+@property(nonatomic, retain)  IBOutlet UIWebView * webView;
 @end

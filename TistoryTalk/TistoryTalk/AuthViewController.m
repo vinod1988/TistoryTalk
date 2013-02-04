@@ -30,12 +30,12 @@
     // Do any additional setup after loading the view from its nib.
     
     
-    NSURL* urlObj = [[NSURL alloc] initWithString:@"http://idfsoft.hostzi.com/auth.php"];
+    NSURL* urlObj = [[NSURL alloc] initWithString:@"http://211.43.193.18/auth.jsp"];
     
     NSURLRequest *urlRequest = [[NSURLRequest alloc] initWithURL:urlObj];
     [authWebView loadRequest: urlRequest];
     
-    
+ 
 }
 
 
@@ -48,10 +48,12 @@
 - (void)webViewDidFinishLoad:(UIWebView *)webView
 {
     NSString *currentURL = webView.request.mainDocumentURL.absoluteString;
-    //NSLog(@"%@", currentURL);
+    NSLog(@"%@", currentURL);
     
     NSRange aRange = [currentURL rangeOfString:@"access_token"];
-    if (aRange.location ==NSNotFound) {
+    if (aRange.location ==NSNotFound)
+    {
+        //not exist
     }
     else
     {
@@ -59,12 +61,10 @@
         
         NSArray * splittedAr = [currentURL componentsSeparatedByString:@"="];
         
-       // NSLog(@"atoken : %@", [splittedAr objectAtIndex:1]);
+        NSLog(@"atoken : %@", [splittedAr objectAtIndex:1]);
         //[[NSUserDefaults standardUserDefaults] setObject:<object> forKey:<key value>];
         [[NSUserDefaults standardUserDefaults] setObject:[splittedAr objectAtIndex:1] forKey:@"tistory_token"];
         [[NSUserDefaults standardUserDefaults] synchronize];
-        
-        
         
         
         [self dismissViewControllerAnimated:YES completion:nil];

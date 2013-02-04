@@ -10,6 +10,12 @@
 #import "JSONKit.h"
 
 @interface TagManager : NSObject
+{
+    NSString *mode; //preview, posting
+}
+
+@property(nonatomic, retain) NSString * mode;
+
 
 +(TagManager *)singleTon_GetInstance;
 +(bool)isSigleton;

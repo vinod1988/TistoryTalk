@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "MessengerViewController.h"
 #import "TagManager.h"
+#import "PostingViewController.h"
 
 @interface WritterViewController : UIViewController
 <UIActionSheetDelegate>

@@ -15,7 +15,7 @@
 
 @implementation MessengerViewController
 @synthesize searchToolbar, mainView, currentMainView;
-@synthesize editButton, closeButton;
+@synthesize leftButton, rightButton, titleLabel;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -26,6 +26,7 @@
         // SearchBar Setting
         searchToolbar = [[[SearchToolBar alloc]initWithFrame:CGRectMake(0, 416, 320, 44)]autorelease];
         searchToolbar.searchTextField.delegate = self;
+        
         [self.view addSubview:searchToolbar];
         
         // register for keyboard notifications
@@ -75,6 +76,7 @@
                     [dateFormatter setDateFormat:@"yyyyMMdd:hh:mm:ss"];
                     NSDate *dateFromString = [[NSDate alloc] init];
                     dateFromString = [dateFormatter dateFromString:[dictFromJson objectForKey:@"date"]];
+                    [dateFormatter release];
                     
                     NSInteger type = [[dictFromJson objectForKey:@"type"] intValue];
                     
@@ -103,8 +105,9 @@
         
         bubbleTableView.bubbleDataSource = self;
         bubbleTableView.snapInterval = 120;
-        bubbleTableView.showAvatars = YES;
+        bubbleTableView.showAvatars = NO;
         bubbleTableView.typingBubble = NSBubbleTypingTypeMe;
+        
         
         
         // add gesture
@@ -126,10 +129,10 @@
         
         //Sub Modules
         
-        searchModuleView = [[[SearchModuleView alloc]initWithFrame:CGRectMake(-280,44, 280, 371)]autorelease];
+        searchModuleView = [[[SearchModuleView alloc]initWithFrame:CGRectMake(-320,44, 320, 480-44)]autorelease];
         [self.view addSubview:searchModuleView];
         
-        mapModuleView = [[[MapModuleView alloc]initWithFrame:CGRectMake(320, 44, 280,  371)]autorelease];
+        mapModuleView = [[[MapModuleView alloc]initWithFrame:CGRectMake(320, 44, 320,  480-44)]autorelease];
         [self.view addSubview:mapModuleView];
         
         
@@ -137,6 +140,8 @@
         currentMainView = MainView;
         prevNSBubbleTypingType = 1; //init
         
+        
+
         
         [bubbleTableView reloadData];
         
@@ -152,19 +157,97 @@
     // Do any additional setup after loading the view from its nib.
     
     [self registerNotificationCenter];
-        
+    
     
 }
+
+ 
 
 -(void)registerNotificationCenter
 {
     NSNotificationCenter *nc = [NSNotificationCenter defaultCenter];
-    [nc addObserver:self selector:@selector(changeBubble:) name:@"CHANGE_BUBBLE" object:nil];
+    [nc addObserver:self selector:@selector(changeBubble:) name:@"CHANGE_BUBBLE" object:nil]; 
+    [nc addObserver:self selector:@selector(closeMapModule:) name:@"MAPMODULE_CLOSE" object:nil];
+    
+    [nc addObserver:self selector:@selector(removeIndex:) name:@"REMOVE_INDEX" object:nil];
+    
+}
+
+-(void) removeIndex:(NSNotification *)noti
+{
+    NSIndexPath *removeIndexPath=  [noti.userInfo objectForKey:@"removeIndex"];
+    
+    [bubbleData removeObjectAtIndex:removeIndexPath.row];
+    [bubbleTableView reloadData];
+
+}
+
+-(void) closeMapModule:(NSNotification *)noti
+{
+    self.titleLabel.text = @"글쓰기";
+    
+    
+     NSIndexPath *indexPath=  [noti.userInfo objectForKey:@"index"];
+    
+    
+    if(indexPath !=nil)
+    {
+    KKCanididateDetail *selectedKkc = [mapModuleView.kkuCanididateArray objectAtIndex:indexPath.row];
+    
+    
+        int currentNSBubbleTypingType = 0;
+        
+        if(prevNSBubbleTypingType == BubbleTypeSomeoneElse)
+        {
+            currentNSBubbleTypingType = BubbleTypeMine;
+        }else
+        {
+            currentNSBubbleTypingType = BubbleTypeSomeoneElse;
+        }
+        
+        NSString *candidateBubble = [NSString stringWithFormat:@"%@ 국회의원\n:%@\n정당:%@\n지역구:%@\n",
+                                     selectedKkc.name, selectedKkc.photo, selectedKkc.political_party, selectedKkc.area];
+        
+        
+        
+        candidateBubble
+        = [candidateBubble stringByAppendingFormat:@"출석수:%@\n결석수:%@\n찬성수:%@\n반대수:%@\n기권수:%@", selectedKkc.attendance, selectedKkc.absence,selectedKkc.agree, selectedKkc.opposite, selectedKkc.abstention, selectedKkc.not_vote];
+        
+ 
+        
+        
+        candidateBubble = [candidateBubble stringByAppendingFormat:@"\n홈페이지:%@", selectedKkc.homepage];
+    
+        NSBubbleData *sayBubble = [NSBubbleData dataWithText:candidateBubble date:[NSDate dateWithTimeIntervalSinceNow:0] type:currentNSBubbleTypingType];
+        sayBubble.avatar = nil;
+         
+        
+        [bubbleData addObject:sayBubble];
+        
+      
+        prevNSBubbleTypingType = currentNSBubbleTypingType;
+        
+        
+        [bubbleTableView reloadData];
+    }
+    
+    
+
+    
 }
 
 -(void) changeBubble:(NSNotification *)noti
 {
-    NSLog(@"changeBubble : %d", noti.userInfo.count);
+    NSIndexPath *fromIndexPath =  [noti.userInfo objectForKey:@"fromIndexPath"];
+    NSIndexPath *toIndexPath =  [noti.userInfo objectForKey:@"toIndexPath"];
+    
+    
+    NSBubbleData *temp  = [[bubbleData objectAtIndex:fromIndexPath.row]retain];
+    
+    [bubbleData removeObjectAtIndex:fromIndexPath.row];
+    [bubbleData insertObject:temp atIndex:toIndexPath.row];
+    
+    [temp release];
     
     
 }
@@ -190,65 +273,71 @@
 -(void)didLeftSwipe:(UIGestureRecognizer *)gestureRecognizer
 {
     
-    if( currentMainView == MainView)
-    {
-        
-        [UIView beginAnimations:nil context:NULL];
-        [UIView setAnimationDuration:0.4];
-        mainView.frame = CGRectMake(-280,mainView.frame.origin.y, mainView.frame.size.width, mainView.frame.size.height);
-        mapModuleView.frame = CGRectMake(40,mapModuleView.frame.origin.y, mapModuleView.frame.size.width, mapModuleView.frame.size.height);
-        
-        [UIView commitAnimations];
-        
-        currentMainView = MapModule;
-    }
-    else if(currentMainView == SearchModule)
-    {
-        
-        
-        [UIView beginAnimations:nil context:NULL];
-        [UIView setAnimationDuration:0.4];
-        mainView.frame = CGRectMake(0,mainView.frame.origin.y, mainView.frame.size.width, mainView.frame.size.height);
-        searchModuleView.frame = CGRectMake(-280,searchModuleView.frame.origin.y, searchModuleView.frame.size.width, searchModuleView.frame.size.height);
-        
-        [UIView commitAnimations];
-        
-        currentMainView = MainView;
-    }
+    
+    [UIView beginAnimations:nil context:NULL];
+    [UIView setAnimationDuration:0.2];
+    
+    mapModuleView.frame = CGRectMake(0,mapModuleView.frame.origin.y, mapModuleView.frame.size.width, mapModuleView.frame.size.height);
+    titleLabel.text = @"Kooking";
+    
+    [UIView commitAnimations];
+    
+    // self.searchToolbar.hidden = YES;
+    
+    
+    //    else if(currentMainView == SearchModule)
+    //    {
+    //
+    //
+    //        [UIView beginAnimations:nil context:NULL];
+    //        [UIView setAnimationDuration:0.2];
+    //        mainView.frame = CGRectMake(0,mainView.frame.origin.y, mainView.frame.size.width, mainView.frame.size.height);
+    //        searchModuleView.frame = CGRectMake(-320,searchModuleView.frame.origin.y, searchModuleView.frame.size.width, searchModuleView.frame.size.height);
+    //
+    //        [UIView commitAnimations];
+    //
+    //        self.searchToolbar.hidden = NO;
+    //        [self.view endEditing:YES];
+    //
+    //        currentMainView = MainView;
+    //    }
     
 }
 
 
 -(void)didRightSwipe:(UIGestureRecognizer *)gestureRecognizer
 {
-
-    if( currentMainView == MainView)
-    {
-        
-        [UIView beginAnimations:nil context:NULL];
-        [UIView setAnimationDuration:0.4];
-        mainView.frame = CGRectMake(280,mainView.frame.origin.y, mainView.frame.size.width, mainView.frame.size.height);
-        searchModuleView.frame = CGRectMake(0,searchModuleView.frame.origin.y, searchModuleView.frame.size.width, searchModuleView.frame.size.height);
-        
-        [UIView commitAnimations];
-        
-        
-        currentMainView = SearchModule;
-        
-    }
-    else if( currentMainView == MapModule)
-    {
-        
-        [UIView beginAnimations:nil context:NULL];
-        [UIView setAnimationDuration:0.4];
-        mainView.frame = CGRectMake(0,mainView.frame.origin.y, mainView.frame.size.width, mainView.frame.size.height);
-        mapModuleView.frame = CGRectMake(320,mapModuleView.frame.origin.y, mapModuleView.frame.size.width, mapModuleView.frame.size.height);
-        
-        [UIView commitAnimations];
-        
-        currentMainView = MainView;
-        
-    }
+    [UIView beginAnimations:nil context:NULL];
+    [UIView setAnimationDuration:0.2];
+    // mainView.frame = CGRectMake(280,mainView.frame.origin.y, mainView.frame.size.width, mainView.frame.size.height);
+    searchModuleView.frame = CGRectMake(0,searchModuleView.frame.origin.y, searchModuleView.frame.size.width, searchModuleView.frame.size.height);
+    
+    [UIView commitAnimations];
+    
+    
+    
+    
+    //self.searchToolbar.hidden = YES;
+    
+    
+    
+    //    else if( currentMainView == MapModule)
+    //    {
+    //
+    //        [UIView beginAnimations:nil context:NULL];
+    //        [UIView setAnimationDuration:0.2];
+    //        mainView.frame = CGRectMake(0,mainView.frame.origin.y, mainView.frame.size.width, mainView.frame.size.height);
+    //        mapModuleView.frame = CGRectMake(320,mapModuleView.frame.origin.y, mapModuleView.frame.size.width, mapModuleView.frame.size.height);
+    //
+    //        [UIView commitAnimations];
+    //
+    //
+    //        self.searchToolbar.hidden = NO;
+    //        [self.view endEditing:YES];
+    //
+    //        currentMainView = MainView;
+    //
+    //    }
     
 }
 
@@ -280,7 +369,7 @@
     [UIView commitAnimations];
     
     //
-    bubbleTableView.frame = CGRectMake(0, 44, 320,157);
+    bubbleTableView.frame = CGRectMake(0, bubbleTableView.frame.origin.y, 320,157);
     
 }
 -(void) keyboardWillHide
@@ -293,7 +382,7 @@
     [UIView commitAnimations];
     
     //
-    bubbleTableView.frame = CGRectMake(0, 44, 320,480-44-searchToolbar.frame.size.height);
+    bubbleTableView.frame = CGRectMake(0, bubbleTableView.frame.origin.y, 320,480-44-searchToolbar.frame.size.height);
     
 }
 
@@ -341,7 +430,7 @@
 
 #pragma mark toolbar action
 
--(IBAction)closeViewController;
+-(IBAction)leftBtnClicked
 {
     
     if(bubbleData.count >0)
@@ -360,18 +449,13 @@
     
 }
 
--(IBAction)clickEditBtn
+-(IBAction)rightBtnClicked
 {
     
     if(bubbleTableView.isEditing==YES)
     {
-        
-        
         [bubbleTableView setEditing:NO];
-        editButton.title = @"편집";
-        editButton.tintColor = [UIColor colorWithRed:33.0/255.0 green:69.0/255.0 blue:105.0/255.0 alpha:1.0];
-        
-        
+        rightButton.title = @"편집";
     }
     else
     {
@@ -379,8 +463,8 @@
         {
             [bubbleTableView setEditing:YES];
             
-            editButton.title = @"완료";
-            editButton.tintColor = [UIColor colorWithRed:47.0/255.0 green:155.0/255.0 blue:203.0/255.0 alpha:1.0];
+            rightButton.title = @"완료";
+            rightButton.tintColor = [UIColor colorWithRed:47.0/255.0 green:155.0/255.0 blue:203.0/255.0 alpha:1.0];
             
             
         }
@@ -415,8 +499,6 @@
         NSBubbleData *sayBubble = [NSBubbleData dataWithText:textField.text date:[NSDate dateWithTimeIntervalSinceNow:0] type:currentNSBubbleTypingType];
         sayBubble.avatar = nil;
         [bubbleData addObject:sayBubble];
-        
-        
         
         textField.text = @"";
         prevNSBubbleTypingType = currentNSBubbleTypingType;

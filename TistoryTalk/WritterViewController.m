@@ -34,9 +34,34 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    
+    
+    NSNotificationCenter *nc = [NSNotificationCenter defaultCenter];
+    [nc addObserver:self selector:@selector(removeData:) name:@"REMOVE_DATA" object:nil];
+    
+    
+    
 
 }
 
+-(void) removeData:(NSNotification *)noti
+{
+    NSFileManager *fileManager= [[NSFileManager alloc] init];
+    DataManager *dm = [DataManager singleTon_GetInstance];
+    
+    
+    NSArray *sortedList = [dm getDescendingFileList];
+    int fileCount = [sortedList count];
+    
+    if (fileCount==1)
+    {
+        [fileManager removeItemAtPath:[[dm getDocumentPath] stringByAppendingPathComponent:[sortedList objectAtIndex:0]] error:nil];
+    }
+    
+    [self preview];
+
+    
+}
 
 - (void) viewWillAppear:(BOOL)animated
 {
@@ -60,6 +85,9 @@
         TagManager *tm = [TagManager singleTon_GetInstance];
         
         NSMutableArray * blogDataFromFile = [dm getDataFromFile:@"tempBlogData"];
+        
+        tm.mode = @"preview";
+        
         NSString* totalHtml = [tm convertHtmlDocument:blogDataFromFile];
         
         
@@ -96,7 +124,7 @@
     
     if(isWritingFile == true)
     {
-        popupQuery = [[UIActionSheet alloc] initWithTitle:@"글쓰기" delegate:self cancelButtonTitle:@"취소" destructiveButtonTitle:@"포스팅하기" otherButtonTitles:@"날려버리기", @"이어쓰기", nil];
+        popupQuery = [[UIActionSheet alloc] initWithTitle:@"글쓰기" delegate:self cancelButtonTitle:@"취소" destructiveButtonTitle:@"포스팅하기" otherButtonTitles:@"지우기", @"이어쓰기", nil];
     }
     else
     {
@@ -152,8 +180,26 @@
     else if(buttonIndex ==0 && isWritingFile == true)
     {
         //posting
-    }
+        
+        DataManager *dm = [DataManager singleTon_GetInstance];
+        TagManager *tm = [TagManager singleTon_GetInstance];
+        
+        NSMutableArray * blogDataFromFile = [dm getDataFromFile:@"tempBlogData"];
+        
+        tm.mode = @"posting";
+        
+        NSString* totalHtml = [tm convertHtmlDocument:blogDataFromFile];
+ 
     
+        PostingViewController *postingViewController = [[PostingViewController alloc]init];
+        
+        postingViewController.content = totalHtml;
+        [self presentViewController:postingViewController animated:YES completion:nil];
+        
+   
+        [postingViewController release];
+        
+    }
     else if(buttonIndex ==1)
     {
         //날려버리기

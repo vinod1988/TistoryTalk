@@ -51,7 +51,7 @@ static DataManager * singleTon = nil;
 	NSString * document_dic = [paths objectAtIndex:0];
     
 	NSString * path = [document_dic stringByAppendingFormat:@"/%@.plist", fileName];
-    NSLog(@"%@", path);
+  //  NSLog(@"%@", path);
     
 	return path;
 }

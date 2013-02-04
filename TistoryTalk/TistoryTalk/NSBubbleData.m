@@ -139,6 +139,9 @@ const UIEdgeInsets imageInsetsSomeone = {11, 18, 16, 14};
     return self;
 }
 
+
+ 
+
 -(NSString*)toJson
 {
     NSMutableDictionary *toJsonDict = [[NSMutableDictionary alloc ] init];

@@ -13,6 +13,7 @@
 @end
 
 @implementation MyblogViewController
+@synthesize webView;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -31,7 +32,11 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-}
+
+
+    NSURL* urlObj = [[NSURL alloc] initWithString:@"http://211.43.193.18/myblog.html"];
+    NSURLRequest *urlRequest = [[NSURLRequest alloc] initWithURL:urlObj];
+    [webView loadRequest: urlRequest];}
 
 - (void)didReceiveMemoryWarning
 {

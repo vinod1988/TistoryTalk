@@ -9,5 +9,15 @@
 #import <UIKit/UIKit.h>
 
 @interface SearchModuleView : UIView
+{
+    
+    UISearchBar *searhBar;
+    UITableView *resultView;
+
+    
+}
+@property(nonatomic, retain)  UISearchBar *searhBar;
+
+@property(nonatomic, retain)  UITableView *resultView;
 
 @end

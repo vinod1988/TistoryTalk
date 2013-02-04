@@ -54,26 +54,32 @@
     [gesture release];
     
     
-    NSURL* urlObj = [[NSURL alloc] initWithString:@"http://www.idfsoft.wo.to/#"];
+    NSURL* urlObj = [[NSURL alloc] initWithString:@"http://211.43.193.18/home.html"];
     NSURLRequest *urlRequest = [[NSURLRequest alloc] initWithURL:urlObj];
     [webView loadRequest: urlRequest];
 }
 
 -(void)viewDidAppear:(BOOL)animated
 {
- 
+    
+    /* 강제 임시키 발급 */
+
+    /*
+    [[NSUserDefaults standardUserDefaults] setObject:@"14b4888d18153d980e994d7afee37fcd_04bc29d2967763c979659c9f014e2d18" forKey:@"tistory_token"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+    */
+    
     NSString* token = [[NSUserDefaults standardUserDefaults] stringForKey:@"tistory_token"];
     NSLog(@"get token : %@", token);
      
     if(token ==nil)
     {
-//    AuthViewController *authViewController = [[AuthViewController alloc] init];
-//    [self presentViewController:authViewController animated:YES completion:nil];
-//    //[authViewController release];
+    AuthViewController *authViewController = [[AuthViewController alloc] init];
+     [self presentViewController:authViewController animated:YES completion:nil];
+    [authViewController release];
  
     }
-    
-    NSLog(@"ddd");
+     
 }
 
 - (void)didReceiveMemoryWarning

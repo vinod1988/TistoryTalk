@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7E5A194A16B52B2F00EB9795 /* PostingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E5A194816B52B2F00EB9795 /* PostingViewController.m */; };
+		7E5A194B16B52B2F00EB9795 /* PostingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7E5A194916B52B2F00EB9795 /* PostingViewController.xib */; };
+		7E5A195116B93BDB00EB9795 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7EE81F6416AF4C7700E87998 /* Default@2x.png */; };
+		7E5A195216B963E100EB9795 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 7EE81F6916AF4D4000E87998 /* Default.png */; };
+		7E5A19A716BBBC9500EB9795 /* HTTPRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E5A19A616BBBC9500EB9795 /* HTTPRequest.m */; };
+		7E5A19AA16BBCC1300EB9795 /* MyBlogInfoParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E5A19A916BBCC1300EB9795 /* MyBlogInfoParser.m */; };
+		7E5A19AE16BBFE2D00EB9795 /* CategoryParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E5A19AD16BBFE2D00EB9795 /* CategoryParser.m */; };
 		7E62275E16B1EFCD00C8C579 /* bubble.png in Resources */ = {isa = PBXBuildFile; fileRef = 7E62275D16B1EFCD00C8C579 /* bubble.png */; };
 		7E62276016B1F01D00C8C579 /* bubble@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7E62275F16B1F01D00C8C579 /* bubble@2x.png */; };
 		7E62276216B1F03300C8C579 /* home@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7E62276116B1F03300C8C579 /* home@2x.png */; };
@@ -19,6 +26,7 @@
 		7E62277016B1FD4F00C8C579 /* settings.png in Resources */ = {isa = PBXBuildFile; fileRef = 7E62276F16B1FD4F00C8C579 /* settings.png */; };
 		7E62277216B1FDB500C8C579 /* tistory.png in Resources */ = {isa = PBXBuildFile; fileRef = 7E62277116B1FDB500C8C579 /* tistory.png */; };
 		7E62277416B1FDCB00C8C579 /* tistory@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7E62277316B1FDCB00C8C579 /* tistory@2x.png */; };
+		7E96C75016BC297000B31BCA /* KKCanididateDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E96C74F16BC297000B31BCA /* KKCanididateDetail.m */; };
 		7EE81EAA16AB9DC900E87998 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EE81EA916AB9DC900E87998 /* UIKit.framework */; };
 		7EE81EAC16AB9DC900E87998 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EE81EAB16AB9DC900E87998 /* Foundation.framework */; };
 		7EE81EAE16AB9DC900E87998 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EE81EAD16AB9DC900E87998 /* CoreGraphics.framework */; };
@@ -45,10 +53,8 @@
 		7EE81F2416AD563E00E87998 /* MessengerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7EE81F2216AD563E00E87998 /* MessengerViewController.xib */; };
 		7EE81F2C16AD5ED600E87998 /* SearchToolBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EE81F2B16AD5ED600E87998 /* SearchToolBar.m */; };
 		7EE81F4416AE9EFE00E87998 /* NSBubbleData.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EE81F3A16AE9EFE00E87998 /* NSBubbleData.m */; };
-		7EE81F4516AE9EFE00E87998 /* UIBubbleHeaderTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EE81F3C16AE9EFE00E87998 /* UIBubbleHeaderTableViewCell.m */; };
 		7EE81F4616AE9EFE00E87998 /* UIBubbleTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EE81F3E16AE9EFE00E87998 /* UIBubbleTableView.m */; };
 		7EE81F4716AE9EFE00E87998 /* UIBubbleTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EE81F4016AE9EFE00E87998 /* UIBubbleTableViewCell.m */; };
-		7EE81F4816AE9EFE00E87998 /* UIBubbleTypingTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EE81F4316AE9EFE00E87998 /* UIBubbleTypingTableViewCell.m */; };
 		7EE81F5416AF2FE000E87998 /* bubbleMine.png in Resources */ = {isa = PBXBuildFile; fileRef = 7EE81F4A16AF2FE000E87998 /* bubbleMine.png */; };
 		7EE81F5516AF2FE000E87998 /* bubbleMine@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7EE81F4B16AF2FE000E87998 /* bubbleMine@2x.png */; };
 		7EE81F5616AF2FE000E87998 /* bubbleSomeone.png in Resources */ = {isa = PBXBuildFile; fileRef = 7EE81F4C16AF2FE000E87998 /* bubbleSomeone.png */; };
@@ -59,19 +65,26 @@
 		7EE81F5B16AF2FE000E87998 /* typingMine@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7EE81F5116AF2FE000E87998 /* typingMine@2x.png */; };
 		7EE81F5C16AF2FE000E87998 /* typingSomeone.png in Resources */ = {isa = PBXBuildFile; fileRef = 7EE81F5216AF2FE000E87998 /* typingSomeone.png */; };
 		7EE81F5D16AF2FE000E87998 /* typingSomeone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7EE81F5316AF2FE000E87998 /* typingSomeone@2x.png */; };
-		7EE81F6516AF4C7700E87998 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7EE81F6416AF4C7700E87998 /* Default@2x.png */; };
 		7EE81F7216B027B900E87998 /* MapModuleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EE81F7116B027B900E87998 /* MapModuleView.m */; };
 		7EE81F7516B0291100E87998 /* SearchModuleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EE81F7416B0291100E87998 /* SearchModuleView.m */; };
 		7EE81F7C16B03F2900E87998 /* DataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EE81F7B16B03F2900E87998 /* DataManager.m */; };
 		7EE81F8316B0962F00E87998 /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EE81F8216B0962F00E87998 /* JSONKit.m */; };
 		7EE81F8616B0AB1200E87998 /* TagManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EE81F8516B0AB1200E87998 /* TagManager.m */; };
 		7EE81FC916B17B4800E87998 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7EE81F6716AF4D2100E87998 /* Default@2x.png */; };
-		7EE81FCA16B1809100E87998 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 7EE81F6916AF4D4000E87998 /* Default.png */; };
 		7EE81FCE16B1846400E87998 /* AuthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EE81FCC16B1845E00E87998 /* AuthViewController.m */; };
 		7EE81FCF16B1846400E87998 /* AuthViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7EE81FCD16B1846000E87998 /* AuthViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7E5A194716B52B2F00EB9795 /* PostingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostingViewController.h; sourceTree = "<group>"; };
+		7E5A194816B52B2F00EB9795 /* PostingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PostingViewController.m; sourceTree = "<group>"; };
+		7E5A194916B52B2F00EB9795 /* PostingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PostingViewController.xib; sourceTree = "<group>"; };
+		7E5A19A516BBBC9500EB9795 /* HTTPRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTTPRequest.h; sourceTree = "<group>"; };
+		7E5A19A616BBBC9500EB9795 /* HTTPRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTTPRequest.m; sourceTree = "<group>"; };
+		7E5A19A816BBCC1300EB9795 /* MyBlogInfoParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyBlogInfoParser.h; sourceTree = "<group>"; };
+		7E5A19A916BBCC1300EB9795 /* MyBlogInfoParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyBlogInfoParser.m; sourceTree = "<group>"; };
+		7E5A19AC16BBFE2D00EB9795 /* CategoryParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryParser.h; sourceTree = "<group>"; };
+		7E5A19AD16BBFE2D00EB9795 /* CategoryParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryParser.m; sourceTree = "<group>"; };
 		7E62275D16B1EFCD00C8C579 /* bubble.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bubble.png; sourceTree = "<group>"; };
 		7E62275F16B1F01D00C8C579 /* bubble@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bubble@2x.png"; sourceTree = "<group>"; };
 		7E62276116B1F03300C8C579 /* home@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "home@2x.png"; sourceTree = "<group>"; };
@@ -84,6 +97,8 @@
 		7E62276F16B1FD4F00C8C579 /* settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = settings.png; sourceTree = "<group>"; };
 		7E62277116B1FDB500C8C579 /* tistory.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tistory.png; sourceTree = "<group>"; };
 		7E62277316B1FDCB00C8C579 /* tistory@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tistory@2x.png"; sourceTree = "<group>"; };
+		7E96C74E16BC297000B31BCA /* KKCanididateDetail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKCanididateDetail.h; sourceTree = "<group>"; };
+		7E96C74F16BC297000B31BCA /* KKCanididateDetail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKCanididateDetail.m; sourceTree = "<group>"; };
 		7EE81EA516AB9DC900E87998 /* TistoryTalk.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TistoryTalk.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7EE81EA916AB9DC900E87998 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		7EE81EAB16AB9DC900E87998 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -124,15 +139,11 @@
 		7EE81F2B16AD5ED600E87998 /* SearchToolBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchToolBar.m; sourceTree = "<group>"; };
 		7EE81F3916AE9EFE00E87998 /* NSBubbleData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSBubbleData.h; sourceTree = "<group>"; };
 		7EE81F3A16AE9EFE00E87998 /* NSBubbleData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSBubbleData.m; sourceTree = "<group>"; };
-		7EE81F3B16AE9EFE00E87998 /* UIBubbleHeaderTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIBubbleHeaderTableViewCell.h; sourceTree = "<group>"; };
-		7EE81F3C16AE9EFE00E87998 /* UIBubbleHeaderTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIBubbleHeaderTableViewCell.m; sourceTree = "<group>"; };
 		7EE81F3D16AE9EFE00E87998 /* UIBubbleTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIBubbleTableView.h; sourceTree = "<group>"; };
 		7EE81F3E16AE9EFE00E87998 /* UIBubbleTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIBubbleTableView.m; sourceTree = "<group>"; };
 		7EE81F3F16AE9EFE00E87998 /* UIBubbleTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIBubbleTableViewCell.h; sourceTree = "<group>"; };
 		7EE81F4016AE9EFE00E87998 /* UIBubbleTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIBubbleTableViewCell.m; sourceTree = "<group>"; };
 		7EE81F4116AE9EFE00E87998 /* UIBubbleTableViewDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIBubbleTableViewDataSource.h; sourceTree = "<group>"; };
-		7EE81F4216AE9EFE00E87998 /* UIBubbleTypingTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIBubbleTypingTableViewCell.h; sourceTree = "<group>"; };
-		7EE81F4316AE9EFE00E87998 /* UIBubbleTypingTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIBubbleTypingTableViewCell.m; sourceTree = "<group>"; };
 		7EE81F4A16AF2FE000E87998 /* bubbleMine.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bubbleMine.png; sourceTree = "<group>"; };
 		7EE81F4B16AF2FE000E87998 /* bubbleMine@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bubbleMine@2x.png"; sourceTree = "<group>"; };
 		7EE81F4C16AF2FE000E87998 /* bubbleSomeone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bubbleSomeone.png; sourceTree = "<group>"; };
@@ -175,6 +186,36 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7E5A194616B52B1500EB9795 /* PostingViewController */ = {
+			isa = PBXGroup;
+			children = (
+				7E5A194716B52B2F00EB9795 /* PostingViewController.h */,
+				7E5A194816B52B2F00EB9795 /* PostingViewController.m */,
+				7E5A194916B52B2F00EB9795 /* PostingViewController.xib */,
+			);
+			name = PostingViewController;
+			sourceTree = "<group>";
+		};
+		7E5A199916BBACF200EB9795 /* HtmlRequest */ = {
+			isa = PBXGroup;
+			children = (
+				7E5A19A516BBBC9500EB9795 /* HTTPRequest.h */,
+				7E5A19A616BBBC9500EB9795 /* HTTPRequest.m */,
+			);
+			name = HtmlRequest;
+			sourceTree = "<group>";
+		};
+		7E5A19AB16BBFDC000EB9795 /* Parser */ = {
+			isa = PBXGroup;
+			children = (
+				7E5A19A816BBCC1300EB9795 /* MyBlogInfoParser.h */,
+				7E5A19A916BBCC1300EB9795 /* MyBlogInfoParser.m */,
+				7E5A19AC16BBFE2D00EB9795 /* CategoryParser.h */,
+				7E5A19AD16BBFE2D00EB9795 /* CategoryParser.m */,
+			);
+			name = Parser;
+			sourceTree = "<group>";
+		};
 		7EE81E9A16AB9DC900E87998 = {
 			isa = PBXGroup;
 			children = (
@@ -208,6 +249,7 @@
 		7EE81EAF16AB9DC900E87998 /* TistoryTalk */ = {
 			isa = PBXGroup;
 			children = (
+				7E5A199916BBACF200EB9795 /* HtmlRequest */,
 				7EE81F7916B03AE700E87998 /* DataStructure */,
 				7EE81EED16ABA03700E87998 /* TabbarImages */,
 				7EE81EEC16ABA01900E87998 /* ViewControllers */,
@@ -232,6 +274,7 @@
 		7EE81EEC16ABA01900E87998 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				7E5A194616B52B1500EB9795 /* PostingViewController */,
 				7EE81FD016B184B700E87998 /* AuthViewController */,
 				7EE81F1D16AD539200E87998 /* MessengerWriterController */,
 				7EE81EEF16ABA05B00E87998 /* WritterViewContoller */,
@@ -246,8 +289,6 @@
 		7EE81EED16ABA03700E87998 /* TabbarImages */ = {
 			isa = PBXGroup;
 			children = (
-				7EE81F8016B095F600E87998 /* JSonKit */,
-				7EE81F1F16AD53FA00E87998 /* Data */,
 				7EE81EC416AB9DC900E87998 /* first.png */,
 				7EE81EC616AB9DC900E87998 /* first@2x.png */,
 				7E62277116B1FDB500C8C579 /* tistory.png */,
@@ -370,15 +411,11 @@
 			children = (
 				7EE81F3916AE9EFE00E87998 /* NSBubbleData.h */,
 				7EE81F3A16AE9EFE00E87998 /* NSBubbleData.m */,
-				7EE81F3B16AE9EFE00E87998 /* UIBubbleHeaderTableViewCell.h */,
-				7EE81F3C16AE9EFE00E87998 /* UIBubbleHeaderTableViewCell.m */,
 				7EE81F3D16AE9EFE00E87998 /* UIBubbleTableView.h */,
 				7EE81F3E16AE9EFE00E87998 /* UIBubbleTableView.m */,
 				7EE81F3F16AE9EFE00E87998 /* UIBubbleTableViewCell.h */,
 				7EE81F4016AE9EFE00E87998 /* UIBubbleTableViewCell.m */,
 				7EE81F4116AE9EFE00E87998 /* UIBubbleTableViewDataSource.h */,
-				7EE81F4216AE9EFE00E87998 /* UIBubbleTypingTableViewCell.h */,
-				7EE81F4316AE9EFE00E87998 /* UIBubbleTypingTableViewCell.m */,
 			);
 			name = UIBubbleTableView;
 			sourceTree = "<group>";
@@ -414,6 +451,8 @@
 			children = (
 				7EE81F7016B027B900E87998 /* MapModuleView.h */,
 				7EE81F7116B027B900E87998 /* MapModuleView.m */,
+				7E96C74E16BC297000B31BCA /* KKCanididateDetail.h */,
+				7E96C74F16BC297000B31BCA /* KKCanididateDetail.m */,
 			);
 			name = MapModuleView;
 			sourceTree = "<group>";
@@ -421,6 +460,9 @@
 		7EE81F7916B03AE700E87998 /* DataStructure */ = {
 			isa = PBXGroup;
 			children = (
+				7E5A19AB16BBFDC000EB9795 /* Parser */,
+				7EE81F8016B095F600E87998 /* JSonKit */,
+				7EE81F1F16AD53FA00E87998 /* Data */,
 			);
 			name = DataStructure;
 			sourceTree = "<group>";
@@ -437,9 +479,9 @@
 		7EE81FD016B184B700E87998 /* AuthViewController */ = {
 			isa = PBXGroup;
 			children = (
+				7EE81FCD16B1846000E87998 /* AuthViewController.xib */,
 				7EE81FCB16B1845A00E87998 /* AuthViewController.h */,
 				7EE81FCC16B1845E00E87998 /* AuthViewController.m */,
-				7EE81FCD16B1846000E87998 /* AuthViewController.xib */,
 			);
 			name = AuthViewController;
 			sourceTree = "<group>";
@@ -516,9 +558,7 @@
 				7EE81F5B16AF2FE000E87998 /* typingMine@2x.png in Resources */,
 				7EE81F5C16AF2FE000E87998 /* typingSomeone.png in Resources */,
 				7EE81F5D16AF2FE000E87998 /* typingSomeone@2x.png in Resources */,
-				7EE81F6516AF4C7700E87998 /* Default@2x.png in Resources */,
 				7EE81FC916B17B4800E87998 /* Default@2x.png in Resources */,
-				7EE81FCA16B1809100E87998 /* Default.png in Resources */,
 				7EE81FCF16B1846400E87998 /* AuthViewController.xib in Resources */,
 				7E62275E16B1EFCD00C8C579 /* bubble.png in Resources */,
 				7E62276016B1F01D00C8C579 /* bubble@2x.png in Resources */,
@@ -532,6 +572,9 @@
 				7E62277016B1FD4F00C8C579 /* settings.png in Resources */,
 				7E62277216B1FDB500C8C579 /* tistory.png in Resources */,
 				7E62277416B1FDCB00C8C579 /* tistory@2x.png in Resources */,
+				7E5A194B16B52B2F00EB9795 /* PostingViewController.xib in Resources */,
+				7E5A195116B93BDB00EB9795 /* Default@2x.png in Resources */,
+				7E5A195216B963E100EB9795 /* Default.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -554,16 +597,19 @@
 				7EE81F2316AD563E00E87998 /* MessengerViewController.m in Sources */,
 				7EE81F2C16AD5ED600E87998 /* SearchToolBar.m in Sources */,
 				7EE81F4416AE9EFE00E87998 /* NSBubbleData.m in Sources */,
-				7EE81F4516AE9EFE00E87998 /* UIBubbleHeaderTableViewCell.m in Sources */,
 				7EE81F4616AE9EFE00E87998 /* UIBubbleTableView.m in Sources */,
 				7EE81F4716AE9EFE00E87998 /* UIBubbleTableViewCell.m in Sources */,
-				7EE81F4816AE9EFE00E87998 /* UIBubbleTypingTableViewCell.m in Sources */,
 				7EE81F7216B027B900E87998 /* MapModuleView.m in Sources */,
 				7EE81F7516B0291100E87998 /* SearchModuleView.m in Sources */,
 				7EE81F7C16B03F2900E87998 /* DataManager.m in Sources */,
 				7EE81F8316B0962F00E87998 /* JSONKit.m in Sources */,
 				7EE81F8616B0AB1200E87998 /* TagManager.m in Sources */,
 				7EE81FCE16B1846400E87998 /* AuthViewController.m in Sources */,
+				7E5A194A16B52B2F00EB9795 /* PostingViewController.m in Sources */,
+				7E5A19A716BBBC9500EB9795 /* HTTPRequest.m in Sources */,
+				7E5A19AA16BBCC1300EB9795 /* MyBlogInfoParser.m in Sources */,
+				7E5A19AE16BBFE2D00EB9795 /* CategoryParser.m in Sources */,
+				7E96C75016BC297000B31BCA /* KKCanididateDetail.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -26,7 +26,6 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-     
     
     self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
     // Override point for customization after application launch.
@@ -36,10 +35,8 @@
     UIViewController *myblogViewController = [[[MyblogViewController alloc] initWithNibName:@"MyblogViewController" bundle:nil] autorelease];
     UIViewController *writterViewController = [[[WritterViewController alloc] initWithNibName:@"WritterViewController" bundle:nil] autorelease];
     
-    
-    
-    sleep(2);
-    
+
+    sleep(1);
     
     
     self.tabBarController = [[[UITabBarController alloc] init] autorelease];

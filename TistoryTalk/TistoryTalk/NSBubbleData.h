@@ -33,5 +33,6 @@ typedef enum _NSBubbleType
 - (id)initWithView:(UIView *)view date:(NSDate *)date type:(NSBubbleType)type insets:(UIEdgeInsets)insets;
 + (id)dataWithView:(UIView *)view date:(NSDate *)date type:(NSBubbleType)type insets:(UIEdgeInsets)insets;
 
+ 
 -(NSString*)toJson;
 @end

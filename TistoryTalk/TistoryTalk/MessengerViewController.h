@@ -26,12 +26,13 @@ typedef enum _NSCurrentMainView
 {
     SearchToolBar* searchToolbar;
     IBOutlet UIBubbleTableView *bubbleTableView;
-     NSMutableArray *bubbleData;
+    NSMutableArray *bubbleData;
     int prevNSBubbleTypingType;
     
-    IBOutlet  UIView *mainView;
-    IBOutlet UIBarButtonItem *editButton;
-    IBOutlet UIBarButtonItem *closeButton;
+    IBOutlet UIView *mainView;
+    IBOutlet UIBarButtonItem *rightButton;
+    IBOutlet UIBarButtonItem *leftButton;
+    IBOutlet UILabel *titleLabel; 
     
     SearchModuleView *searchModuleView ;
     MapModuleView *mapModuleView;
@@ -41,11 +42,10 @@ typedef enum _NSCurrentMainView
 @property(nonatomic, retain) IBOutlet UIView *mainView;
 @property NSCurrentMainView currentMainView;
 
-@property(nonatomic, retain)
-IBOutlet UIBarButtonItem *editButton;
-@property(nonatomic, retain)
-IBOutlet UIBarButtonItem *closeButton;
+@property(nonatomic, retain) IBOutlet UIBarButtonItem *rightButton;
+@property(nonatomic, retain) IBOutlet UIBarButtonItem *leftButton;
+@property(nonatomic, retain) IBOutlet UILabel *titleLabel;
 
--(IBAction)closeViewController;
--(IBAction)clickEditBtn; 
+-(IBAction)leftBtnClicked;
+-(IBAction)rightBtnClicked;
 @end
