@@ -15,6 +15,8 @@
 @implementation TistoryViewController
 @synthesize webView;
 
+#pragma mark view method
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -28,6 +30,23 @@
     return self;
 }
 
+- (void)viewDidLoad
+{
+    [super viewDidLoad]; 
+    
+    [self registerGesture];
+    
+    NSURL* urlObj = [[NSURL alloc] initWithString:@"http://www.tistory.com"];
+    NSURLRequest *urlRequest = [[NSURLRequest alloc] initWithURL:urlObj];
+    [webView loadRequest: urlRequest];
+}
+
+
+- (void)didReceiveMemoryWarning
+{
+    [super didReceiveMemoryWarning];
+}
+
 
 
 #pragma mark gesture method
@@ -36,38 +55,30 @@
     return YES;
 }
 
+-(void)registerGesture
+{
+    
+    UISwipeGestureRecognizer *leftGesture = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(didLeftSwipe:)];
+    leftGesture.direction = UISwipeGestureRecognizerDirectionLeft;
+    [webView addGestureRecognizer:leftGesture];
+    
+    UISwipeGestureRecognizer *rightGesture = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(didRightSwipe:)];
+    rightGesture.direction = UISwipeGestureRecognizerDirectionRight;
+    [webView addGestureRecognizer:rightGesture];
+}
+
+
 -(void)didLeftSwipe:(UIGestureRecognizer *)gestureRecognizer
 {
     [webView goBack];
-    
 }
 
-- (void)viewDidLoad
+-(void)didRightSwipe:(UIGestureRecognizer *)gestureRecognizer
 {
-    [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
-    
-    
-    UISwipeGestureRecognizer *gesture = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(didLeftSwipe:)];
-    gesture.direction = UISwipeGestureRecognizerDirectionLeft;
-    [webView addGestureRecognizer:gesture];
-    
-    
-    NSURL* urlObj = [[NSURL alloc] initWithString:@"http://www.tistory.com"];
-    NSURLRequest *urlRequest = [[NSURLRequest alloc] initWithURL:urlObj];
-    [webView loadRequest: urlRequest];
+    [webView goForward];
 }
 
--(void)viewDidAppear:(BOOL)animated
-{
-     
-}
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
 
 
 
