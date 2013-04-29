@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		7E5A194A16B52B2F00EB9795 /* PostingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E5A194816B52B2F00EB9795 /* PostingViewController.m */; };
 		7E5A194B16B52B2F00EB9795 /* PostingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7E5A194916B52B2F00EB9795 /* PostingViewController.xib */; };
-		7E5A195116B93BDB00EB9795 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7EE81F6416AF4C7700E87998 /* Default@2x.png */; };
 		7E5A195216B963E100EB9795 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 7EE81F6916AF4D4000E87998 /* Default.png */; };
 		7E5A19A716BBBC9500EB9795 /* HTTPRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E5A19A616BBBC9500EB9795 /* HTTPRequest.m */; };
 		7E5A19AA16BBCC1300EB9795 /* MyBlogInfoParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E5A19A916BBCC1300EB9795 /* MyBlogInfoParser.m */; };
@@ -512,7 +511,7 @@
 		7EE81E9C16AB9DC900E87998 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0450;
+				LastUpgradeCheck = 0460;
 				ORGANIZATIONNAME = "an seonghyun";
 			};
 			buildConfigurationList = 7EE81E9F16AB9DC900E87998 /* Build configuration list for PBXProject "TistoryTalk" */;
@@ -573,7 +572,6 @@
 				7E62277216B1FDB500C8C579 /* tistory.png in Resources */,
 				7E62277416B1FDCB00C8C579 /* tistory@2x.png in Resources */,
 				7E5A194B16B52B2F00EB9795 /* PostingViewController.xib in Resources */,
-				7E5A195116B93BDB00EB9795 /* Default@2x.png in Resources */,
 				7E5A195216B963E100EB9795 /* Default.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
