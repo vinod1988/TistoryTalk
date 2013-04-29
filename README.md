@@ -15,10 +15,10 @@
 ## Daum DevDay23013 Screen shots
 <br/>
 ###  글쓰기 화면 
-<center>
-
-![ScreenShot](http://farm9.static.flickr.com/8261/8677507373_7f4d4b7624.jpg)  ![ScreenShot](http://farm9.static.flickr.com/8531/8678613392_f370a220ea.jpg)
-</center>
+<p align = "center">
+	<img src="http://farm9.static.flickr.com/8261/8677507373_7f4d4b7624.jpg"/>
+	<img src="http://farm9.static.flickr.com/8531/8678613392_f370a220ea.jpg"/>
+</p>
 
 ###  저장 화면 
 <p align = "center">
