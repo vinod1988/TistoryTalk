@@ -136,7 +136,6 @@
     popupQuery.actionSheetStyle = UIBarStyleBlackTranslucent;
     
     [popupQuery showFromTabBar:self.tabBarController.tabBar];
-    [popupQuery release];
     
 }
 
@@ -160,7 +159,6 @@
     
     }
     
-    [fileManager release];
     
     
 }
@@ -175,7 +173,6 @@
         MessengerViewController *messengerViewController = [[MessengerViewController alloc]init];
         [self presentViewController:messengerViewController animated:YES completion:nil];
         
-        [messengerViewController release];
     }
     else if(buttonIndex ==0 && isWritingFile == true)
     {
@@ -197,7 +194,6 @@
         [self presentViewController:postingViewController animated:YES completion:nil];
         
    
-        [postingViewController release];
         
     }
     else if(buttonIndex ==1)
@@ -225,7 +221,6 @@
         
         [self presentViewController:messengerViewController animated:YES completion:nil];
         
-        [messengerViewController release];
         
     }
     

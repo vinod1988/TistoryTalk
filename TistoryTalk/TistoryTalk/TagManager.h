@@ -14,7 +14,7 @@
     NSString *mode; //preview, posting
 }
 
-@property(nonatomic, retain) NSString * mode;
+@property(nonatomic, strong) NSString * mode;
 
 
 +(TagManager *)singleTon_GetInstance;

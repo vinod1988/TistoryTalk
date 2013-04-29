@@ -16,8 +16,8 @@
 
     
 }
-@property(nonatomic, retain)  UISearchBar *searhBar;
+@property(nonatomic, strong)  UISearchBar *searhBar;
 
-@property(nonatomic, retain)  UITableView *resultView;
+@property(nonatomic, strong)  UITableView *resultView;
 
 @end

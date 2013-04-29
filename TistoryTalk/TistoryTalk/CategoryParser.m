@@ -60,9 +60,7 @@
         
         [parser setDelegate:self];
         [parser parse];
-        [parser release];
         
-        [conn release];
         
     }
     else

@@ -24,7 +24,7 @@
         // Custom initialization
         
         // SearchBar Setting
-        searchToolbar = [[[SearchToolBar alloc]initWithFrame:CGRectMake(0, 416, 320, 44)]autorelease];
+        searchToolbar = [[SearchToolBar alloc]initWithFrame:CGRectMake(0, 416, 320, 44)];
         searchToolbar.searchTextField.delegate = self;
         
         [self.view addSubview:searchToolbar];
@@ -76,7 +76,6 @@
                     [dateFormatter setDateFormat:@"yyyyMMdd:hh:mm:ss"];
                     NSDate *dateFromString = [[NSDate alloc] init];
                     dateFromString = [dateFormatter dateFromString:[dictFromJson objectForKey:@"date"]];
-                    [dateFormatter release];
                     
                     NSInteger type = [[dictFromJson objectForKey:@"type"] intValue];
                     
@@ -115,24 +114,21 @@
         UITapGestureRecognizer *doubleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didDoubleTap:)];
         doubleTap.numberOfTapsRequired = 2;
         [bubbleTableView addGestureRecognizer:doubleTap];
-        [doubleTap release];
         
         UISwipeGestureRecognizer *leftSwipegesture = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(didLeftSwipe:)];
         leftSwipegesture.direction = UISwipeGestureRecognizerDirectionLeft;
         [bubbleTableView addGestureRecognizer:leftSwipegesture];
-        [leftSwipegesture release];
         
         UISwipeGestureRecognizer *rigthSwipegesture = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(didRightSwipe:)];
         rigthSwipegesture.direction = UISwipeGestureRecognizerDirectionRight;
         [bubbleTableView addGestureRecognizer:rigthSwipegesture];
-        [rigthSwipegesture release];
         
         //Sub Modules
         
-        searchModuleView = [[[SearchModuleView alloc]initWithFrame:CGRectMake(-320,44, 320, 480-44)]autorelease];
+        searchModuleView = [[SearchModuleView alloc]initWithFrame:CGRectMake(-320,44, 320, 480-44)];
         [self.view addSubview:searchModuleView];
         
-        mapModuleView = [[[MapModuleView alloc]initWithFrame:CGRectMake(320, 44, 320,  480-44)]autorelease];
+        mapModuleView = [[MapModuleView alloc]initWithFrame:CGRectMake(320, 44, 320,  480-44)];
         [self.view addSubview:mapModuleView];
         
         
@@ -242,12 +238,11 @@
     NSIndexPath *toIndexPath =  [noti.userInfo objectForKey:@"toIndexPath"];
     
     
-    NSBubbleData *temp  = [[bubbleData objectAtIndex:fromIndexPath.row]retain];
+    NSBubbleData *temp  = [bubbleData objectAtIndex:fromIndexPath.row];
     
     [bubbleData removeObjectAtIndex:fromIndexPath.row];
     [bubbleData insertObject:temp atIndex:toIndexPath.row];
     
-    [temp release];
     
     
 }
@@ -439,7 +434,6 @@
         alert.delegate = self;
         
         [alert show];
-        [alert release];
         
     }
     else
@@ -473,7 +467,6 @@
             
             UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"데이터가 없습니다." message:@"" delegate:self cancelButtonTitle:@"확인" otherButtonTitles:nil, nil];
             [alert show];
-            [alert release];
         }
         
     }
@@ -511,7 +504,6 @@
         
         UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"입력해주세요" message:@"" delegate:self cancelButtonTitle:@"확인" otherButtonTitles:nil, nil];
         [alert show];
-        [alert release];
         
     }
     

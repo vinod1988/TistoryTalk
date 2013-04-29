@@ -67,13 +67,6 @@
 
 
 
-- (void)dealloc
-{
-	[title release];
-	[onOff release];
-	
-    [super dealloc];
-}
 
 
 

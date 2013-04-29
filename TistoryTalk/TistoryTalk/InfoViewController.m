@@ -83,10 +83,10 @@
     {
         if(indexPath.section==2)
         {
-            cell =  [[[LogOutCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
+            cell =  [[LogOutCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
         }
         else{
-            cell =  [[[InfoCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
+            cell =  [[InfoCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
         }
     }
     
@@ -143,13 +143,13 @@
 	if(section == 0)
 	{
 		
-		NSArray* m_headers = [[[NSArray alloc]initWithObjects: @"공지사항", nil]autorelease];
+		NSArray* m_headers = [[NSArray alloc]initWithObjects: @"공지사항", nil];
 		
 		// create the parent view that will hold header Label
-		UIView* customView = [[[UIView alloc] initWithFrame:CGRectMake(0.0, 0.0, 320.0, 30.0)] autorelease];;
+		UIView* customView = [[UIView alloc] initWithFrame:CGRectMake(0.0, 0.0, 320.0, 30.0)];;
 		//	customView.backgroundColor = [UIColor colorWithRed:237/255.0 green:237/255.0 blue:237/255.0 alpha:1.0];
 		// create the button object
-		UILabel * headerLabel = [[[UILabel alloc] initWithFrame:CGRectZero]autorelease];
+		UILabel * headerLabel = [[UILabel alloc] initWithFrame:CGRectZero];
 		headerLabel.backgroundColor = [UIColor colorWithRed:237/255.0 green:237/255.0 blue:237/255.0 alpha:1.0];
         
 		headerLabel.opaque = YES;
@@ -171,13 +171,13 @@
 	{
 		
 		
-		NSArray* m_headers = [[[NSArray alloc]initWithObjects: @"i&DF", nil]autorelease];
+		NSArray* m_headers = [[NSArray alloc]initWithObjects: @"i&DF", nil];
 		
 		// create the parent view that will hold header Label
-		UIView* customView = [[[UIView alloc] initWithFrame:CGRectMake(0.0, 0.0, 320.0, 30.0)]autorelease];
+		UIView* customView = [[UIView alloc] initWithFrame:CGRectMake(0.0, 0.0, 320.0, 30.0)];
 		//	customView.backgroundColor = [UIColor colorWithRed:237/255.0 green:237/255.0 blue:237/255.0 alpha:1.0];
 		// create the button object
-		UILabel * headerLabel = [[[UILabel alloc] initWithFrame:CGRectZero]autorelease];
+		UILabel * headerLabel = [[UILabel alloc] initWithFrame:CGRectZero];
 		headerLabel.backgroundColor = [UIColor colorWithRed:237/255.0 green:237/255.0 blue:237/255.0 alpha:1.0];
 		
 		headerLabel.opaque = YES;
@@ -196,13 +196,13 @@
 	}
 	else if (section ==2)
 	{
-		NSArray* m_headers = [[[NSArray alloc]initWithObjects:@"계정설정", nil]autorelease];
+		NSArray* m_headers = [[NSArray alloc]initWithObjects:@"계정설정", nil];
 		
 		// create the parent view that will hold header Label
-		UIView* customView = [[[UIView alloc] initWithFrame:CGRectMake(0.0, 0.0, 320.0, 30.0)] autorelease];
+		UIView* customView = [[UIView alloc] initWithFrame:CGRectMake(0.0, 0.0, 320.0, 30.0)];
 		//customView.backgroundColor = [UIColor colorWithRed:237/255.0 green:237/255.0 blue:237/255.0 alpha:1.0];
 		// create the button object
-		UILabel * headerLabel = [[[UILabel alloc] initWithFrame:CGRectZero]autorelease];
+		UILabel * headerLabel = [[UILabel alloc] initWithFrame:CGRectZero];
 		headerLabel.backgroundColor = [UIColor colorWithRed:237/255.0 green:237/255.0 blue:237/255.0 alpha:1.0];
 		
 		headerLabel.opaque = YES;

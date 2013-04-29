@@ -13,6 +13,6 @@
 {
     UITextField *searchTextField;
 }
-@property (nonatomic, retain) UITextField *searchTextField;
+@property (nonatomic, strong) UITextField *searchTextField;
 
 @end

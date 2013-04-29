@@ -101,12 +101,5 @@
 	self.selector = aSelector;
 }
 
-- (void)dealloc
-{
-	[receivedData release];
-	[response release];
-	[result release];
-	[super dealloc];
-}
 
 @end

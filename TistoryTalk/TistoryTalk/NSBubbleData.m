@@ -164,7 +164,6 @@ const UIEdgeInsets imageInsetsSomeone = {11, 18, 16, 14};
     
     NSString *bubbleType = [[NSString alloc]initWithFormat:@"%d", self.type];
     
-    [dateFormatter release];
     
     [toJsonDict setObject:bubbleText forKey:@"text"];
     [toJsonDict setObject:bubbleAvatarImgUrl forKey:@"imgUrl"];

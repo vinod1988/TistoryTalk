@@ -22,8 +22,8 @@
     
 }
 
-@property(nonatomic, retain)  UISearchBar *searhBar;
-@property(nonatomic, retain)  UITableView *resultView;
-@property(nonatomic, retain)   NSMutableArray *kkuCanididateArray;
+@property(nonatomic, strong)  UISearchBar *searhBar;
+@property(nonatomic, strong)  UITableView *resultView;
+@property(nonatomic, strong)   NSMutableArray *kkuCanididateArray;
 
 @end

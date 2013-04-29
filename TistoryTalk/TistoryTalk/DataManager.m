@@ -40,7 +40,6 @@ static DataManager * singleTon = nil;
 
 +(void)destructor
 {
-    [singleTon release];
     singleTon = nil;
 }
 
@@ -70,7 +69,7 @@ static DataManager * singleTon = nil;
     
     NSMutableArray *data = [[NSMutableArray alloc] initWithContentsOfFile:[self getFilePath:fileName]];
    
-    return [data autorelease];
+    return data;
 }
 
 -(NSArray*) getDescendingFileList

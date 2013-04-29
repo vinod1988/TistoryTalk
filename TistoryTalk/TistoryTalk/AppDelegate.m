@@ -17,29 +17,23 @@
 
 @implementation AppDelegate
 
-- (void)dealloc
-{
-    [_window release];
-    [_tabBarController release];
-    [super dealloc];
-}
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     
-    self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
-    UIViewController *infoViewController = [[[InfoViewController alloc] initWithNibName:@"InfoViewController" bundle:nil] autorelease];
-    UIViewController *feedbackViewController = [[[FeedbackViewController alloc] initWithNibName:@"FeedbackViewController" bundle:nil] autorelease];
-    UIViewController *tistoryViewController= [[[TistoryViewController alloc] initWithNibName:@"TistoryViewController" bundle:nil] autorelease];
-    UIViewController *myblogViewController = [[[MyblogViewController alloc] initWithNibName:@"MyblogViewController" bundle:nil] autorelease];
-    UIViewController *writterViewController = [[[WritterViewController alloc] initWithNibName:@"WritterViewController" bundle:nil] autorelease];
+    UIViewController *infoViewController = [[InfoViewController alloc] initWithNibName:@"InfoViewController" bundle:nil];
+    UIViewController *feedbackViewController = [[FeedbackViewController alloc] initWithNibName:@"FeedbackViewController" bundle:nil];
+    UIViewController *tistoryViewController= [[TistoryViewController alloc] initWithNibName:@"TistoryViewController" bundle:nil];
+    UIViewController *myblogViewController = [[MyblogViewController alloc] initWithNibName:@"MyblogViewController" bundle:nil];
+    UIViewController *writterViewController = [[WritterViewController alloc] initWithNibName:@"WritterViewController" bundle:nil];
     
 
     sleep(1);
     
     
-    self.tabBarController = [[[UITabBarController alloc] init] autorelease];
+    self.tabBarController = [[UITabBarController alloc] init];
     self.tabBarController.viewControllers = @[tistoryViewController, feedbackViewController,myblogViewController, writterViewController, infoViewController];
     self.window.rootViewController = self.tabBarController;
     [self.window makeKeyAndVisible];

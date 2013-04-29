@@ -57,24 +57,24 @@
   
     
 }
-@property(nonatomic, retain)  NSString *political_party;
+@property(nonatomic, strong)  NSString *political_party;
 
-@property(nonatomic, retain)  NSString *name;
-@property(nonatomic, retain) NSString *area;
-@property(nonatomic, retain)   NSString *opposite;
+@property(nonatomic, strong)  NSString *name;
+@property(nonatomic, strong) NSString *area;
+@property(nonatomic, strong)   NSString *opposite;
 
-@property(nonatomic, retain) NSString *agree;
-@property(nonatomic, retain)   NSString *leave;
+@property(nonatomic, strong) NSString *agree;
+@property(nonatomic, strong)   NSString *leave;
 
-@property(nonatomic, retain)NSString *homepage; 
+@property(nonatomic, strong)NSString *homepage; 
  
-@property(nonatomic, retain) NSString *business;
-@property(nonatomic, retain) NSString *abstention;
-@property(nonatomic, retain) NSString *not_vote;
-@property(nonatomic, retain) NSString *attendance; 
+@property(nonatomic, strong) NSString *business;
+@property(nonatomic, strong) NSString *abstention;
+@property(nonatomic, strong) NSString *not_vote;
+@property(nonatomic, strong) NSString *attendance; 
 
-@property(nonatomic, retain) NSString *photo;
-@property(nonatomic, retain) NSString *absence;
+@property(nonatomic, strong) NSString *photo;
+@property(nonatomic, strong) NSString *absence;
 
 
 

@@ -31,12 +31,12 @@
 
 }
 
-@property(nonatomic, retain) UIButton *categoryButton;
-@property(nonatomic, retain) UITextField *titleTextField;
-@property(nonatomic, retain) NSString *content;
-@property(nonatomic, retain) UIPickerView *pickerView ;
-@property(nonatomic, retain) UIActionSheet *actionSheet;
-@property(nonatomic, retain) NSString *selectedCategoryId;
+@property(nonatomic, strong) UIButton *categoryButton;
+@property(nonatomic, strong) UITextField *titleTextField;
+@property(nonatomic, strong) NSString *content;
+@property(nonatomic, strong) UIPickerView *pickerView ;
+@property(nonatomic, strong) UIActionSheet *actionSheet;
+@property(nonatomic, strong) NSString *selectedCategoryId;
 
 -(IBAction)category:(id)sender;
 

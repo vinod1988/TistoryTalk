@@ -46,7 +46,6 @@ static TagManager * singleTon = nil;
 
 +(void)destructor
 {
-    [singleTon release];
     singleTon = nil;
 }
 

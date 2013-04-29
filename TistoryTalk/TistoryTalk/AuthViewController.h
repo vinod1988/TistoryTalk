@@ -14,5 +14,5 @@
     IBOutlet UIWebView *authWebView;
 }
 
-@property(nonatomic, retain) IBOutlet UIWebView *authWebView; 
+@property(nonatomic, strong) IBOutlet UIWebView *authWebView; 
 @end

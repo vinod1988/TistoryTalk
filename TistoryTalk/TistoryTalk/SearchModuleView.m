@@ -28,7 +28,6 @@
         UISwipeGestureRecognizer *leftSwipegesture = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(didLeftSwipe:)];
         leftSwipegesture.direction = UISwipeGestureRecognizerDirectionLeft;
         [resultView addGestureRecognizer:leftSwipegesture];
-        [leftSwipegesture release];
         
                        [self addSubview:resultView];
         

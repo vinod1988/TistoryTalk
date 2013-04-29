@@ -16,8 +16,8 @@
 }
 
 
-@property (nonatomic, retain) UILabel *title;
-@property (nonatomic, retain) UILabel *value;
+@property (nonatomic, strong) UILabel *title;
+@property (nonatomic, strong) UILabel *value;
 
 
 @end

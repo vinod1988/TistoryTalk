@@ -51,7 +51,6 @@
     UISwipeGestureRecognizer *gesture = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(didLeftSwipe:)];
     gesture.direction = UISwipeGestureRecognizerDirectionLeft;
     [webView addGestureRecognizer:gesture];
-    [gesture release];
     
     
     NSURL* urlObj = [[NSURL alloc] initWithString:@"http://www.tistory.com"];

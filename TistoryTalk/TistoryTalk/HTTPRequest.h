@@ -14,7 +14,7 @@
 	NSMutableData *receivedData;
 	NSURLResponse *response;
 	NSString *result;
-	id target;
+	id __weak target;
 	SEL selector;
 }
 
@@ -25,10 +25,10 @@
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection;
 - (void)setDelegate:(id)aTarget selector:(SEL)aSelector;
 
-@property (nonatomic, retain) NSMutableData *receivedData;
-@property (nonatomic, retain) NSURLResponse *response;
-@property (nonatomic, assign) NSString *result;
-@property (nonatomic, assign) id target;
+@property (nonatomic, strong) NSMutableData *receivedData;
+@property (nonatomic, strong) NSURLResponse *response;
+@property (nonatomic) NSString *result;
+@property (nonatomic, weak) id target;
 @property (nonatomic, assign) SEL selector;
 
 @end

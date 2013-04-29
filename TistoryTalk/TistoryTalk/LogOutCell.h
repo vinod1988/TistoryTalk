@@ -16,7 +16,7 @@
 }
 
 
-@property (nonatomic, retain) UILabel *title;
-@property (nonatomic, retain) UISwitch *onOff;
+@property (nonatomic, strong) UILabel *title;
+@property (nonatomic, strong) UISwitch *onOff;
 
 @end

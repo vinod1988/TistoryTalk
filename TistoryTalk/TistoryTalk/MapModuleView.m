@@ -32,7 +32,6 @@
         UISwipeGestureRecognizer *rigthSwipegesture = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(didRightSwipe:)];
         rigthSwipegesture.direction = UISwipeGestureRecognizerDirectionRight;
         [resultView addGestureRecognizer:rigthSwipegesture];
-        [rigthSwipegesture release];
         
         [self addSubview:resultView];
         
@@ -178,7 +177,6 @@
         }
         else
         {
-            [kkCandi release];
         }
         
     }
@@ -237,8 +235,8 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     
     if (cell == nil){
-        cell = [[[UITableViewCell alloc]
-                 initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
+        cell = [[UITableViewCell alloc]
+                 initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
     
     

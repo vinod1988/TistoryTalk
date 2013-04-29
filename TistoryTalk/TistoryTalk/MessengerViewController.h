@@ -38,13 +38,13 @@ typedef enum _NSCurrentMainView
     MapModuleView *mapModuleView;
 }
 
-@property(nonatomic, retain) SearchToolBar* searchToolbar;
-@property(nonatomic, retain) IBOutlet UIView *mainView;
+@property(nonatomic, strong) SearchToolBar* searchToolbar;
+@property(nonatomic, strong) IBOutlet UIView *mainView;
 @property NSCurrentMainView currentMainView;
 
-@property(nonatomic, retain) IBOutlet UIBarButtonItem *rightButton;
-@property(nonatomic, retain) IBOutlet UIBarButtonItem *leftButton;
-@property(nonatomic, retain) IBOutlet UILabel *titleLabel;
+@property(nonatomic, strong) IBOutlet UIBarButtonItem *rightButton;
+@property(nonatomic, strong) IBOutlet UIBarButtonItem *leftButton;
+@property(nonatomic, strong) IBOutlet UILabel *titleLabel;
 
 -(IBAction)leftBtnClicked;
 -(IBAction)rightBtnClicked;

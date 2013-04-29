@@ -24,7 +24,7 @@
         searchTextField.font = [UIFont systemFontOfSize:14.0];
     
         // searchTextField.delegate = self;
-        UIBarButtonItem *textFieldItem = [[[UIBarButtonItem alloc] initWithCustomView:searchTextField] autorelease];
+        UIBarButtonItem *textFieldItem = [[UIBarButtonItem alloc] initWithCustomView:searchTextField];
         self.items = [NSArray arrayWithObject:textFieldItem];
         
         self.tintColor = [UIColor colorWithRed:237.0/255.0 green:237.0/255.0  blue:237.0/255.0  alpha:1.0];
@@ -36,13 +36,6 @@
 
 
 
-- (void)dealloc
-{
-	[searchTextField release];
-    
-	
-    [super dealloc];
-}
 
 
 /*

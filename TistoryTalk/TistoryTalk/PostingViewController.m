@@ -29,7 +29,7 @@
         
         
         // Custom initialization
-        UIView *titleView = [[[UIView alloc]initWithFrame:CGRectMake(20, 44+20, 280, 60)]autorelease];
+        UIView *titleView = [[UIView alloc]initWithFrame:CGRectMake(20, 44+20, 280, 60)];
         
         //view border
         titleView.layer.borderColor = [UIColor grayColor].CGColor;
@@ -164,7 +164,6 @@
 	// 페이지 호출
 	[httpRequest requestUrl:url bodyObject:bodyObject];
     
-    [bodyObject release];
     
 }
 
@@ -179,7 +178,6 @@
         UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"포스팅 성공" message:@""
                                                       delegate:self cancelButtonTitle:@"확인" otherButtonTitles:nil, nil];
         [alert show];
-        [alert release]; 
         
     }
     else
@@ -193,12 +191,10 @@
             UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"인증을 다시 합니다." message:@""
                                                           delegate:self cancelButtonTitle:@"확인" otherButtonTitles:nil, nil];
             [alert show];
-            [alert release];
              
             
             AuthViewController *authViewController = [[AuthViewController alloc] init];
             [self presentViewController:authViewController animated:YES completion:nil];
-            [authViewController release];
         }
         else
         {    
@@ -206,7 +202,6 @@
             UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"포스팅 실패" message:@""
                                                           delegate:self cancelButtonTitle:@"확인" otherButtonTitles:nil, nil];
             [alert show];
-            [alert release];
         }
     }
 }

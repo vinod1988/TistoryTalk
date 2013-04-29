@@ -54,13 +54,6 @@
 }
 
 
-- (void)dealloc
-{ 	
-	[title release]; 
-	[value release]; 
-	
-    [super dealloc];
-}
 
 
 

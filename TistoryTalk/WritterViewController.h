@@ -19,8 +19,8 @@
     IBOutlet UILabel *noBlogData; 
     
 }
-@property(nonatomic, retain) IBOutlet UIWebView *webView;
-@property(nonatomic, retain) IBOutlet UILabel *noBlogData;
+@property(nonatomic, strong) IBOutlet UIWebView *webView;
+@property(nonatomic, strong) IBOutlet UILabel *noBlogData;
 @property bool isWritingFile;
 
 -(IBAction)showMenu;
