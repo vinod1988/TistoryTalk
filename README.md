@@ -21,4 +21,4 @@
 </center>
 
 ###  저장 화면 
-<img align="center" src="http://farm9.static.flickr.com/8261/8678613390_dd55ddb2e3.jpg"/>
+<img align="middle" src="http://farm9.static.flickr.com/8261/8678613390_dd55ddb2e3.jpg"/>
