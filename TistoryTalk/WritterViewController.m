@@ -142,10 +142,7 @@
 -(void)checkTempFile
 {
     DataManager *dm = [DataManager singleTon_GetInstance];
-    NSFileManager *fileManager= [[NSFileManager alloc] init];
-	
-    
-    
+    	 
     NSArray *sortedList = [dm getDescendingFileList];
     int fileCount = [sortedList count];
     
@@ -155,8 +152,7 @@
     }
     else
     {
-        isWritingFile = false; 
-    
+        isWritingFile = false;  
     }
     
     

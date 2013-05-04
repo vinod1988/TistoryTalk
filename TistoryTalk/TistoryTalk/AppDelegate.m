@@ -24,8 +24,8 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
     UIViewController *infoViewController = [[InfoViewController alloc] initWithNibName:@"InfoViewController" bundle:nil];
-    UIViewController *feedbackViewController = [[FeedbackViewController alloc] initWithNibName:@"FeedbackViewController" bundle:nil];
-    UIViewController *tistoryViewController= [[TistoryViewController alloc] initWithNibName:@"TistoryViewController" bundle:nil];
+   // UIViewController *feedbackViewController = [[FeedbackViewController alloc] initWithNibName:@"FeedbackViewController" bundle:nil];
+    //UIViewController *tistoryViewController= [[TistoryViewController alloc] initWithNibName:@"TistoryViewController" bundle:nil];
     UIViewController *myblogViewController = [[MyblogViewController alloc] initWithNibName:@"MyblogViewController" bundle:nil];
     UIViewController *writterViewController = [[WritterViewController alloc] initWithNibName:@"WritterViewController" bundle:nil];
     
@@ -34,7 +34,7 @@
     
     
     self.tabBarController = [[UITabBarController alloc] init];
-    self.tabBarController.viewControllers = @[tistoryViewController, feedbackViewController,myblogViewController, writterViewController, infoViewController];
+    self.tabBarController.viewControllers = @[myblogViewController, writterViewController, infoViewController];
     self.window.rootViewController = self.tabBarController;
     [self.window makeKeyAndVisible];
     

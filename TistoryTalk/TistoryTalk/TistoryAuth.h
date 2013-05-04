@@ -9,5 +9,14 @@
 #import <Foundation/Foundation.h>
 
 @interface TistoryAuth : NSObject
+{
+    
+}
+
++(void)setToken:(NSString*)token;
++(NSString*)getToken;
++(bool)exist;
+
+
 
 @end

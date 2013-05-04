@@ -164,7 +164,6 @@
     NSNotificationCenter *nc = [NSNotificationCenter defaultCenter];
     [nc addObserver:self selector:@selector(changeBubble:) name:@"CHANGE_BUBBLE" object:nil]; 
     [nc addObserver:self selector:@selector(closeMapModule:) name:@"MAPMODULE_CLOSE" object:nil];
-    
     [nc addObserver:self selector:@selector(removeIndex:) name:@"REMOVE_INDEX" object:nil];
     
 }
@@ -172,7 +171,6 @@
 -(void) removeIndex:(NSNotification *)noti
 {
     NSIndexPath *removeIndexPath=  [noti.userInfo objectForKey:@"removeIndex"];
-    
     [bubbleData removeObjectAtIndex:removeIndexPath.row];
     [bubbleTableView reloadData];
 

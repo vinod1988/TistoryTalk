@@ -26,6 +26,7 @@
 		7E62277216B1FDB500C8C579 /* tistory.png in Resources */ = {isa = PBXBuildFile; fileRef = 7E62277116B1FDB500C8C579 /* tistory.png */; };
 		7E62277416B1FDCB00C8C579 /* tistory@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7E62277316B1FDCB00C8C579 /* tistory@2x.png */; };
 		7E96C75016BC297000B31BCA /* KKCanididateDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E96C74F16BC297000B31BCA /* KKCanididateDetail.m */; };
+		7ECBEC5C1733218800C2AADD /* TistoryAuth.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ECBEC5B1733218800C2AADD /* TistoryAuth.m */; };
 		7EE81EAA16AB9DC900E87998 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EE81EA916AB9DC900E87998 /* UIKit.framework */; };
 		7EE81EAC16AB9DC900E87998 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EE81EAB16AB9DC900E87998 /* Foundation.framework */; };
 		7EE81EAE16AB9DC900E87998 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EE81EAD16AB9DC900E87998 /* CoreGraphics.framework */; };
@@ -47,7 +48,6 @@
 		7EE81F0116AC27FD00E87998 /* InfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EE81EFF16AC27FD00E87998 /* InfoViewController.m */; };
 		7EE81F0216AC27FD00E87998 /* InfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7EE81F0016AC27FD00E87998 /* InfoViewController.xib */; };
 		7EE81F0D16AC35E300E87998 /* InfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EE81F0C16AC35E200E87998 /* InfoCell.m */; };
-		7EE81F1816AC94A300E87998 /* LogOutCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EE81F1716AC94A300E87998 /* LogOutCell.m */; };
 		7EE81F2316AD563E00E87998 /* MessengerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EE81F2116AD563E00E87998 /* MessengerViewController.m */; };
 		7EE81F2416AD563E00E87998 /* MessengerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7EE81F2216AD563E00E87998 /* MessengerViewController.xib */; };
 		7EE81F2C16AD5ED600E87998 /* SearchToolBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EE81F2B16AD5ED600E87998 /* SearchToolBar.m */; };
@@ -97,6 +97,8 @@
 		7E62277316B1FDCB00C8C579 /* tistory@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tistory@2x.png"; sourceTree = "<group>"; };
 		7E96C74E16BC297000B31BCA /* KKCanididateDetail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKCanididateDetail.h; sourceTree = "<group>"; };
 		7E96C74F16BC297000B31BCA /* KKCanididateDetail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKCanididateDetail.m; sourceTree = "<group>"; };
+		7ECBEC5A1733218800C2AADD /* TistoryAuth.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TistoryAuth.h; sourceTree = "<group>"; };
+		7ECBEC5B1733218800C2AADD /* TistoryAuth.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TistoryAuth.m; sourceTree = "<group>"; };
 		7EE81EA516AB9DC900E87998 /* TistoryTalk.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TistoryTalk.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7EE81EA916AB9DC900E87998 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		7EE81EAB16AB9DC900E87998 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -128,8 +130,6 @@
 		7EE81F0016AC27FD00E87998 /* InfoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InfoViewController.xib; sourceTree = "<group>"; };
 		7EE81F0B16AC35E200E87998 /* InfoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InfoCell.h; sourceTree = "<group>"; };
 		7EE81F0C16AC35E200E87998 /* InfoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InfoCell.m; sourceTree = "<group>"; };
-		7EE81F1616AC94A300E87998 /* LogOutCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LogOutCell.h; sourceTree = "<group>"; };
-		7EE81F1716AC94A300E87998 /* LogOutCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LogOutCell.m; sourceTree = "<group>"; };
 		7EE81F2016AD563E00E87998 /* MessengerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessengerViewController.h; sourceTree = "<group>"; };
 		7EE81F2116AD563E00E87998 /* MessengerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessengerViewController.m; sourceTree = "<group>"; };
 		7EE81F2216AD563E00E87998 /* MessengerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MessengerViewController.xib; sourceTree = "<group>"; };
@@ -212,6 +212,15 @@
 			name = Parser;
 			sourceTree = "<group>";
 		};
+		7ECBEC591733216C00C2AADD /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				7ECBEC5A1733218800C2AADD /* TistoryAuth.h */,
+				7ECBEC5B1733218800C2AADD /* TistoryAuth.m */,
+			);
+			name = Auth;
+			sourceTree = "<group>";
+		};
 		7EE81E9A16AB9DC900E87998 = {
 			isa = PBXGroup;
 			children = (
@@ -245,6 +254,7 @@
 		7EE81EAF16AB9DC900E87998 /* TistoryTalk */ = {
 			isa = PBXGroup;
 			children = (
+				7ECBEC591733216C00C2AADD /* Auth */,
 				7E5A199916BBACF200EB9795 /* HtmlRequest */,
 				7EE81F7916B03AE700E87998 /* DataStructure */,
 				7EE81EED16ABA03700E87998 /* TabbarImages */,
@@ -361,8 +371,6 @@
 			children = (
 				7EE81F0B16AC35E200E87998 /* InfoCell.h */,
 				7EE81F0C16AC35E200E87998 /* InfoCell.m */,
-				7EE81F1616AC94A300E87998 /* LogOutCell.h */,
-				7EE81F1716AC94A300E87998 /* LogOutCell.m */,
 			);
 			name = CustomCells;
 			sourceTree = "<group>";
@@ -578,7 +586,6 @@
 				7EE81EFC16AC27F400E87998 /* FeedbackViewController.m in Sources */,
 				7EE81F0116AC27FD00E87998 /* InfoViewController.m in Sources */,
 				7EE81F0D16AC35E300E87998 /* InfoCell.m in Sources */,
-				7EE81F1816AC94A300E87998 /* LogOutCell.m in Sources */,
 				7EE81F2316AD563E00E87998 /* MessengerViewController.m in Sources */,
 				7EE81F2C16AD5ED600E87998 /* SearchToolBar.m in Sources */,
 				7EE81F4416AE9EFE00E87998 /* NSBubbleData.m in Sources */,
@@ -594,6 +601,7 @@
 				7E5A19AA16BBCC1300EB9795 /* MyBlogInfoParser.m in Sources */,
 				7E5A19AE16BBFE2D00EB9795 /* CategoryParser.m in Sources */,
 				7E96C75016BC297000B31BCA /* KKCanididateDetail.m in Sources */,
+				7ECBEC5C1733218800C2AADD /* TistoryAuth.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

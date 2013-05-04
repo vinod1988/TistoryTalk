@@ -13,6 +13,7 @@
 @end
 
 @implementation InfoViewController
+@synthesize infoTableView;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -20,9 +21,9 @@
     if (self)
     {
         // Custom initialization
-        self.title = NSLocalizedString(@"info", @"info");  
+        self.title = NSLocalizedString(@"info", @"info");
         self.tabBarItem.image = [UIImage imageNamed:@"settings"];
-
+        
     }
     return self;
 }
@@ -31,13 +32,56 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    
+    NSNotificationCenter *nc = [NSNotificationCenter defaultCenter];
+    [nc addObserver:self selector:@selector(logIn:) name:@"NOTIFY_LOGIN" object:nil];
+    [nc addObserver:self selector:@selector(logInComplete:) name:@"NOTIFY_LOGIN_COMPLETE" object:nil];
+    [nc addObserver:self selector:@selector(logOut:) name:@"NOTIFY_LOGOUT" object:nil];
+    
+
+    isConnect =[TistoryAuth exist];
+    
 }
+
+
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+#pragma mark notifcation codes
+-(void)logInComplete:(NSNotification *)note
+{
+    
+}
+
+-(void)logIn:(NSNotification *)note
+{
+    NSLog(@"LOGIN");
+    
+    isConnect = YES;
+    
+    [infoTableView reloadData];
+    
+}
+
+-(void)logOut:(NSNotification *)note
+{
+    NSLog(@"LOGOUT");
+    
+    isConnect = NO;
+    
+    //init settings
+    [TistoryAuth setToken:@""];
+    
+    [infoTableView reloadData];
+}
+
+
+
+#pragma mark tableView
 
 //섹션과 row로 cell의 높이 설정
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -47,16 +91,20 @@
 }
 
 
-#pragma mark tableView
 
 //셀선택
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     
-    if(indexPath.section == 1)
+    if(indexPath.section == 0)
     {
-        [[UIApplication sharedApplication] openURL:[NSURL URLWithString: @"http://cafe.naver.com/ideadogfoot"]];
-
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString: @"http://blog.indf.net"]];
+    }
+    else
+    {
+        
+        AuthViewController *authViewController = [[AuthViewController alloc]init];
+        [self presentViewController:authViewController animated:YES completion:nil];
     }
     
 }
@@ -64,8 +112,7 @@
 //현재 UITableView의 섹션의 개수
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-	return 3;
-	
+	return 2;
 	
 }
 
@@ -77,43 +124,38 @@
     static NSString *CellIdentifier = @"CELL";
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-       
-
+    
+    
     if (cell == nil)
     {
-        if(indexPath.section==2)
-        {
-            cell =  [[LogOutCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
-        }
-        else{
-            cell =  [[InfoCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
-        }
+        
+        cell =  [[InfoCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+        
     }
     
     
-
+    
     if(indexPath.section==0)
     {
-        ((InfoCell*)cell).title.text = @"1/19";
-        ((InfoCell*)cell).value.text = @"테스트버전입니다.";
-        cell.selectionStyle = UITableViewCellSelectionStyleNone;
-    }
-    else if(indexPath.section == 1)
-    {
-        
-        ((InfoCell*)cell).title.text = @"HomePage";
-        ((InfoCell*)cell).value.text = @"cafe.naver.com/ideadogfoot";
+        ((InfoCell*)cell).title.text = @"INDF";
+        ((InfoCell*)cell).value.text = @"생각에 가치를 더하는 IDNF";
         cell.selectionStyle = UITableViewCellSelectionStyleBlue;
     }
     else
     {
         
-        ((LogOutCell *)cell).title.text = @"로그아웃";
+        ((InfoCell *)cell).title.text = @"티스토리 연결";
+        if(isConnect==YES)
+            ((InfoCell *)cell).value.text = @"연결";
+        else
+            ((InfoCell *)cell).value.text = @"비연결";
+        
+            
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
-           
+        
     }
-     
-   
+    
+    
     
     return cell;
 }
@@ -121,19 +163,16 @@
 //섹션내아이템이몇개?
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     
-    int sectionOfRowCount = 0; 
+    int sectionOfRowCount = 0;
     if(section == 0)
     {
-        sectionOfRowCount = 1; 
+        sectionOfRowCount = 1;
     }
-    else if(section ==1)
+    else
     {
-        sectionOfRowCount = 1; 
+        sectionOfRowCount = 1;
     }
-    else{
-        sectionOfRowCount = 1; 
-    }
-    return sectionOfRowCount; 
+    return sectionOfRowCount;
 }
 
 //헤더 섹션 설정
@@ -142,79 +181,29 @@
 	
 	if(section == 0)
 	{
-		
-		NSArray* m_headers = [[NSArray alloc]initWithObjects: @"공지사항", nil];
-		
-		// create the parent view that will hold header Label
-		UIView* customView = [[UIView alloc] initWithFrame:CGRectMake(0.0, 0.0, 320.0, 30.0)];;
-		//	customView.backgroundColor = [UIColor colorWithRed:237/255.0 green:237/255.0 blue:237/255.0 alpha:1.0];
-		// create the button object
-		UILabel * headerLabel = [[UILabel alloc] initWithFrame:CGRectZero];
-		headerLabel.backgroundColor = [UIColor colorWithRed:237/255.0 green:237/255.0 blue:237/255.0 alpha:1.0];
         
-		headerLabel.opaque = YES;
-		headerLabel.textColor = [UIColor darkGrayColor];
-		//headerLabel.highlightedTextColor = [UIColor whiteColor];
-		headerLabel.font = [UIFont systemFontOfSize:16];
-		headerLabel.frame = CGRectMake(13.0, 20.0, 320.0, 20.0);
-		//headerLabel.text = @"Put here whatever you want to display"; // i.e. array element
-		// headerLabel.text = m_headers;
-		[headerLabel setText:[m_headers objectAtIndex:section]];
-		//NSArray인 m_headers에서 objectAtIndex:section을 이용해 section=0,1 일때 값을 빼와서 할당해 줍니다.
-		
-		[customView addSubview:headerLabel];
-		return customView;
-		
-        
-		
-	}else if (section ==1)
-	{
-		
-		
-		NSArray* m_headers = [[NSArray alloc]initWithObjects: @"i&DF", nil];
-		
-		// create the parent view that will hold header Label
 		UIView* customView = [[UIView alloc] initWithFrame:CGRectMake(0.0, 0.0, 320.0, 30.0)];
-		//	customView.backgroundColor = [UIColor colorWithRed:237/255.0 green:237/255.0 blue:237/255.0 alpha:1.0];
-		// create the button object
 		UILabel * headerLabel = [[UILabel alloc] initWithFrame:CGRectZero];
-		headerLabel.backgroundColor = [UIColor colorWithRed:237/255.0 green:237/255.0 blue:237/255.0 alpha:1.0];
-		
+		headerLabel.backgroundColor = [UIColor clearColor];
 		headerLabel.opaque = YES;
 		headerLabel.textColor = [UIColor darkGrayColor];
-		//headerLabel.highlightedTextColor = [UIColor whiteColor];
 		headerLabel.font = [UIFont systemFontOfSize:16];
 		headerLabel.frame = CGRectMake(13.0, 20.0, 320.0, 20.0);
-		//headerLabel.text = @"Put here whatever you want to display"; // i.e. array element
-		// headerLabel.text = m_headers;
-		[headerLabel setText:[m_headers objectAtIndex:0]];
-		//NSArray인 m_headers에서 objectAtIndex:section을 이용해 section=0,1 일때 값을 빼와서 할당해 줍니다.
-		
+		[headerLabel setText:@"팀 소개"];
 		[customView addSubview:headerLabel];
 		return customView;
 		
 	}
-	else if (section ==2)
+	else
 	{
-		NSArray* m_headers = [[NSArray alloc]initWithObjects:@"계정설정", nil];
-		
-		// create the parent view that will hold header Label
-		UIView* customView = [[UIView alloc] initWithFrame:CGRectMake(0.0, 0.0, 320.0, 30.0)];
-		//customView.backgroundColor = [UIColor colorWithRed:237/255.0 green:237/255.0 blue:237/255.0 alpha:1.0];
-		// create the button object
+        UIView* customView = [[UIView alloc] initWithFrame:CGRectMake(0.0, 0.0, 320.0, 30.0)];
 		UILabel * headerLabel = [[UILabel alloc] initWithFrame:CGRectZero];
-		headerLabel.backgroundColor = [UIColor colorWithRed:237/255.0 green:237/255.0 blue:237/255.0 alpha:1.0];
-		
+		headerLabel.backgroundColor = [UIColor clearColor];
 		headerLabel.opaque = YES;
 		headerLabel.textColor = [UIColor darkGrayColor];
-		//headerLabel.highlightedTextColor = [UIColor whiteColor];
 		headerLabel.font = [UIFont systemFontOfSize:16];
 		headerLabel.frame = CGRectMake(13.0, 20.0, 320.0, 20.0);
-		//headerLabel.text = @"Put here whatever you want to display"; // i.e. array element
-		// headerLabel.text = m_headers;
-		[headerLabel setText:[m_headers objectAtIndex:0]];
-		//NSArray인 m_headers에서 objectAtIndex:section을 이용해 section=0,1 일때 값을 빼와서 할당해 줍니다.
-		
+		[headerLabel setText:@"계정설정"];
 		[customView addSubview:headerLabel];
 		return customView;
     }
@@ -225,9 +214,7 @@
 //헤더 섹션의 Height 크기 설정
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
-	
-    return 50; 
-	
+    return 50;	
 }
 
 

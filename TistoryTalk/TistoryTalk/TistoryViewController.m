@@ -7,7 +7,7 @@
 //
 
 #import "TistoryViewController.h"
-#import "AuthViewController.h"
+
 @interface TistoryViewController ()
 
 @end

@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "TistoryAuth.h"
 
 @interface AuthViewController : UIViewController
 <UIWebViewDelegate>
@@ -14,5 +15,7 @@
     IBOutlet UIWebView *authWebView;
 }
 
-@property(nonatomic, strong) IBOutlet UIWebView *authWebView; 
+@property(nonatomic, strong) IBOutlet UIWebView *authWebView;
+-(IBAction)cancel:(id)sender;
+
 @end

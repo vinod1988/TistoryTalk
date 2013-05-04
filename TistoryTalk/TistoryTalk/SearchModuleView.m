@@ -9,6 +9,7 @@
 #import "SearchModuleView.h"
 
 @implementation SearchModuleView
+@synthesize resultView, searhBar; 
 
 - (id)initWithFrame:(CGRect)frame
 {

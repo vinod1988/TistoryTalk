@@ -38,9 +38,7 @@
         [self.backgroundView setHidden:YES];
         self.backgroundColor = [UIColor whiteColor];
         self.opaque = NO;
-        
-        
-        
+         
 		
     }
     return self;
@@ -48,8 +46,7 @@
 
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated
-{
-    
+{ 
     [super setSelected:selected animated:animated]; 
 }
 

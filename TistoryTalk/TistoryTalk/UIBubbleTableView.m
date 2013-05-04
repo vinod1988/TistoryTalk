@@ -104,16 +104,11 @@
             assert([object isKindOfClass:[NSBubbleData class]]);
             [bubbleData addObject:object];
         }
-        
-        NSMutableArray *currentSection = nil;
+         
         
         for (int i = 0; i < count; i++)
         {
-            NSBubbleData *data = (NSBubbleData *)[bubbleData objectAtIndex:i];
-            
-           // currentSection = [[[NSMutableArray alloc] init] autorelease];
-            
-           // [currentSection addObject:data];
+            NSBubbleData *data = (NSBubbleData *)[bubbleData objectAtIndex:i]; 
             
             [self.bubbleSection addObject:data];
             

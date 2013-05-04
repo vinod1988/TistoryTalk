@@ -27,15 +27,13 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
     
-    
-    NSURL* urlObj = [[NSURL alloc] initWithString:@"http://211.43.193.18/auth.jsp"];
+    NSURL* urlObj = [[NSURL alloc] initWithString:@"https://www.tistory.com/oauth/authorize?client_id=76f30e50a21087cd8581813762365396&redirect_uri=http://indf.net&response_type=token"];
     
     NSURLRequest *urlRequest = [[NSURLRequest alloc] initWithURL:urlObj];
     [authWebView loadRequest: urlRequest];
     
- 
+    
 }
 
 
@@ -48,30 +46,41 @@
 - (void)webViewDidFinishLoad:(UIWebView *)webView
 {
     NSString *currentURL = webView.request.mainDocumentURL.absoluteString;
-    NSLog(@"%@", currentURL);
     
-    NSRange aRange = [currentURL rangeOfString:@"access_token"];
-    if (aRange.location ==NSNotFound)
+    NSString *flag =  [currentURL substringFromIndex:currentURL.length-5];
+    
+    if([flag isEqualToString:@"token"])
     {
-        //not exist
+        //login view
     }
     else
     {
-        //NSLog(@"string was at index %d ",aRange.location);
+        NSRange aRange = [currentURL rangeOfString:@"access_token"];
+        NSNotificationCenter *nc = [NSNotificationCenter defaultCenter];
         
-        NSArray * splittedAr = [currentURL componentsSeparatedByString:@"="];
-        
-        NSLog(@"atoken : %@", [splittedAr objectAtIndex:1]);
-        //[[NSUserDefaults standardUserDefaults] setObject:<object> forKey:<key value>];
-        [[NSUserDefaults standardUserDefaults] setObject:[splittedAr objectAtIndex:1] forKey:@"tistory_token"];
-        [[NSUserDefaults standardUserDefaults] synchronize];
-        
+        if (aRange.location ==NSNotFound)
+        {
+            [nc postNotificationName:@"NOTIFY_LOGOUT" object:nil userInfo:nil];
+        }
+        else
+        {
+            NSArray * splittedAr = [currentURL componentsSeparatedByString:@"="];
+            [TistoryAuth setToken:[splittedAr objectAtIndex:1]];
+            [nc postNotificationName:@"NOTIFY_LOGIN" object:nil userInfo:nil];
+        }
         
         [self dismissViewControllerAnimated:YES completion:nil];
-        
     }
     
     
+}
+
+-(IBAction)cancel:(id)sender
+{
+    NSNotificationCenter *nc = [NSNotificationCenter defaultCenter];
+    [nc postNotificationName:@"NOTIFY_LOGOUT" object:nil userInfo:nil];
+    
+    [self dismissViewControllerAnimated:YES completion:nil];
     
 }
 @end

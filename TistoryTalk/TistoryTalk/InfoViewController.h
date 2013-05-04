@@ -7,13 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "InfoCell.h"
-#import "LogOutCell.h"
+#import "InfoCell.h" 
+#import "AuthViewController.h"
+#import "TistoryAuth.h"
 
 @interface InfoViewController : UIViewController
 <UITableViewDataSource, UITableViewDelegate>
 {
-    
+    bool isConnect; 
 }
+
+@property (nonatomic, strong) IBOutlet UITableView  *infoTableView;
+
 
 @end
