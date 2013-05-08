@@ -1,29 +1,24 @@
 //
-//  MyblogViewController.m
+//  MyBlogViewController.m
 //  TistoryTalk
 //
-//  Created by an seonghyun on 13. 1. 20..
+//  Created by an seonghyun on 13. 5. 4..
 //  Copyright (c) 2013년 an seonghyun. All rights reserved.
 //
 
-#import "MyblogViewController.h"
+#import "MyBlogViewController.h"
 
-@interface MyblogViewController ()
+@interface MyBlogViewController ()
 
 @end
 
-@implementation MyblogViewController
-@synthesize webView;
+@implementation MyBlogViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
-          self.title = NSLocalizedString(@"블로그", @"myblog");
-        
-        self.tabBarItem.image = [UIImage imageNamed:@"home"];
-        
     }
     return self;
 }
@@ -32,11 +27,7 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-
-
-    NSURL* urlObj = [[NSURL alloc] initWithString:@"http://211.43.193.18/myblog.html"];
-    NSURLRequest *urlRequest = [[NSURLRequest alloc] initWithURL:urlObj];
-    [webView loadRequest: urlRequest];}
+}
 
 - (void)didReceiveMemoryWarning
 {
