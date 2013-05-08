@@ -7,9 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7E015B371734BFBA005588C5 /* MyBlogViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E015B351734BFBA005588C5 /* MyBlogViewController.m */; };
+		7E015B381734BFBA005588C5 /* MyBlogViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7E015B361734BFBA005588C5 /* MyBlogViewController.xib */; };
 		7E5A194A16B52B2F00EB9795 /* PostingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E5A194816B52B2F00EB9795 /* PostingViewController.m */; };
 		7E5A194B16B52B2F00EB9795 /* PostingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7E5A194916B52B2F00EB9795 /* PostingViewController.xib */; };
-		7E5A195216B963E100EB9795 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 7EE81F6916AF4D4000E87998 /* Default.png */; };
 		7E5A19A716BBBC9500EB9795 /* HTTPRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E5A19A616BBBC9500EB9795 /* HTTPRequest.m */; };
 		7E5A19AA16BBCC1300EB9795 /* MyBlogInfoParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E5A19A916BBCC1300EB9795 /* MyBlogInfoParser.m */; };
 		7E5A19AE16BBFE2D00EB9795 /* CategoryParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E5A19AD16BBFE2D00EB9795 /* CategoryParser.m */; };
@@ -25,7 +26,6 @@
 		7E62277016B1FD4F00C8C579 /* settings.png in Resources */ = {isa = PBXBuildFile; fileRef = 7E62276F16B1FD4F00C8C579 /* settings.png */; };
 		7E62277216B1FDB500C8C579 /* tistory.png in Resources */ = {isa = PBXBuildFile; fileRef = 7E62277116B1FDB500C8C579 /* tistory.png */; };
 		7E62277416B1FDCB00C8C579 /* tistory@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7E62277316B1FDCB00C8C579 /* tistory@2x.png */; };
-		7E96C75016BC297000B31BCA /* KKCanididateDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E96C74F16BC297000B31BCA /* KKCanididateDetail.m */; };
 		7ECBEC5C1733218800C2AADD /* TistoryAuth.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ECBEC5B1733218800C2AADD /* TistoryAuth.m */; };
 		7EE81EAA16AB9DC900E87998 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EE81EA916AB9DC900E87998 /* UIKit.framework */; };
 		7EE81EAC16AB9DC900E87998 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EE81EAB16AB9DC900E87998 /* Foundation.framework */; };
@@ -41,8 +41,6 @@
 		7EE81EE116AB9E1700E87998 /* TistoryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7EE81EDF16AB9E1700E87998 /* TistoryViewController.xib */; };
 		7EE81EE516AB9E5D00E87998 /* WritterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EE81EE316AB9E5D00E87998 /* WritterViewController.m */; };
 		7EE81EE616AB9E5D00E87998 /* WritterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7EE81EE416AB9E5D00E87998 /* WritterViewController.xib */; };
-		7EE81EEA16AB9EDA00E87998 /* MyblogViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EE81EE816AB9EDA00E87998 /* MyblogViewController.m */; };
-		7EE81EEB16AB9EDA00E87998 /* MyblogViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7EE81EE916AB9EDA00E87998 /* MyblogViewController.xib */; };
 		7EE81EFC16AC27F400E87998 /* FeedbackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EE81EFA16AC27F400E87998 /* FeedbackViewController.m */; };
 		7EE81EFD16AC27F400E87998 /* FeedbackViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7EE81EFB16AC27F400E87998 /* FeedbackViewController.xib */; };
 		7EE81F0116AC27FD00E87998 /* InfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EE81EFF16AC27FD00E87998 /* InfoViewController.m */; };
@@ -68,12 +66,14 @@
 		7EE81F7516B0291100E87998 /* SearchModuleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EE81F7416B0291100E87998 /* SearchModuleView.m */; };
 		7EE81F7C16B03F2900E87998 /* DataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EE81F7B16B03F2900E87998 /* DataManager.m */; };
 		7EE81F8616B0AB1200E87998 /* TagManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EE81F8516B0AB1200E87998 /* TagManager.m */; };
-		7EE81FC916B17B4800E87998 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7EE81F6716AF4D2100E87998 /* Default@2x.png */; };
 		7EE81FCE16B1846400E87998 /* AuthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EE81FCC16B1845E00E87998 /* AuthViewController.m */; };
 		7EE81FCF16B1846400E87998 /* AuthViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7EE81FCD16B1846000E87998 /* AuthViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7E015B341734BFBA005588C5 /* MyBlogViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyBlogViewController.h; sourceTree = "<group>"; };
+		7E015B351734BFBA005588C5 /* MyBlogViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyBlogViewController.m; sourceTree = "<group>"; };
+		7E015B361734BFBA005588C5 /* MyBlogViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyBlogViewController.xib; sourceTree = "<group>"; };
 		7E5A194716B52B2F00EB9795 /* PostingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostingViewController.h; sourceTree = "<group>"; };
 		7E5A194816B52B2F00EB9795 /* PostingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PostingViewController.m; sourceTree = "<group>"; };
 		7E5A194916B52B2F00EB9795 /* PostingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PostingViewController.xib; sourceTree = "<group>"; };
@@ -95,8 +95,6 @@
 		7E62276F16B1FD4F00C8C579 /* settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = settings.png; sourceTree = "<group>"; };
 		7E62277116B1FDB500C8C579 /* tistory.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tistory.png; sourceTree = "<group>"; };
 		7E62277316B1FDCB00C8C579 /* tistory@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tistory@2x.png"; sourceTree = "<group>"; };
-		7E96C74E16BC297000B31BCA /* KKCanididateDetail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKCanididateDetail.h; sourceTree = "<group>"; };
-		7E96C74F16BC297000B31BCA /* KKCanididateDetail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKCanididateDetail.m; sourceTree = "<group>"; };
 		7ECBEC5A1733218800C2AADD /* TistoryAuth.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TistoryAuth.h; sourceTree = "<group>"; };
 		7ECBEC5B1733218800C2AADD /* TistoryAuth.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TistoryAuth.m; sourceTree = "<group>"; };
 		7EE81EA516AB9DC900E87998 /* TistoryTalk.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TistoryTalk.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -119,9 +117,6 @@
 		7EE81EE216AB9E5D00E87998 /* WritterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WritterViewController.h; path = ../WritterViewController.h; sourceTree = "<group>"; };
 		7EE81EE316AB9E5D00E87998 /* WritterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WritterViewController.m; path = ../WritterViewController.m; sourceTree = "<group>"; };
 		7EE81EE416AB9E5D00E87998 /* WritterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = WritterViewController.xib; path = ../WritterViewController.xib; sourceTree = "<group>"; };
-		7EE81EE716AB9EDA00E87998 /* MyblogViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyblogViewController.h; sourceTree = "<group>"; };
-		7EE81EE816AB9EDA00E87998 /* MyblogViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyblogViewController.m; sourceTree = "<group>"; };
-		7EE81EE916AB9EDA00E87998 /* MyblogViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyblogViewController.xib; sourceTree = "<group>"; };
 		7EE81EF916AC27F400E87998 /* FeedbackViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeedbackViewController.h; sourceTree = "<group>"; };
 		7EE81EFA16AC27F400E87998 /* FeedbackViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeedbackViewController.m; sourceTree = "<group>"; };
 		7EE81EFB16AC27F400E87998 /* FeedbackViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FeedbackViewController.xib; sourceTree = "<group>"; };
@@ -152,9 +147,6 @@
 		7EE81F5116AF2FE000E87998 /* typingMine@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "typingMine@2x.png"; sourceTree = "<group>"; };
 		7EE81F5216AF2FE000E87998 /* typingSomeone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = typingSomeone.png; sourceTree = "<group>"; };
 		7EE81F5316AF2FE000E87998 /* typingSomeone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "typingSomeone@2x.png"; sourceTree = "<group>"; };
-		7EE81F6416AF4C7700E87998 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
-		7EE81F6716AF4D2100E87998 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
-		7EE81F6916AF4D4000E87998 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		7EE81F7016B027B900E87998 /* MapModuleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapModuleView.h; sourceTree = "<group>"; };
 		7EE81F7116B027B900E87998 /* MapModuleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapModuleView.m; sourceTree = "<group>"; };
 		7EE81F7316B0291100E87998 /* SearchModuleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchModuleView.h; sourceTree = "<group>"; };
@@ -224,9 +216,6 @@
 		7EE81E9A16AB9DC900E87998 = {
 			isa = PBXGroup;
 			children = (
-				7EE81F6916AF4D4000E87998 /* Default.png */,
-				7EE81F6716AF4D2100E87998 /* Default@2x.png */,
-				7EE81F6416AF4C7700E87998 /* Default@2x.png */,
 				7EE81EAF16AB9DC900E87998 /* TistoryTalk */,
 				7EE81EA816AB9DC900E87998 /* Frameworks */,
 				7EE81EA616AB9DC900E87998 /* Products */,
@@ -318,9 +307,9 @@
 		7EE81EEE16ABA04A00E87998 /* MyblogViewController */ = {
 			isa = PBXGroup;
 			children = (
-				7EE81EE716AB9EDA00E87998 /* MyblogViewController.h */,
-				7EE81EE816AB9EDA00E87998 /* MyblogViewController.m */,
-				7EE81EE916AB9EDA00E87998 /* MyblogViewController.xib */,
+				7E015B341734BFBA005588C5 /* MyBlogViewController.h */,
+				7E015B351734BFBA005588C5 /* MyBlogViewController.m */,
+				7E015B361734BFBA005588C5 /* MyBlogViewController.xib */,
 			);
 			name = MyblogViewController;
 			sourceTree = "<group>";
@@ -455,8 +444,6 @@
 			children = (
 				7EE81F7016B027B900E87998 /* MapModuleView.h */,
 				7EE81F7116B027B900E87998 /* MapModuleView.m */,
-				7E96C74E16BC297000B31BCA /* KKCanididateDetail.h */,
-				7E96C74F16BC297000B31BCA /* KKCanididateDetail.m */,
 			);
 			name = MapModuleView;
 			sourceTree = "<group>";
@@ -538,7 +525,6 @@
 				7EE81ECE16AB9DC900E87998 /* second@2x.png in Resources */,
 				7EE81EE116AB9E1700E87998 /* TistoryViewController.xib in Resources */,
 				7EE81EE616AB9E5D00E87998 /* WritterViewController.xib in Resources */,
-				7EE81EEB16AB9EDA00E87998 /* MyblogViewController.xib in Resources */,
 				7EE81EFD16AC27F400E87998 /* FeedbackViewController.xib in Resources */,
 				7EE81F0216AC27FD00E87998 /* InfoViewController.xib in Resources */,
 				7EE81F2416AD563E00E87998 /* MessengerViewController.xib in Resources */,
@@ -552,7 +538,6 @@
 				7EE81F5B16AF2FE000E87998 /* typingMine@2x.png in Resources */,
 				7EE81F5C16AF2FE000E87998 /* typingSomeone.png in Resources */,
 				7EE81F5D16AF2FE000E87998 /* typingSomeone@2x.png in Resources */,
-				7EE81FC916B17B4800E87998 /* Default@2x.png in Resources */,
 				7EE81FCF16B1846400E87998 /* AuthViewController.xib in Resources */,
 				7E62275E16B1EFCD00C8C579 /* bubble.png in Resources */,
 				7E62276016B1F01D00C8C579 /* bubble@2x.png in Resources */,
@@ -567,7 +552,7 @@
 				7E62277216B1FDB500C8C579 /* tistory.png in Resources */,
 				7E62277416B1FDCB00C8C579 /* tistory@2x.png in Resources */,
 				7E5A194B16B52B2F00EB9795 /* PostingViewController.xib in Resources */,
-				7E5A195216B963E100EB9795 /* Default.png in Resources */,
+				7E015B381734BFBA005588C5 /* MyBlogViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -582,7 +567,6 @@
 				7EE81EBA16AB9DC900E87998 /* AppDelegate.m in Sources */,
 				7EE81EE016AB9E1700E87998 /* TistoryViewController.m in Sources */,
 				7EE81EE516AB9E5D00E87998 /* WritterViewController.m in Sources */,
-				7EE81EEA16AB9EDA00E87998 /* MyblogViewController.m in Sources */,
 				7EE81EFC16AC27F400E87998 /* FeedbackViewController.m in Sources */,
 				7EE81F0116AC27FD00E87998 /* InfoViewController.m in Sources */,
 				7EE81F0D16AC35E300E87998 /* InfoCell.m in Sources */,
@@ -600,8 +584,8 @@
 				7E5A19A716BBBC9500EB9795 /* HTTPRequest.m in Sources */,
 				7E5A19AA16BBCC1300EB9795 /* MyBlogInfoParser.m in Sources */,
 				7E5A19AE16BBFE2D00EB9795 /* CategoryParser.m in Sources */,
-				7E96C75016BC297000B31BCA /* KKCanididateDetail.m in Sources */,
 				7ECBEC5C1733218800C2AADD /* TistoryAuth.m in Sources */,
+				7E015B371734BFBA005588C5 /* MyBlogViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -640,7 +624,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 			};
@@ -660,7 +644,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;

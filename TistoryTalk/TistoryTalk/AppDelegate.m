@@ -8,12 +8,10 @@
 
 #import "AppDelegate.h"
  
-#import "WritterViewController.h"
-#import "MyblogViewController.h"
-#import "TistoryViewController.h"
+#import "WritterViewController.h" 
 #import "InfoViewController.h"
-#import "FeedbackViewController.h"
-#import "AuthViewController.h"
+#import "MyBlogViewController.h"
+ 
 
 @implementation AppDelegate
 
@@ -26,7 +24,7 @@
     UIViewController *infoViewController = [[InfoViewController alloc] initWithNibName:@"InfoViewController" bundle:nil];
    // UIViewController *feedbackViewController = [[FeedbackViewController alloc] initWithNibName:@"FeedbackViewController" bundle:nil];
     //UIViewController *tistoryViewController= [[TistoryViewController alloc] initWithNibName:@"TistoryViewController" bundle:nil];
-    UIViewController *myblogViewController = [[MyblogViewController alloc] initWithNibName:@"MyblogViewController" bundle:nil];
+    UIViewController *myBlogViewController = [[MyBlogViewController alloc] initWithNibName:@"MyBlogViewController" bundle:nil];
     UIViewController *writterViewController = [[WritterViewController alloc] initWithNibName:@"WritterViewController" bundle:nil];
     
 
@@ -34,7 +32,7 @@
     
     
     self.tabBarController = [[UITabBarController alloc] init];
-    self.tabBarController.viewControllers = @[myblogViewController, writterViewController, infoViewController];
+    self.tabBarController.viewControllers = @[myBlogViewController, writterViewController, infoViewController];
     self.window.rootViewController = self.tabBarController;
     [self.window makeKeyAndVisible];
     

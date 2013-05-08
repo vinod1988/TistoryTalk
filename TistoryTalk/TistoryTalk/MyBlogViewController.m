@@ -19,6 +19,12 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
+        
+        self.title = NSLocalizedString(@"내 블로그", @"myblog");
+        
+        self.tabBarItem.image = [UIImage imageNamed:@"home"];
+        // Custom initialization
+        
     }
     return self;
 }
