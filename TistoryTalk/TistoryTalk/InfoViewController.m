@@ -13,16 +13,15 @@
 @end
 
 @implementation InfoViewController
-@synthesize infoTableView;
+@synthesize infoTableView, infoToolBar;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self)
-    {
-        // Custom initialization
+    { 
         self.title = NSLocalizedString(@"info", @"info");
-        self.tabBarItem.image = [UIImage imageNamed:@"settings"];
+        self.tabBarItem.image = [UIImage imageNamed:@"settings"]; 
         
     }
     return self;
@@ -30,8 +29,7 @@
 
 - (void)viewDidLoad
 {
-    [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+    [super viewDidLoad];  
     
     NSNotificationCenter *nc = [NSNotificationCenter defaultCenter];
     [nc addObserver:self selector:@selector(logIn:) name:@"NOTIFY_LOGIN" object:nil];
@@ -52,6 +50,7 @@
 }
 
 #pragma mark notifcation codes
+
 -(void)logInComplete:(NSNotification *)note
 {
     

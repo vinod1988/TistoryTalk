@@ -18,6 +18,7 @@
     bool isConnect; 
 }
 
+@property (nonatomic, strong) IBOutlet UIToolbar *infoToolBar; 
 @property (nonatomic, strong) IBOutlet UITableView  *infoTableView;
 
 

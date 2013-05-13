@@ -15,6 +15,14 @@
 		7E0C894E174133F900579E10 /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E0C894D174133F900579E10 /* JSONKit.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		7E0C89561741965A00579E10 /* CategoryParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E0C89531741965A00579E10 /* CategoryParser.m */; };
 		7E0C89571741965A00579E10 /* MyBlogInfoParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E0C89551741965A00579E10 /* MyBlogInfoParser.m */; };
+		7E0C895B1741972100579E10 /* WritterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E0C89591741972100579E10 /* WritterViewController.m */; };
+		7E0C895C1741972100579E10 /* WritterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7E0C895A1741972100579E10 /* WritterViewController.xib */; };
+		7E0C89631741994C00579E10 /* blue-menuBar.png in Resources */ = {isa = PBXBuildFile; fileRef = 7E0C895F1741994C00579E10 /* blue-menuBar.png */; };
+		7E0C89641741994C00579E10 /* blue-menuBar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7E0C89601741994C00579E10 /* blue-menuBar@2x.png */; };
+		7E0C89651741994C00579E10 /* blue-reverse-menuBar.png in Resources */ = {isa = PBXBuildFile; fileRef = 7E0C89611741994C00579E10 /* blue-reverse-menuBar.png */; };
+		7E0C89661741994C00579E10 /* blue-reverse-menuBar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7E0C89621741994C00579E10 /* blue-reverse-menuBar@2x.png */; };
+		7E0C89691741995E00579E10 /* red-menuBar.png in Resources */ = {isa = PBXBuildFile; fileRef = 7E0C89671741995E00579E10 /* red-menuBar.png */; };
+		7E0C896A1741995E00579E10 /* red-menuBar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7E0C89681741995E00579E10 /* red-menuBar@2x.png */; };
 		7E5A194A16B52B2F00EB9795 /* PostingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E5A194816B52B2F00EB9795 /* PostingViewController.m */; };
 		7E5A194B16B52B2F00EB9795 /* PostingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7E5A194916B52B2F00EB9795 /* PostingViewController.xib */; };
 		7E5A19A716BBBC9500EB9795 /* HTTPRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E5A19A616BBBC9500EB9795 /* HTTPRequest.m */; };
@@ -42,8 +50,6 @@
 		7EE81ECE16AB9DC900E87998 /* second@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7EE81ECD16AB9DC900E87998 /* second@2x.png */; };
 		7EE81EE016AB9E1700E87998 /* TistoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EE81EDE16AB9E1700E87998 /* TistoryViewController.m */; };
 		7EE81EE116AB9E1700E87998 /* TistoryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7EE81EDF16AB9E1700E87998 /* TistoryViewController.xib */; };
-		7EE81EE516AB9E5D00E87998 /* WritterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EE81EE316AB9E5D00E87998 /* WritterViewController.m */; };
-		7EE81EE616AB9E5D00E87998 /* WritterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7EE81EE416AB9E5D00E87998 /* WritterViewController.xib */; };
 		7EE81EFC16AC27F400E87998 /* FeedbackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EE81EFA16AC27F400E87998 /* FeedbackViewController.m */; };
 		7EE81EFD16AC27F400E87998 /* FeedbackViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7EE81EFB16AC27F400E87998 /* FeedbackViewController.xib */; };
 		7EE81F0116AC27FD00E87998 /* InfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EE81EFF16AC27FD00E87998 /* InfoViewController.m */; };
@@ -90,6 +96,15 @@
 		7E0C89531741965A00579E10 /* CategoryParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryParser.m; sourceTree = "<group>"; };
 		7E0C89541741965A00579E10 /* MyBlogInfoParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyBlogInfoParser.h; sourceTree = "<group>"; };
 		7E0C89551741965A00579E10 /* MyBlogInfoParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyBlogInfoParser.m; sourceTree = "<group>"; };
+		7E0C89581741972100579E10 /* WritterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WritterViewController.h; sourceTree = "<group>"; };
+		7E0C89591741972100579E10 /* WritterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WritterViewController.m; sourceTree = "<group>"; };
+		7E0C895A1741972100579E10 /* WritterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WritterViewController.xib; sourceTree = "<group>"; };
+		7E0C895F1741994C00579E10 /* blue-menuBar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "blue-menuBar.png"; sourceTree = "<group>"; };
+		7E0C89601741994C00579E10 /* blue-menuBar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "blue-menuBar@2x.png"; sourceTree = "<group>"; };
+		7E0C89611741994C00579E10 /* blue-reverse-menuBar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "blue-reverse-menuBar.png"; sourceTree = "<group>"; };
+		7E0C89621741994C00579E10 /* blue-reverse-menuBar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "blue-reverse-menuBar@2x.png"; sourceTree = "<group>"; };
+		7E0C89671741995E00579E10 /* red-menuBar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "red-menuBar.png"; sourceTree = "<group>"; };
+		7E0C89681741995E00579E10 /* red-menuBar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "red-menuBar@2x.png"; sourceTree = "<group>"; };
 		7E5A194716B52B2F00EB9795 /* PostingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostingViewController.h; sourceTree = "<group>"; };
 		7E5A194816B52B2F00EB9795 /* PostingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PostingViewController.m; sourceTree = "<group>"; };
 		7E5A194916B52B2F00EB9795 /* PostingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PostingViewController.xib; sourceTree = "<group>"; };
@@ -124,9 +139,6 @@
 		7EE81EDD16AB9E1700E87998 /* TistoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TistoryViewController.h; sourceTree = "<group>"; };
 		7EE81EDE16AB9E1700E87998 /* TistoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TistoryViewController.m; sourceTree = "<group>"; };
 		7EE81EDF16AB9E1700E87998 /* TistoryViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TistoryViewController.xib; sourceTree = "<group>"; };
-		7EE81EE216AB9E5D00E87998 /* WritterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WritterViewController.h; path = ../WritterViewController.h; sourceTree = "<group>"; };
-		7EE81EE316AB9E5D00E87998 /* WritterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WritterViewController.m; path = ../WritterViewController.m; sourceTree = "<group>"; };
-		7EE81EE416AB9E5D00E87998 /* WritterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = WritterViewController.xib; path = ../WritterViewController.xib; sourceTree = "<group>"; };
 		7EE81EF916AC27F400E87998 /* FeedbackViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeedbackViewController.h; sourceTree = "<group>"; };
 		7EE81EFA16AC27F400E87998 /* FeedbackViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeedbackViewController.m; sourceTree = "<group>"; };
 		7EE81EFB16AC27F400E87998 /* FeedbackViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FeedbackViewController.xib; sourceTree = "<group>"; };
@@ -230,6 +242,28 @@
 			name = JSON;
 			sourceTree = "<group>";
 		};
+		7E0C895D1741991200579E10 /* Imgages */ = {
+			isa = PBXGroup;
+			children = (
+				7E0C895E1741992A00579E10 /* ToolBarImages */,
+				7EE81EED16ABA03700E87998 /* TabbarImages */,
+			);
+			name = Imgages;
+			sourceTree = "<group>";
+		};
+		7E0C895E1741992A00579E10 /* ToolBarImages */ = {
+			isa = PBXGroup;
+			children = (
+				7E0C89671741995E00579E10 /* red-menuBar.png */,
+				7E0C89681741995E00579E10 /* red-menuBar@2x.png */,
+				7E0C895F1741994C00579E10 /* blue-menuBar.png */,
+				7E0C89601741994C00579E10 /* blue-menuBar@2x.png */,
+				7E0C89611741994C00579E10 /* blue-reverse-menuBar.png */,
+				7E0C89621741994C00579E10 /* blue-reverse-menuBar@2x.png */,
+			);
+			name = ToolBarImages;
+			sourceTree = "<group>";
+		};
 		7E5A194616B52B1500EB9795 /* PostingViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -279,12 +313,12 @@
 		7EE81EAF16AB9DC900E87998 /* TistoryTalk */ = {
 			isa = PBXGroup;
 			children = (
+				7E0C895D1741991200579E10 /* Imgages */,
 				7E0C894A1741337500579E10 /* Library */,
 				7E0C894117411BF000579E10 /* TistoryAPI */,
 				7E0C89361741154800579E10 /* StandartUserSettings */,
 				7E5A199916BBACF200EB9795 /* HtmlRequest */,
 				7EE81F7916B03AE700E87998 /* DataStructure */,
-				7EE81EED16ABA03700E87998 /* TabbarImages */,
 				7EE81EEC16ABA01900E87998 /* ViewControllers */,
 				7EE81EB816AB9DC900E87998 /* AppDelegate.h */,
 				7EE81EB916AB9DC900E87998 /* AppDelegate.m */,
@@ -355,9 +389,9 @@
 		7EE81EEF16ABA05B00E87998 /* WritterViewContoller */ = {
 			isa = PBXGroup;
 			children = (
-				7EE81EE216AB9E5D00E87998 /* WritterViewController.h */,
-				7EE81EE316AB9E5D00E87998 /* WritterViewController.m */,
-				7EE81EE416AB9E5D00E87998 /* WritterViewController.xib */,
+				7E0C89581741972100579E10 /* WritterViewController.h */,
+				7E0C89591741972100579E10 /* WritterViewController.m */,
+				7E0C895A1741972100579E10 /* WritterViewController.xib */,
 			);
 			name = WritterViewContoller;
 			sourceTree = "<group>";
@@ -565,7 +599,6 @@
 				7EE81ECC16AB9DC900E87998 /* second.png in Resources */,
 				7EE81ECE16AB9DC900E87998 /* second@2x.png in Resources */,
 				7EE81EE116AB9E1700E87998 /* TistoryViewController.xib in Resources */,
-				7EE81EE616AB9E5D00E87998 /* WritterViewController.xib in Resources */,
 				7EE81EFD16AC27F400E87998 /* FeedbackViewController.xib in Resources */,
 				7EE81F0216AC27FD00E87998 /* InfoViewController.xib in Resources */,
 				7EE81F2416AD563E00E87998 /* MessengerViewController.xib in Resources */,
@@ -594,6 +627,13 @@
 				7E62277416B1FDCB00C8C579 /* tistory@2x.png in Resources */,
 				7E5A194B16B52B2F00EB9795 /* PostingViewController.xib in Resources */,
 				7E015B381734BFBA005588C5 /* MyBlogViewController.xib in Resources */,
+				7E0C895C1741972100579E10 /* WritterViewController.xib in Resources */,
+				7E0C89631741994C00579E10 /* blue-menuBar.png in Resources */,
+				7E0C89641741994C00579E10 /* blue-menuBar@2x.png in Resources */,
+				7E0C89651741994C00579E10 /* blue-reverse-menuBar.png in Resources */,
+				7E0C89661741994C00579E10 /* blue-reverse-menuBar@2x.png in Resources */,
+				7E0C89691741995E00579E10 /* red-menuBar.png in Resources */,
+				7E0C896A1741995E00579E10 /* red-menuBar@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -607,7 +647,6 @@
 				7EE81EB616AB9DC900E87998 /* main.m in Sources */,
 				7EE81EBA16AB9DC900E87998 /* AppDelegate.m in Sources */,
 				7EE81EE016AB9E1700E87998 /* TistoryViewController.m in Sources */,
-				7EE81EE516AB9E5D00E87998 /* WritterViewController.m in Sources */,
 				7EE81EFC16AC27F400E87998 /* FeedbackViewController.m in Sources */,
 				7EE81F0116AC27FD00E87998 /* InfoViewController.m in Sources */,
 				7EE81F0D16AC35E300E87998 /* InfoCell.m in Sources */,
@@ -630,6 +669,7 @@
 				7E0C894E174133F900579E10 /* JSONKit.m in Sources */,
 				7E0C89561741965A00579E10 /* CategoryParser.m in Sources */,
 				7E0C89571741965A00579E10 /* MyBlogInfoParser.m in Sources */,
+				7E0C895B1741972100579E10 /* WritterViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
