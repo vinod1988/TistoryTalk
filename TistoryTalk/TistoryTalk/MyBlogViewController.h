@@ -7,7 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SettingKeys.h"
+#import "StandardUserSettings.h"
 
 @interface MyBlogViewController : UIViewController
+{
+    
+    
+}
+
+@property (nonatomic, strong) IBOutlet UIWebView  *myBlogView;
+
+
 
 @end

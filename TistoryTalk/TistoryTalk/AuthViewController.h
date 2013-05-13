@@ -6,8 +6,10 @@
 //  Copyright (c) 2013년 an seonghyun. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
-#import "TistoryAuth.h"
+#import <UIKit/UIKit.h> 
+#import "StandardUserSettings.h"
+#import "SettingKeys.h"
+#import "MyBlogApi.h"
 
 @interface AuthViewController : UIViewController
 <UIWebViewDelegate>

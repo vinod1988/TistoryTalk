@@ -9,11 +9,15 @@
 /* Begin PBXBuildFile section */
 		7E015B371734BFBA005588C5 /* MyBlogViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E015B351734BFBA005588C5 /* MyBlogViewController.m */; };
 		7E015B381734BFBA005588C5 /* MyBlogViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7E015B361734BFBA005588C5 /* MyBlogViewController.xib */; };
+		7E0C893D174115C700579E10 /* StandardUserSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E0C893C174115C700579E10 /* StandardUserSettings.m */; };
+		7E0C894617412C2E00579E10 /* MyBlogApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E0C894517412C2E00579E10 /* MyBlogApi.m */; };
+		7E0C894917412C6F00579E10 /* MyBlogInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E0C894817412C6F00579E10 /* MyBlogInfo.m */; };
+		7E0C894E174133F900579E10 /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E0C894D174133F900579E10 /* JSONKit.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		7E0C89561741965A00579E10 /* CategoryParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E0C89531741965A00579E10 /* CategoryParser.m */; };
+		7E0C89571741965A00579E10 /* MyBlogInfoParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E0C89551741965A00579E10 /* MyBlogInfoParser.m */; };
 		7E5A194A16B52B2F00EB9795 /* PostingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E5A194816B52B2F00EB9795 /* PostingViewController.m */; };
 		7E5A194B16B52B2F00EB9795 /* PostingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7E5A194916B52B2F00EB9795 /* PostingViewController.xib */; };
 		7E5A19A716BBBC9500EB9795 /* HTTPRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E5A19A616BBBC9500EB9795 /* HTTPRequest.m */; };
-		7E5A19AA16BBCC1300EB9795 /* MyBlogInfoParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E5A19A916BBCC1300EB9795 /* MyBlogInfoParser.m */; };
-		7E5A19AE16BBFE2D00EB9795 /* CategoryParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E5A19AD16BBFE2D00EB9795 /* CategoryParser.m */; };
 		7E62275E16B1EFCD00C8C579 /* bubble.png in Resources */ = {isa = PBXBuildFile; fileRef = 7E62275D16B1EFCD00C8C579 /* bubble.png */; };
 		7E62276016B1F01D00C8C579 /* bubble@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7E62275F16B1F01D00C8C579 /* bubble@2x.png */; };
 		7E62276216B1F03300C8C579 /* home@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7E62276116B1F03300C8C579 /* home@2x.png */; };
@@ -26,7 +30,6 @@
 		7E62277016B1FD4F00C8C579 /* settings.png in Resources */ = {isa = PBXBuildFile; fileRef = 7E62276F16B1FD4F00C8C579 /* settings.png */; };
 		7E62277216B1FDB500C8C579 /* tistory.png in Resources */ = {isa = PBXBuildFile; fileRef = 7E62277116B1FDB500C8C579 /* tistory.png */; };
 		7E62277416B1FDCB00C8C579 /* tistory@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7E62277316B1FDCB00C8C579 /* tistory@2x.png */; };
-		7ECBEC5C1733218800C2AADD /* TistoryAuth.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ECBEC5B1733218800C2AADD /* TistoryAuth.m */; };
 		7EE81EAA16AB9DC900E87998 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EE81EA916AB9DC900E87998 /* UIKit.framework */; };
 		7EE81EAC16AB9DC900E87998 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EE81EAB16AB9DC900E87998 /* Foundation.framework */; };
 		7EE81EAE16AB9DC900E87998 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EE81EAD16AB9DC900E87998 /* CoreGraphics.framework */; };
@@ -74,15 +77,24 @@
 		7E015B341734BFBA005588C5 /* MyBlogViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyBlogViewController.h; sourceTree = "<group>"; };
 		7E015B351734BFBA005588C5 /* MyBlogViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyBlogViewController.m; sourceTree = "<group>"; };
 		7E015B361734BFBA005588C5 /* MyBlogViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyBlogViewController.xib; sourceTree = "<group>"; };
+		7E0C893B174115C700579E10 /* StandardUserSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StandardUserSettings.h; sourceTree = "<group>"; };
+		7E0C893C174115C700579E10 /* StandardUserSettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StandardUserSettings.m; sourceTree = "<group>"; };
+		7E0C893E1741177400579E10 /* SettingKeys.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingKeys.h; sourceTree = "<group>"; };
+		7E0C894417412C2E00579E10 /* MyBlogApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyBlogApi.h; sourceTree = "<group>"; };
+		7E0C894517412C2E00579E10 /* MyBlogApi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyBlogApi.m; sourceTree = "<group>"; };
+		7E0C894717412C6F00579E10 /* MyBlogInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyBlogInfo.h; sourceTree = "<group>"; };
+		7E0C894817412C6F00579E10 /* MyBlogInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyBlogInfo.m; sourceTree = "<group>"; };
+		7E0C894C174133F900579E10 /* JSONKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONKit.h; sourceTree = "<group>"; };
+		7E0C894D174133F900579E10 /* JSONKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONKit.m; sourceTree = "<group>"; };
+		7E0C89521741965A00579E10 /* CategoryParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryParser.h; sourceTree = "<group>"; };
+		7E0C89531741965A00579E10 /* CategoryParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryParser.m; sourceTree = "<group>"; };
+		7E0C89541741965A00579E10 /* MyBlogInfoParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyBlogInfoParser.h; sourceTree = "<group>"; };
+		7E0C89551741965A00579E10 /* MyBlogInfoParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyBlogInfoParser.m; sourceTree = "<group>"; };
 		7E5A194716B52B2F00EB9795 /* PostingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostingViewController.h; sourceTree = "<group>"; };
 		7E5A194816B52B2F00EB9795 /* PostingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PostingViewController.m; sourceTree = "<group>"; };
 		7E5A194916B52B2F00EB9795 /* PostingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PostingViewController.xib; sourceTree = "<group>"; };
 		7E5A19A516BBBC9500EB9795 /* HTTPRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTTPRequest.h; sourceTree = "<group>"; };
 		7E5A19A616BBBC9500EB9795 /* HTTPRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTTPRequest.m; sourceTree = "<group>"; };
-		7E5A19A816BBCC1300EB9795 /* MyBlogInfoParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyBlogInfoParser.h; sourceTree = "<group>"; };
-		7E5A19A916BBCC1300EB9795 /* MyBlogInfoParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyBlogInfoParser.m; sourceTree = "<group>"; };
-		7E5A19AC16BBFE2D00EB9795 /* CategoryParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryParser.h; sourceTree = "<group>"; };
-		7E5A19AD16BBFE2D00EB9795 /* CategoryParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryParser.m; sourceTree = "<group>"; };
 		7E62275D16B1EFCD00C8C579 /* bubble.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bubble.png; sourceTree = "<group>"; };
 		7E62275F16B1F01D00C8C579 /* bubble@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bubble@2x.png"; sourceTree = "<group>"; };
 		7E62276116B1F03300C8C579 /* home@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "home@2x.png"; sourceTree = "<group>"; };
@@ -95,8 +107,6 @@
 		7E62276F16B1FD4F00C8C579 /* settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = settings.png; sourceTree = "<group>"; };
 		7E62277116B1FDB500C8C579 /* tistory.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tistory.png; sourceTree = "<group>"; };
 		7E62277316B1FDCB00C8C579 /* tistory@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tistory@2x.png"; sourceTree = "<group>"; };
-		7ECBEC5A1733218800C2AADD /* TistoryAuth.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TistoryAuth.h; sourceTree = "<group>"; };
-		7ECBEC5B1733218800C2AADD /* TistoryAuth.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TistoryAuth.m; sourceTree = "<group>"; };
 		7EE81EA516AB9DC900E87998 /* TistoryTalk.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TistoryTalk.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7EE81EA916AB9DC900E87998 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		7EE81EAB16AB9DC900E87998 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -174,6 +184,52 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7E0C89361741154800579E10 /* StandartUserSettings */ = {
+			isa = PBXGroup;
+			children = (
+				7E0C893B174115C700579E10 /* StandardUserSettings.h */,
+				7E0C893C174115C700579E10 /* StandardUserSettings.m */,
+				7E0C893E1741177400579E10 /* SettingKeys.h */,
+			);
+			name = StandartUserSettings;
+			sourceTree = "<group>";
+		};
+		7E0C894117411BF000579E10 /* TistoryAPI */ = {
+			isa = PBXGroup;
+			children = (
+				7E0C894217411BFC00579E10 /* MyBlog */,
+			);
+			name = TistoryAPI;
+			sourceTree = "<group>";
+		};
+		7E0C894217411BFC00579E10 /* MyBlog */ = {
+			isa = PBXGroup;
+			children = (
+				7E0C894417412C2E00579E10 /* MyBlogApi.h */,
+				7E0C894517412C2E00579E10 /* MyBlogApi.m */,
+				7E0C894717412C6F00579E10 /* MyBlogInfo.h */,
+				7E0C894817412C6F00579E10 /* MyBlogInfo.m */,
+			);
+			name = MyBlog;
+			sourceTree = "<group>";
+		};
+		7E0C894A1741337500579E10 /* Library */ = {
+			isa = PBXGroup;
+			children = (
+				7E0C894B1741337F00579E10 /* JSON */,
+			);
+			name = Library;
+			sourceTree = "<group>";
+		};
+		7E0C894B1741337F00579E10 /* JSON */ = {
+			isa = PBXGroup;
+			children = (
+				7E0C894C174133F900579E10 /* JSONKit.h */,
+				7E0C894D174133F900579E10 /* JSONKit.m */,
+			);
+			name = JSON;
+			sourceTree = "<group>";
+		};
 		7E5A194616B52B1500EB9795 /* PostingViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -191,26 +247,6 @@
 				7E5A19A616BBBC9500EB9795 /* HTTPRequest.m */,
 			);
 			name = HtmlRequest;
-			sourceTree = "<group>";
-		};
-		7E5A19AB16BBFDC000EB9795 /* Parser */ = {
-			isa = PBXGroup;
-			children = (
-				7E5A19A816BBCC1300EB9795 /* MyBlogInfoParser.h */,
-				7E5A19A916BBCC1300EB9795 /* MyBlogInfoParser.m */,
-				7E5A19AC16BBFE2D00EB9795 /* CategoryParser.h */,
-				7E5A19AD16BBFE2D00EB9795 /* CategoryParser.m */,
-			);
-			name = Parser;
-			sourceTree = "<group>";
-		};
-		7ECBEC591733216C00C2AADD /* Auth */ = {
-			isa = PBXGroup;
-			children = (
-				7ECBEC5A1733218800C2AADD /* TistoryAuth.h */,
-				7ECBEC5B1733218800C2AADD /* TistoryAuth.m */,
-			);
-			name = Auth;
 			sourceTree = "<group>";
 		};
 		7EE81E9A16AB9DC900E87998 = {
@@ -243,7 +279,9 @@
 		7EE81EAF16AB9DC900E87998 /* TistoryTalk */ = {
 			isa = PBXGroup;
 			children = (
-				7ECBEC591733216C00C2AADD /* Auth */,
+				7E0C894A1741337500579E10 /* Library */,
+				7E0C894117411BF000579E10 /* TistoryAPI */,
+				7E0C89361741154800579E10 /* StandartUserSettings */,
 				7E5A199916BBACF200EB9795 /* HtmlRequest */,
 				7EE81F7916B03AE700E87998 /* DataStructure */,
 				7EE81EED16ABA03700E87998 /* TabbarImages */,
@@ -382,6 +420,10 @@
 		7EE81F1F16AD53FA00E87998 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				7E0C89521741965A00579E10 /* CategoryParser.h */,
+				7E0C89531741965A00579E10 /* CategoryParser.m */,
+				7E0C89541741965A00579E10 /* MyBlogInfoParser.h */,
+				7E0C89551741965A00579E10 /* MyBlogInfoParser.m */,
 				7EE81F7A16B03F2900E87998 /* DataManager.h */,
 				7EE81F7B16B03F2900E87998 /* DataManager.m */,
 				7EE81F8416B0AB1200E87998 /* TagManager.h */,
@@ -451,7 +493,6 @@
 		7EE81F7916B03AE700E87998 /* DataStructure */ = {
 			isa = PBXGroup;
 			children = (
-				7E5A19AB16BBFDC000EB9795 /* Parser */,
 				7EE81F1F16AD53FA00E87998 /* Data */,
 			);
 			name = DataStructure;
@@ -582,10 +623,13 @@
 				7EE81FCE16B1846400E87998 /* AuthViewController.m in Sources */,
 				7E5A194A16B52B2F00EB9795 /* PostingViewController.m in Sources */,
 				7E5A19A716BBBC9500EB9795 /* HTTPRequest.m in Sources */,
-				7E5A19AA16BBCC1300EB9795 /* MyBlogInfoParser.m in Sources */,
-				7E5A19AE16BBFE2D00EB9795 /* CategoryParser.m in Sources */,
-				7ECBEC5C1733218800C2AADD /* TistoryAuth.m in Sources */,
 				7E015B371734BFBA005588C5 /* MyBlogViewController.m in Sources */,
+				7E0C893D174115C700579E10 /* StandardUserSettings.m in Sources */,
+				7E0C894617412C2E00579E10 /* MyBlogApi.m in Sources */,
+				7E0C894917412C6F00579E10 /* MyBlogInfo.m in Sources */,
+				7E0C894E174133F900579E10 /* JSONKit.m in Sources */,
+				7E0C89561741965A00579E10 /* CategoryParser.m in Sources */,
+				7E0C89571741965A00579E10 /* MyBlogInfoParser.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -658,6 +702,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TistoryTalk/TistoryTalk-Prefix.pch";
 				INFOPLIST_FILE = "TistoryTalk/TistoryTalk-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -670,6 +715,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TistoryTalk/TistoryTalk-Prefix.pch";
 				INFOPLIST_FILE = "TistoryTalk/TistoryTalk-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};

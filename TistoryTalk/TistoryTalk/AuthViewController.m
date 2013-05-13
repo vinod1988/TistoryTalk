@@ -46,33 +46,39 @@
 - (void)webViewDidFinishLoad:(UIWebView *)webView
 {
     NSString *currentURL = webView.request.mainDocumentURL.absoluteString;
-    
     NSString *flag =  [currentURL substringFromIndex:currentURL.length-5];
     
-    if([flag isEqualToString:@"token"])
-    {
-        //login view
-    }
-    else
+    if(![flag isEqualToString:@"token"])
     {
         NSRange aRange = [currentURL rangeOfString:@"access_token"];
         NSNotificationCenter *nc = [NSNotificationCenter defaultCenter];
         
-        if (aRange.location ==NSNotFound)
+        if (aRange.location == NSNotFound)
         {
             [nc postNotificationName:@"NOTIFY_LOGOUT" object:nil userInfo:nil];
         }
         else
         {
+            
+            //save access_token
             NSArray * splittedAr = [currentURL componentsSeparatedByString:@"="];
-            [TistoryAuth setToken:[splittedAr objectAtIndex:1]];
+            NSString *accessToken = [splittedAr objectAtIndex:1];
+            [StandardUserSettings setValue:TISTORY_TOKEN value:accessToken];
+            
+            //save myblogurl
+            MyBlogApi *myBlogApi = [[MyBlogApi alloc]init];
+            NSString *basicBlogUrl = [myBlogApi getMyBasicBlogUrl];
+            [StandardUserSettings setValue:MY_BLOG_ADDR value:basicBlogUrl];
+            
+            NSLog(@"accessToken : %@", accessToken);
+            NSLog(@"basicBlogUrl : %@", basicBlogUrl);
+            
+            
             [nc postNotificationName:@"NOTIFY_LOGIN" object:nil userInfo:nil];
         }
         
         [self dismissViewControllerAnimated:YES completion:nil];
     }
-    
-    
 }
 
 -(IBAction)cancel:(id)sender

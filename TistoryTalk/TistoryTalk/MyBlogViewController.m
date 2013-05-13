@@ -13,6 +13,7 @@
 @end
 
 @implementation MyBlogViewController
+@synthesize myBlogView;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -32,7 +33,24 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+    
+    NSString *myBlogAddress = [StandardUserSettings getValue:MY_BLOG_ADDR];
+    
+    if(myBlogAddress != nil)
+    {
+        NSURL* urlObj = [[NSURL alloc] initWithString:myBlogAddress];
+        NSURLRequest *urlRequest = [[NSURLRequest alloc] initWithURL:urlObj];
+        [myBlogView loadRequest: urlRequest];
+    }
+    else
+    {//설정이 안되어 있는 경우, 경고 표시 
+        UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"티스토리 연결해주세요." message:@""
+                                                      delegate:self cancelButtonTitle:@"확인" otherButtonTitles:nil, nil];
+        [alert show];
+        
+        
+        //TODO:아무것도 없을때도 뭔가 보여주면 좋을것 같다. 마치 404 페이지마냥 
+    }
 }
 
 - (void)didReceiveMemoryWarning

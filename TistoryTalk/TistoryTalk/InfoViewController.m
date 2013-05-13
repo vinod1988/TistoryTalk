@@ -39,7 +39,7 @@
     [nc addObserver:self selector:@selector(logOut:) name:@"NOTIFY_LOGOUT" object:nil];
     
 
-    isConnect =[TistoryAuth exist];
+    isConnect = [StandardUserSettings exist:TISTORY_TOKEN];
     
 }
 
@@ -62,7 +62,6 @@
     NSLog(@"LOGIN");
     
     isConnect = YES;
-    
     [infoTableView reloadData];
     
 }
@@ -73,9 +72,8 @@
     
     isConnect = NO;
     
-    //init settings
-    [TistoryAuth setToken:@""];
-    
+    //init settings 
+    [StandardUserSettings setValue:TISTORY_TOKEN value:@""];
     [infoTableView reloadData];
 }
 
