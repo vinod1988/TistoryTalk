@@ -10,14 +10,15 @@
 
 @interface InfoCell : UITableViewCell
 {
-	
 	  UILabel *title;
 	  UILabel *value; 
 }
 
-
 @property (nonatomic, strong) UILabel *title;
 @property (nonatomic, strong) UILabel *value;
+
+
+-(void)setValueFrame:(CGRect)_frame;
 
 
 @end

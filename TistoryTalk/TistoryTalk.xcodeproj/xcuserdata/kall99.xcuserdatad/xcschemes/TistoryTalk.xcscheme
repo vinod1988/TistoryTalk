@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "7EE81EA416AB9DC900E87998"
+               BlueprintIdentifier = "7E0C8A0E1743D74C00579E10"
                BuildableName = "TistoryTalk.app"
                BlueprintName = "TistoryTalk"
                ReferencedContainer = "container:TistoryTalk.xcodeproj">
@@ -32,7 +32,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "7EE81EA416AB9DC900E87998"
+            BlueprintIdentifier = "7E0C8A0E1743D74C00579E10"
             BuildableName = "TistoryTalk.app"
             BlueprintName = "TistoryTalk"
             ReferencedContainer = "container:TistoryTalk.xcodeproj">
@@ -51,7 +51,7 @@
       <BuildableProductRunnable>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "7EE81EA416AB9DC900E87998"
+            BlueprintIdentifier = "7E0C8A0E1743D74C00579E10"
             BuildableName = "TistoryTalk.app"
             BlueprintName = "TistoryTalk"
             ReferencedContainer = "container:TistoryTalk.xcodeproj">
@@ -69,7 +69,7 @@
       <BuildableProductRunnable>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "7EE81EA416AB9DC900E87998"
+            BlueprintIdentifier = "7E0C8A0E1743D74C00579E10"
             BuildableName = "TistoryTalk.app"
             BlueprintName = "TistoryTalk"
             ReferencedContainer = "container:TistoryTalk.xcodeproj">

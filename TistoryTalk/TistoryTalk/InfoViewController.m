@@ -19,9 +19,9 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self)
-    { 
-        self.title = NSLocalizedString(@"info", @"info");
-        self.tabBarItem.image = [UIImage imageNamed:@"settings"]; 
+    {
+        self.title = NSLocalizedString(@"Info", @"Info");
+        self.tabBarItem.image = [UIImage imageNamed:@"settings"];
         
     }
     return self;
@@ -29,19 +29,12 @@
 
 - (void)viewDidLoad
 {
-    [super viewDidLoad];  
+    [super viewDidLoad];
     
-    NSNotificationCenter *nc = [NSNotificationCenter defaultCenter];
-    [nc addObserver:self selector:@selector(logIn:) name:@"NOTIFY_LOGIN" object:nil];
-    [nc addObserver:self selector:@selector(logInComplete:) name:@"NOTIFY_LOGIN_COMPLETE" object:nil];
-    [nc addObserver:self selector:@selector(logOut:) name:@"NOTIFY_LOGOUT" object:nil];
+    [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"red-menuBar"] forBarMetrics:UIBarMetricsDefault];
     
-
     isConnect = [StandardUserSettings exist:TISTORY_TOKEN];
-    
 }
-
-
 
 - (void)didReceiveMemoryWarning
 {
@@ -49,33 +42,12 @@
     // Dispose of any resources that can be recreated.
 }
 
-#pragma mark notifcation codes
-
--(void)logInComplete:(NSNotification *)note
+-(void)viewWillAppear:(BOOL)animated
 {
     
-}
-
--(void)logIn:(NSNotification *)note
-{
-    NSLog(@"LOGIN");
-    
-    isConnect = YES;
-    [infoTableView reloadData];
-    
-}
-
--(void)logOut:(NSNotification *)note
-{
-    NSLog(@"LOGOUT");
-    
-    isConnect = NO;
-    
-    //init settings 
-    [StandardUserSettings setValue:TISTORY_TOKEN value:@""];
+    isConnect = [StandardUserSettings exist:TISTORY_TOKEN];
     [infoTableView reloadData];
 }
-
 
 
 #pragma mark tableView
@@ -99,18 +71,17 @@
     }
     else
     {
-        
-        AuthViewController *authViewController = [[AuthViewController alloc]init];
-        [self presentViewController:authViewController animated:YES completion:nil];
+        TIstoryConnectionViewController *tistoryViewController = [[TIstoryConnectionViewController alloc]init];
+        [self.navigationController pushViewController:tistoryViewController animated:YES];
     }
+    
     
 }
 
 //현재 UITableView의 섹션의 개수
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-	return 2;
-	
+    return 2;
 }
 
 
@@ -119,39 +90,55 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
     static NSString *CellIdentifier = @"CELL";
-    
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     
     
     if (cell == nil)
     {
-        
         cell =  [[InfoCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
-        
     }
     
     
     
     if(indexPath.section==0)
     {
-        ((InfoCell*)cell).title.text = @"INDF";
-        ((InfoCell*)cell).value.text = @"생각에 가치를 더하는 IDNF";
-        cell.selectionStyle = UITableViewCellSelectionStyleBlue;
+        
+        switch (indexPath.row)
+        {
+            case 0:
+                
+                ((InfoCell*)cell).title.text = @"Version";
+                ((InfoCell*)cell).value.text = @"0.3";
+                
+                break;
+                
+            case 1:
+                
+                ((InfoCell*)cell).title.text = @"Created by";
+                ((InfoCell*)cell).value.text = @"INDF";
+                
+                break;
+                
+                
+            default:
+                break;
+        }
+        
     }
     else
     {
         
-        ((InfoCell *)cell).title.text = @"티스토리 연결";
+        ((InfoCell *)cell).title.text = @"연동하기";
         if(isConnect==YES)
             ((InfoCell *)cell).value.text = @"연결";
         else
             ((InfoCell *)cell).value.text = @"비연결";
         
-            
-        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
         
     }
     
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     
     
     return cell;
@@ -163,7 +150,7 @@
     int sectionOfRowCount = 0;
     if(section == 0)
     {
-        sectionOfRowCount = 1;
+        sectionOfRowCount = 2;
     }
     else
     {
@@ -176,34 +163,26 @@
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
 	
+    UIView* customView = [[UIView alloc] initWithFrame:CGRectMake(0.0, 0.0, 320.0, 30.0)];
+    UILabel * headerLabel = [[UILabel alloc] initWithFrame:CGRectZero];
+    headerLabel.backgroundColor = [UIColor clearColor];
+    headerLabel.opaque = YES;
+    headerLabel.textColor = [UIColor darkGrayColor];
+    headerLabel.font = [UIFont systemFontOfSize:18];
+    headerLabel.frame = CGRectMake(13.0, 20.0, 320.0, 20.0);
+	
+    
 	if(section == 0)
 	{
-        
-		UIView* customView = [[UIView alloc] initWithFrame:CGRectMake(0.0, 0.0, 320.0, 30.0)];
-		UILabel * headerLabel = [[UILabel alloc] initWithFrame:CGRectZero];
-		headerLabel.backgroundColor = [UIColor clearColor];
-		headerLabel.opaque = YES;
-		headerLabel.textColor = [UIColor darkGrayColor];
-		headerLabel.font = [UIFont systemFontOfSize:16];
-		headerLabel.frame = CGRectMake(13.0, 20.0, 320.0, 20.0);
-		[headerLabel setText:@"팀 소개"];
-		[customView addSubview:headerLabel];
-		return customView;
-		
+		[headerLabel setText:@"App"];
 	}
 	else
 	{
-        UIView* customView = [[UIView alloc] initWithFrame:CGRectMake(0.0, 0.0, 320.0, 30.0)];
-		UILabel * headerLabel = [[UILabel alloc] initWithFrame:CGRectZero];
-		headerLabel.backgroundColor = [UIColor clearColor];
-		headerLabel.opaque = YES;
-		headerLabel.textColor = [UIColor darkGrayColor];
-		headerLabel.font = [UIFont systemFontOfSize:16];
-		headerLabel.frame = CGRectMake(13.0, 20.0, 320.0, 20.0);
-		[headerLabel setText:@"계정설정"];
-		[customView addSubview:headerLabel];
-		return customView;
+    	[headerLabel setText:@"Tistory"];
     }
+    
+    [customView addSubview:headerLabel];
+    return customView;
     
 }
 
@@ -211,7 +190,7 @@
 //헤더 섹션의 Height 크기 설정
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
-    return 50;	
+    return 50;
 }
 
 

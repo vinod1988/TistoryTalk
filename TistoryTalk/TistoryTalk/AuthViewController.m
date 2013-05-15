@@ -20,6 +20,8 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
+        
+        
     }
     return self;
 }
@@ -27,6 +29,11 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    
+    self.navigationItem.leftBarButtonItem.tintColor
+    =[UIColor colorWithRed:154.0/255.0 green:45.0/255.0 blue:36.0/255.0 alpha:1.0];
+    
     
     NSURL* urlObj = [[NSURL alloc] initWithString:@"https://www.tistory.com/oauth/authorize?client_id=76f30e50a21087cd8581813762365396&redirect_uri=http://indf.net&response_type=token"];
     
@@ -83,9 +90,9 @@
 
 -(IBAction)cancel:(id)sender
 {
-    NSNotificationCenter *nc = [NSNotificationCenter defaultCenter];
-    [nc postNotificationName:@"NOTIFY_LOGOUT" object:nil userInfo:nil];
-    
+//    NSNotificationCenter *nc = [NSNotificationCenter defaultCenter];
+//    [nc postNotificationName:@"NOTIFY_LOGOUT" object:nil userInfo:nil];
+
     [self dismissViewControllerAnimated:YES completion:nil];
     
 }

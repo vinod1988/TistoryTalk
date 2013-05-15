@@ -10,11 +10,14 @@
 #import "MessengerViewController.h"
 #import "TagManager.h"
 #import "PostingViewController.h"
+#import "PopoverView.h"
 
 @interface WritterViewController : UIViewController
-<UIActionSheetDelegate>
+<PopoverViewDelegate>
 {
     bool isWritingFile;
+    NSArray *menuStrArr;
+    
     IBOutlet UIWebView *webView;
     IBOutlet UILabel *noBlogData; 
     
@@ -23,5 +26,6 @@
 @property(nonatomic, strong) IBOutlet UILabel *noBlogData;
 @property bool isWritingFile;
 
--(IBAction)showMenu;
+-(IBAction)showMenu:(id)sender;
+
 @end

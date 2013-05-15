@@ -45,6 +45,7 @@
 						<string key="NSFrame">{{0, 44}, {320, 504}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<reference key="NSWindow"/>
+						<reference key="NSNextKeyView"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<object class="NSColor" key="IBUIBackgroundColor">
 							<int key="NSColorSpace">1</int>
@@ -65,11 +66,16 @@
 						<bool key="IBUIOpaque">NO</bool>
 						<bool key="IBUIClearsContextBeforeDrawing">NO</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
+						<int key="IBUIBarStyle">1</int>
 						<array class="NSMutableArray" key="IBUIItems">
 							<object class="IBUIBarButtonItem" id="561427588">
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 								<int key="IBUIStyle">2</int>
 								<reference key="IBUIToolbar" ref="861527296"/>
+								<object class="NSColor" key="IBUITintColor">
+									<int key="NSColorSpace">2</int>
+									<bytes key="NSRGB">MC4yMTk2MDc4NTk4IDAuMzQ5MDE5NjE2OCAwLjQ4NjI3NDU0MDQAA</bytes>
+								</object>
 								<int key="IBUISystemItemIdentifier">1</int>
 							</object>
 						</array>

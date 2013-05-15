@@ -2,42 +2,45 @@
 //  AppDelegate.m
 //  TistoryTalk
 //
-//  Created by an seonghyun on 13. 1. 20..
-//  Copyright (c) 2013년 an seonghyun. All rights reserved.
+//  Created by an seonghyun on 13. 5. 15..
+//  Copyright (c) 2013년 INDF. All rights reserved.
 //
 
 #import "AppDelegate.h"
- 
-#import "WritterViewController.h" 
-#import "InfoViewController.h"
+
 #import "MyBlogViewController.h"
- 
+#import "WritterViewController.h"
+#import "InfoViewController.h"
 
 @implementation AppDelegate
-
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
-    UIViewController *infoViewController = [[InfoViewController alloc] initWithNibName:@"InfoViewController" bundle:nil];
-   // UIViewController *feedbackViewController = [[FeedbackViewController alloc] initWithNibName:@"FeedbackViewController" bundle:nil];
-    //UIViewController *tistoryViewController= [[TistoryViewController alloc] initWithNibName:@"TistoryViewController" bundle:nil];
     UIViewController *myBlogViewController = [[MyBlogViewController alloc] initWithNibName:@"MyBlogViewController" bundle:nil];
     UIViewController *writterViewController = [[WritterViewController alloc] initWithNibName:@"WritterViewController" bundle:nil];
+    UIViewController *infoViewController = [[InfoViewController alloc] initWithNibName:@"InfoViewController" bundle:nil];
     
-
+    
+    UINavigationController *infoNavigationController = [[UINavigationController alloc]
+                                                        initWithRootViewController:infoViewController];
+    
+    UINavigationController *writterNavigationController = [[UINavigationController alloc] initWithRootViewController:writterViewController];
+    
+    
     sleep(1);
     
     
     self.tabBarController = [[UITabBarController alloc] init];
-    self.tabBarController.viewControllers = @[myBlogViewController, writterViewController, infoViewController];
+    self.tabBarController.viewControllers = @[myBlogViewController, writterNavigationController, infoNavigationController];
     self.window.rootViewController = self.tabBarController;
     [self.window makeKeyAndVisible];
     
     
     return YES;
+
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application

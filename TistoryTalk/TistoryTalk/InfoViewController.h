@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "InfoCell.h" 
-#import "AuthViewController.h"
+#import "TIstoryConnectionViewController.h"
 #import "SettingKeys.h"
 #import "StandardUserSettings.h"
 

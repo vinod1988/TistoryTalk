@@ -22,7 +22,7 @@
         // Initialization code.
 		
 		title = [[UILabel alloc] initWithFrame:CGRectMake(20.0, 6.0, 100.0, 30.0)];
-		value = [[UILabel alloc] initWithFrame:CGRectMake(120.0, 6.0, 180.0, 30.0)];
+		value = [[UILabel alloc] initWithFrame:CGRectMake(150, 6.0, 60.0, 30.0)];
 		
         UIFont *desc_Font = [UIFont fontWithName:@"Helvetica" size:13];
 		title.font = desc_Font;	
@@ -50,7 +50,10 @@
     [super setSelected:selected animated:animated]; 
 }
 
-
+-(void)setValueFrame:(CGRect)_frame
+{
+    value.frame = _frame; 
+}
 
 
 

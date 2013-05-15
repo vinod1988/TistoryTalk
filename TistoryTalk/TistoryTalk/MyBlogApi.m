@@ -28,8 +28,6 @@
         {
             apiUrl = [NSString stringWithFormat:@"%@%@?%@=%@&%@",
                       tistoryApiUrl, blogApiUrl, accessToken, savedAccessToken, output];
-            
-            NSLog(@"apiUrl : %@", apiUrl);
         }
     }
     return self;
@@ -39,7 +37,6 @@
 
 -(NSMutableArray*)getMyAllBlog
 {
-    //대표블로그만 가져온다.
     NSMutableArray *blogInfoArr  = [[NSMutableArray alloc]init];
     
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:
@@ -54,7 +51,6 @@
     
     if (conn)
     {
-        
         NSData *receivedData = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil];
         
         if( [receivedData length]!=0) //if data.exist
@@ -72,20 +68,12 @@
     if(jsonDict != nil)
     {
         NSDictionary* blogInfoDict = [jsonDict objectForKey:@"tistory"];
-        NSLog(@"arr : %@", blogInfoDict);
         int count = blogInfoDict.count;
-        
-        NSLog(@"count : %d", count);
-        
         int statusCode = [[blogInfoDict objectForKey:@"status"] integerValue];
         
         if(statusCode == 200)
         {
-            
-            NSLog(@"item : %@", [blogInfoDict objectForKey:@"item"]);
             NSArray *itemArr = [blogInfoDict objectForKey:@"item"];
-            
-            NSLog(@"count : %d", itemArr.count);
             
             for(int i =0; i<count; i++)
             {
@@ -102,13 +90,9 @@
                 
                 
                 if([defaultStr isEqualToString:@"Y"] || [defaultStr isEqualToString:@"y"])
-                {
                     myBlogInfo.basicBlog = YES;
-                }
                 else
-                {
                     myBlogInfo.basicBlog = NO;
-                }
                 
                 
                 myBlogInfo.blogIconUrl = [item objectForKey:@"blogIconUrl"];
@@ -150,10 +134,6 @@
     
     return basicBlogInfo;
 }
-
-
-
-
 
 -(NSString*)getMyBasicBlogUrl
 {
