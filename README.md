@@ -12,15 +12,9 @@
 - Daum DevDay 2013, INDF 자료(http://blog.indf.net/5)
 
 
-## Daum DevDay23013 Screen shots
+#Screen shots
 <br/>
-###  글쓰기 화면 
 <p align = "center">
-	<img src="http://farm9.static.flickr.com/8261/8677507373_7f4d4b7624.jpg"/>
-	<img src="http://farm9.static.flickr.com/8531/8678613392_f370a220ea.jpg"/>
+    <img src="http://farm8.static.flickr.com/7291/8741755989_d1ef704212.jpg"/>
 </p>
-
-###  저장 화면 
-<p align = "center">
-	<img src="http://farm9.static.flickr.com/8261/8678613390_dd55ddb2e3.jpg"/>
-</p>
+ 
