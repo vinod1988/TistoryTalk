@@ -68,14 +68,14 @@
     if(jsonDict != nil)
     {
         NSDictionary* blogInfoDict = [jsonDict objectForKey:@"tistory"];
-        int count = blogInfoDict.count;
+      
         int statusCode = [[blogInfoDict objectForKey:@"status"] integerValue];
         
         if(statusCode == 200)
         {
             NSArray *itemArr = [blogInfoDict objectForKey:@"item"];
             
-            for(int i =0; i<count; i++)
+            for(int i =0; i<itemArr.count; i++)
             {
                 NSDictionary* item = [itemArr objectAtIndex:i];
                 
