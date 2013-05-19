@@ -33,6 +33,7 @@
     NSString *savedAccessToken = [StandardUserSettings getValue:TISTORY_TOKEN];
     NSString *targetUrl = [ApiUtils getTargetUrl];
     NSString *visibility = @"3"; //발행.
+ 
     
     [bodyObject setValue:savedAccessToken forKey:@"access_token"];
     [bodyObject setValue:targetUrl forKey:@"targetUrl"];
@@ -70,7 +71,8 @@
     
     int status = [[result objectForKey:@"status"] integerValue];
     NSNotificationCenter *nc = [NSNotificationCenter defaultCenter];
-     
+    
+    NSLog(@"%@", receivedData);
     
     if(status==200)
         [nc postNotificationName:@"NOTIFY_POST_SUCCESS" object:nil userInfo:nil];

@@ -67,8 +67,11 @@
     
     if(jsonDict != nil)
     {
+        NSLog(@"json : %@", jsonDict);
+        
+        
         NSDictionary* blogInfoDict = [jsonDict objectForKey:@"tistory"];
-      
+        
         int statusCode = [[blogInfoDict objectForKey:@"status"] integerValue];
         
         if(statusCode == 200)
@@ -122,8 +125,9 @@
     MyBlogInfo* basicBlogInfo = nil;
     
     for(int i=0; i<allBlogs.count; i++)
-    { 
+    {
         MyBlogInfo *myBlogInfo = [allBlogs objectAtIndex:i];
+        
         
         if(myBlogInfo.basicBlog)
         {
@@ -137,7 +141,21 @@
 
 -(NSString*)getMyBasicBlogUrl
 {
-    return [self getMyBasicBlog].url;
+    NSString*url =@"";
+    MyBlogInfo*basicBlogInfo = [self getMyBasicBlog];
+    
+    if(basicBlogInfo.secondaryUrl ==nil || basicBlogInfo.secondaryUrl.length==7)
+    {
+        url = basicBlogInfo.url; 
+    }
+    else
+    {
+        url = basicBlogInfo.secondaryUrl;
+        
+    }
+    
+    
+    return url;
     
 }
 

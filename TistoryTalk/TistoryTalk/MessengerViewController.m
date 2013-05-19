@@ -301,15 +301,15 @@
     if(bubbleTableView.isEditing==YES)
     {
         [bubbleTableView setEditing:NO];
-        closeButton.title = @"편집";
+        editButton.title = @"편집";
     }
     else
     {
         if([posting getDataCount] >0)
         {
             [bubbleTableView setEditing:YES];
-            closeButton.title = @"완료";
-            closeButton.tintColor = [UIColor colorWithRed:47.0/255.0 green:155.0/255.0 blue:203.0/255.0 alpha:1.0];
+            editButton.title = @"완료";
+            editButton.tintColor = [UIColor colorWithRed:47.0/255.0 green:155.0/255.0 blue:203.0/255.0 alpha:1.0];
         }
         else
         {
@@ -328,23 +328,6 @@
     
     if(textField.text.length != 0)
     {
-        /*
-         int currentNSBubbleTypingType = 0;
-         
-         if(prevNSBubbleTypingType == BubbleTypeSomeoneElse)
-         currentNSBubbleTypingType = BubbleTypeMine;
-         else
-         currentNSBubbleTypingType = BubbleTypeSomeoneElse;
-         
-         
-         NSBubbleData *sayBubble = [NSBubbleData dataWithText:textField.text date:[NSDate dateWithTimeIntervalSinceNow:0] type:currentNSBubbleTypingType];
-         sayBubble.avatar = nil;
-         [bubbleDataArr addObject:sayBubble];
-         
-         textField.text = @"";
-         prevNSBubbleTypingType = currentNSBubbleTypingType;
-         */
-        
         [posting addData:textField.text];
         textField.text = @"";
         prevNSBubbleTypingType = 1;
