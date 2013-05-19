@@ -35,7 +35,6 @@
 		7E0C8A6C1743DB8400579E10 /* tistory@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7E0C8A611743DB8400579E10 /* tistory@2x.png */; };
 		7E0C8A711743DBF600579E10 /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E0C8A701743DBF600579E10 /* JSONKit.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		7E0C8A741743DC0F00579E10 /* HTTPRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E0C8A731743DC0F00579E10 /* HTTPRequest.m */; };
-		7E0C8A791743DEBE00579E10 /* SettingKeys.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E0C8A761743DEBE00579E10 /* SettingKeys.m */; };
 		7E0C8A7A1743DEBE00579E10 /* StandardUserSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E0C8A781743DEBE00579E10 /* StandardUserSettings.m */; };
 		7E0C8A801743DF5600579E10 /* MyBlogApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E0C8A7D1743DF5600579E10 /* MyBlogApi.m */; };
 		7E0C8A811743DF5600579E10 /* MyBlogInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E0C8A7F1743DF5600579E10 /* MyBlogInfo.m */; };
@@ -46,8 +45,6 @@
 		7E0C8A931743E27B00579E10 /* PostingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E0C8A911743E27B00579E10 /* PostingViewController.m */; };
 		7E0C8A941743E27B00579E10 /* PostingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7E0C8A921743E27B00579E10 /* PostingViewController.xib */; };
 		7E0C8A9D1743E41600579E10 /* PopoverView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E0C8A9C1743E41600579E10 /* PopoverView.m */; };
-		7E0C8AA41743E71A00579E10 /* MapModuleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E0C8AA31743E71A00579E10 /* MapModuleView.m */; };
-		7E0C8AA71743E72700579E10 /* SearchModuleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E0C8AA61743E72700579E10 /* SearchModuleView.m */; };
 		7E0C8AAB1743E76000579E10 /* bubble@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7E0C8AAA1743E76000579E10 /* bubble@2x.png */; };
 		7E0C8AB61743E78500579E10 /* bubbleMine.png in Resources */ = {isa = PBXBuildFile; fileRef = 7E0C8AAC1743E78500579E10 /* bubbleMine.png */; };
 		7E0C8AB71743E78500579E10 /* bubbleMine@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7E0C8AAD1743E78500579E10 /* bubbleMine@2x.png */; };
@@ -83,6 +80,23 @@
 		7E0C8AFE1743E90E00579E10 /* NSBubbleData.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E0C8AFD1743E90E00579E10 /* NSBubbleData.m */; };
 		7E0C8B02174439D200579E10 /* WritterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E0C8B00174439D100579E10 /* WritterViewController.m */; };
 		7E0C8B03174439D200579E10 /* WritterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7E0C8B01174439D100579E10 /* WritterViewController.xib */; };
+		7E5C68321747668A00B61234 /* TistoryHtmlTagManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E5C68311747668A00B61234 /* TistoryHtmlTagManager.m */; };
+		7E5C68361747882600B61234 /* TagInputViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E5C68341747882600B61234 /* TagInputViewController.m */; };
+		7E5C68371747882600B61234 /* TagInputViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7E5C68351747882600B61234 /* TagInputViewController.xib */; };
+		7E5C683B1747891800B61234 /* CategoryInputViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E5C68391747891800B61234 /* CategoryInputViewController.m */; };
+		7E5C683C1747891800B61234 /* CategoryInputViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7E5C683A1747891800B61234 /* CategoryInputViewController.xib */; };
+		7E5C684017480D9C00B61234 /* CategoryApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E5C683F17480D9C00B61234 /* CategoryApi.m */; };
+		7E5C684317481EB500B61234 /* CategoryInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E5C684217481EB500B61234 /* CategoryInfo.m */; };
+		7E85EC581745A76E00926189 /* NSPosting.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E85EC571745A76E00926189 /* NSPosting.m */; };
+		7E85EC5C1745C2D600926189 /* NSMD5Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E85EC5B1745C2D600926189 /* NSMD5Utils.m */; };
+		7E85EC5F1745F84500926189 /* NSPostingIndex.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E85EC5E1745F84500926189 /* NSPostingIndex.m */; };
+		7E85EC63174667EF00926189 /* BlogPostingCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E85EC62174667EF00926189 /* BlogPostingCell.m */; };
+		7E85EC6617466A5000926189 /* NSDateUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E85EC6517466A5000926189 /* NSDateUtils.m */; };
+		7E8F38471745118500E5B9AF /* hr.png in Resources */ = {isa = PBXBuildFile; fileRef = 7E8F38461745118500E5B9AF /* hr.png */; };
+		7EDA35C717482283006CA470 /* CRTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EDA35C617482283006CA470 /* CRTableViewCell.m */; };
+		7EDA35CA1748538E006CA470 /* NSPostingUpload.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EDA35C91748538E006CA470 /* NSPostingUpload.m */; };
+		7EDA35D117486B2B006CA470 /* WriteApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EDA35D017486B2B006CA470 /* WriteApi.m */; };
+		7EDA35D417487FFB006CA470 /* ApiUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EDA35D317487FFB006CA470 /* ApiUtils.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -121,7 +135,6 @@
 		7E0C8A721743DC0F00579E10 /* HTTPRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTTPRequest.h; sourceTree = "<group>"; };
 		7E0C8A731743DC0F00579E10 /* HTTPRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTTPRequest.m; sourceTree = "<group>"; };
 		7E0C8A751743DEBE00579E10 /* SettingKeys.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingKeys.h; sourceTree = "<group>"; };
-		7E0C8A761743DEBE00579E10 /* SettingKeys.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingKeys.m; sourceTree = "<group>"; };
 		7E0C8A771743DEBE00579E10 /* StandardUserSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StandardUserSettings.h; sourceTree = "<group>"; };
 		7E0C8A781743DEBE00579E10 /* StandardUserSettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StandardUserSettings.m; sourceTree = "<group>"; };
 		7E0C8A7C1743DF5600579E10 /* MyBlogApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyBlogApi.h; sourceTree = "<group>"; };
@@ -142,10 +155,6 @@
 		7E0C8A9A1743E41600579E10 /* PopoverView_Configuration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PopoverView_Configuration.h; sourceTree = "<group>"; };
 		7E0C8A9B1743E41600579E10 /* PopoverView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PopoverView.h; sourceTree = "<group>"; };
 		7E0C8A9C1743E41600579E10 /* PopoverView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PopoverView.m; sourceTree = "<group>"; };
-		7E0C8AA21743E71A00579E10 /* MapModuleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapModuleView.h; sourceTree = "<group>"; };
-		7E0C8AA31743E71A00579E10 /* MapModuleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapModuleView.m; sourceTree = "<group>"; };
-		7E0C8AA51743E72700579E10 /* SearchModuleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchModuleView.h; sourceTree = "<group>"; };
-		7E0C8AA61743E72700579E10 /* SearchModuleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchModuleView.m; sourceTree = "<group>"; };
 		7E0C8AAA1743E76000579E10 /* bubble@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bubble@2x.png"; sourceTree = "<group>"; };
 		7E0C8AAC1743E78500579E10 /* bubbleMine.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bubbleMine.png; sourceTree = "<group>"; };
 		7E0C8AAD1743E78500579E10 /* bubbleMine@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bubbleMine@2x.png"; sourceTree = "<group>"; };
@@ -198,6 +207,37 @@
 		7E0C8AFF174439D100579E10 /* WritterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WritterViewController.h; sourceTree = "<group>"; };
 		7E0C8B00174439D100579E10 /* WritterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WritterViewController.m; sourceTree = "<group>"; };
 		7E0C8B01174439D100579E10 /* WritterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WritterViewController.xib; sourceTree = "<group>"; };
+		7E5C68301747668A00B61234 /* TistoryHtmlTagManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TistoryHtmlTagManager.h; sourceTree = "<group>"; };
+		7E5C68311747668A00B61234 /* TistoryHtmlTagManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TistoryHtmlTagManager.m; sourceTree = "<group>"; };
+		7E5C68331747882600B61234 /* TagInputViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TagInputViewController.h; sourceTree = "<group>"; };
+		7E5C68341747882600B61234 /* TagInputViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TagInputViewController.m; sourceTree = "<group>"; };
+		7E5C68351747882600B61234 /* TagInputViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TagInputViewController.xib; sourceTree = "<group>"; };
+		7E5C68381747891700B61234 /* CategoryInputViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryInputViewController.h; sourceTree = "<group>"; };
+		7E5C68391747891800B61234 /* CategoryInputViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryInputViewController.m; sourceTree = "<group>"; };
+		7E5C683A1747891800B61234 /* CategoryInputViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CategoryInputViewController.xib; sourceTree = "<group>"; };
+		7E5C683E17480D9C00B61234 /* CategoryApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryApi.h; sourceTree = "<group>"; };
+		7E5C683F17480D9C00B61234 /* CategoryApi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryApi.m; sourceTree = "<group>"; };
+		7E5C684117481EB500B61234 /* CategoryInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryInfo.h; sourceTree = "<group>"; };
+		7E5C684217481EB500B61234 /* CategoryInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryInfo.m; sourceTree = "<group>"; };
+		7E85EC561745A76D00926189 /* NSPosting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSPosting.h; sourceTree = "<group>"; };
+		7E85EC571745A76E00926189 /* NSPosting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSPosting.m; sourceTree = "<group>"; };
+		7E85EC5A1745C2D600926189 /* NSMD5Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSMD5Utils.h; sourceTree = "<group>"; };
+		7E85EC5B1745C2D600926189 /* NSMD5Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSMD5Utils.m; sourceTree = "<group>"; };
+		7E85EC5D1745F84500926189 /* NSPostingIndex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSPostingIndex.h; sourceTree = "<group>"; };
+		7E85EC5E1745F84500926189 /* NSPostingIndex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSPostingIndex.m; sourceTree = "<group>"; };
+		7E85EC61174667EF00926189 /* BlogPostingCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlogPostingCell.h; sourceTree = "<group>"; };
+		7E85EC62174667EF00926189 /* BlogPostingCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BlogPostingCell.m; sourceTree = "<group>"; };
+		7E85EC6417466A4F00926189 /* NSDateUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSDateUtils.h; sourceTree = "<group>"; };
+		7E85EC6517466A5000926189 /* NSDateUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSDateUtils.m; sourceTree = "<group>"; };
+		7E8F38461745118500E5B9AF /* hr.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hr.png; sourceTree = "<group>"; };
+		7EDA35C517482283006CA470 /* CRTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRTableViewCell.h; sourceTree = "<group>"; };
+		7EDA35C617482283006CA470 /* CRTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRTableViewCell.m; sourceTree = "<group>"; };
+		7EDA35C81748538E006CA470 /* NSPostingUpload.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSPostingUpload.h; sourceTree = "<group>"; };
+		7EDA35C91748538E006CA470 /* NSPostingUpload.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSPostingUpload.m; sourceTree = "<group>"; };
+		7EDA35CF17486B2B006CA470 /* WriteApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WriteApi.h; sourceTree = "<group>"; };
+		7EDA35D017486B2B006CA470 /* WriteApi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WriteApi.m; sourceTree = "<group>"; };
+		7EDA35D217487FFB006CA470 /* ApiUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApiUtils.h; sourceTree = "<group>"; };
+		7EDA35D317487FFB006CA470 /* ApiUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApiUtils.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -274,6 +314,7 @@
 		7E0C8A431743D78100579E10 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				7E8F38461745118500E5B9AF /* hr.png */,
 				7E0C8A451743D9AD00579E10 /* MenuImage */,
 				7E0C8A441743D7AB00579E10 /* TabImage */,
 			);
@@ -326,7 +367,12 @@
 		7E0C8A471743D9CC00579E10 /* TistoryAPI */ = {
 			isa = PBXGroup;
 			children = (
-				7E0C8A7B1743DEF200579E10 /* MyBlog */,
+				7EDA35CB174861A7006CA470 /* WriteAPI */,
+				7E5C683D17480CA900B61234 /* CategoryAPI */,
+				7E5C682E1747661D00B61234 /* etc */,
+				7E0C8A7B1743DEF200579E10 /* MyBlogAPI */,
+				7EDA35D217487FFB006CA470 /* ApiUtils.h */,
+				7EDA35D317487FFB006CA470 /* ApiUtils.m */,
 			);
 			name = TistoryAPI;
 			sourceTree = "<group>";
@@ -334,6 +380,9 @@
 		7E0C8A481743DA0400579E10 /* Library */ = {
 			isa = PBXGroup;
 			children = (
+				7E85EC6417466A4F00926189 /* NSDateUtils.h */,
+				7E85EC6517466A5000926189 /* NSDateUtils.m */,
+				7E85EC591745C2BC00926189 /* MD5 */,
 				7E0C8A6E1743DBDC00579E10 /* JSON */,
 				7E0C8A6D1743DBCD00579E10 /* HtmlRequest */,
 			);
@@ -344,7 +393,6 @@
 			isa = PBXGroup;
 			children = (
 				7E0C8A751743DEBE00579E10 /* SettingKeys.h */,
-				7E0C8A761743DEBE00579E10 /* SettingKeys.m */,
 				7E0C8A771743DEBE00579E10 /* StandardUserSettings.h */,
 				7E0C8A781743DEBE00579E10 /* StandardUserSettings.m */,
 			);
@@ -354,6 +402,8 @@
 		7E0C8A4A1743DA1F00579E10 /* DataStructure */ = {
 			isa = PBXGroup;
 			children = (
+				7E5C682F1747665100B61234 /* HTML */,
+				7E85EC551745A74C00926189 /* DataManager */,
 				7E0C8A821743DF8800579E10 /* Data */,
 			);
 			name = DataStructure;
@@ -377,7 +427,7 @@
 			name = JSON;
 			sourceTree = "<group>";
 		};
-		7E0C8A7B1743DEF200579E10 /* MyBlog */ = {
+		7E0C8A7B1743DEF200579E10 /* MyBlogAPI */ = {
 			isa = PBXGroup;
 			children = (
 				7E0C8A7C1743DF5600579E10 /* MyBlogApi.h */,
@@ -385,20 +435,18 @@
 				7E0C8A7E1743DF5600579E10 /* MyBlogInfo.h */,
 				7E0C8A7F1743DF5600579E10 /* MyBlogInfo.m */,
 			);
-			name = MyBlog;
+			name = MyBlogAPI;
 			sourceTree = "<group>";
 		};
 		7E0C8A821743DF8800579E10 /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				7E0C8A831743DFBC00579E10 /* CategoryParser.h */,
-				7E0C8A841743DFBC00579E10 /* CategoryParser.m */,
-				7E0C8A851743DFBC00579E10 /* DataManager.h */,
-				7E0C8A861743DFBC00579E10 /* DataManager.m */,
-				7E0C8A871743DFBC00579E10 /* MyBlogInfoParser.h */,
-				7E0C8A881743DFBC00579E10 /* MyBlogInfoParser.m */,
-				7E0C8A891743DFBC00579E10 /* TagManager.h */,
-				7E0C8A8A1743DFBC00579E10 /* TagManager.m */,
+				7E85EC561745A76D00926189 /* NSPosting.h */,
+				7E85EC571745A76E00926189 /* NSPosting.m */,
+				7E85EC5D1745F84500926189 /* NSPostingIndex.h */,
+				7E85EC5E1745F84500926189 /* NSPostingIndex.m */,
+				7EDA35C81748538E006CA470 /* NSPostingUpload.h */,
+				7EDA35C91748538E006CA470 /* NSPostingUpload.m */,
 			);
 			name = Data;
 			sourceTree = "<group>";
@@ -406,9 +454,17 @@
 		7E0C8A8F1743E25A00579E10 /* PostingViewController */ = {
 			isa = PBXGroup;
 			children = (
+				7EDA35C517482283006CA470 /* CRTableViewCell.h */,
+				7EDA35C617482283006CA470 /* CRTableViewCell.m */,
 				7E0C8A901743E27B00579E10 /* PostingViewController.h */,
 				7E0C8A911743E27B00579E10 /* PostingViewController.m */,
 				7E0C8A921743E27B00579E10 /* PostingViewController.xib */,
+				7E5C68331747882600B61234 /* TagInputViewController.h */,
+				7E5C68341747882600B61234 /* TagInputViewController.m */,
+				7E5C68351747882600B61234 /* TagInputViewController.xib */,
+				7E5C68381747891700B61234 /* CategoryInputViewController.h */,
+				7E5C68391747891800B61234 /* CategoryInputViewController.m */,
+				7E5C683A1747891800B61234 /* CategoryInputViewController.xib */,
 			);
 			name = PostingViewController;
 			sourceTree = "<group>";
@@ -416,6 +472,7 @@
 		7E0C8A951743E28E00579E10 /* WritterViewController */ = {
 			isa = PBXGroup;
 			children = (
+				7E85EC60174667B900926189 /* CustomCells */,
 				7E0C8AFF174439D100579E10 /* WritterViewController.h */,
 				7E0C8B00174439D100579E10 /* WritterViewController.m */,
 				7E0C8B01174439D100579E10 /* WritterViewController.xib */,
@@ -444,28 +501,8 @@
 				7E0C8ACE1743E7BB00579E10 /* SearchToolBar */,
 				7E0C8AC01743E7A200579E10 /* UIBubbleTableView */,
 				7E0C8AA11743E70100579E10 /* MessengerImages */,
-				7E0C8AA01743E6F200579E10 /* SearchModuleView */,
-				7E0C8A9F1743E6EA00579E10 /* MapModuleView */,
 			);
 			name = MessengerWriterController;
-			sourceTree = "<group>";
-		};
-		7E0C8A9F1743E6EA00579E10 /* MapModuleView */ = {
-			isa = PBXGroup;
-			children = (
-				7E0C8AA21743E71A00579E10 /* MapModuleView.h */,
-				7E0C8AA31743E71A00579E10 /* MapModuleView.m */,
-			);
-			name = MapModuleView;
-			sourceTree = "<group>";
-		};
-		7E0C8AA01743E6F200579E10 /* SearchModuleView */ = {
-			isa = PBXGroup;
-			children = (
-				7E0C8AA51743E72700579E10 /* SearchModuleView.h */,
-				7E0C8AA61743E72700579E10 /* SearchModuleView.m */,
-			);
-			name = SearchModuleView;
 			sourceTree = "<group>";
 		};
 		7E0C8AA11743E70100579E10 /* MessengerImages */ = {
@@ -602,6 +639,7 @@
 		7E0C8B0C17443B7A00579E10 /* MyBlogViewController */ = {
 			isa = PBXGroup;
 			children = (
+				7E5C682D17471F7800B61234 /* CustomCells */,
 				7E0C8ADD1743E82300579E10 /* MyBlogViewController.h */,
 				7E0C8ADE1743E82300579E10 /* MyBlogViewController.m */,
 				7E0C8ADF1743E82300579E10 /* MyBlogViewController.xib */,
@@ -626,6 +664,82 @@
 				7E0C8AE41743E82C00579E10 /* TistoryViewController.xib */,
 			);
 			name = TistoryViewController;
+			sourceTree = "<group>";
+		};
+		7E5C682D17471F7800B61234 /* CustomCells */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = CustomCells;
+			sourceTree = "<group>";
+		};
+		7E5C682E1747661D00B61234 /* etc */ = {
+			isa = PBXGroup;
+			children = (
+				7E0C8A831743DFBC00579E10 /* CategoryParser.h */,
+				7E0C8A841743DFBC00579E10 /* CategoryParser.m */,
+				7E0C8A871743DFBC00579E10 /* MyBlogInfoParser.h */,
+				7E0C8A881743DFBC00579E10 /* MyBlogInfoParser.m */,
+			);
+			name = etc;
+			sourceTree = "<group>";
+		};
+		7E5C682F1747665100B61234 /* HTML */ = {
+			isa = PBXGroup;
+			children = (
+				7E0C8A891743DFBC00579E10 /* TagManager.h */,
+				7E0C8A8A1743DFBC00579E10 /* TagManager.m */,
+				7E5C68301747668A00B61234 /* TistoryHtmlTagManager.h */,
+				7E5C68311747668A00B61234 /* TistoryHtmlTagManager.m */,
+			);
+			name = HTML;
+			sourceTree = "<group>";
+		};
+		7E5C683D17480CA900B61234 /* CategoryAPI */ = {
+			isa = PBXGroup;
+			children = (
+				7E5C683E17480D9C00B61234 /* CategoryApi.h */,
+				7E5C683F17480D9C00B61234 /* CategoryApi.m */,
+				7E5C684117481EB500B61234 /* CategoryInfo.h */,
+				7E5C684217481EB500B61234 /* CategoryInfo.m */,
+			);
+			name = CategoryAPI;
+			sourceTree = "<group>";
+		};
+		7E85EC551745A74C00926189 /* DataManager */ = {
+			isa = PBXGroup;
+			children = (
+				7E0C8A851743DFBC00579E10 /* DataManager.h */,
+				7E0C8A861743DFBC00579E10 /* DataManager.m */,
+			);
+			name = DataManager;
+			sourceTree = "<group>";
+		};
+		7E85EC591745C2BC00926189 /* MD5 */ = {
+			isa = PBXGroup;
+			children = (
+				7E85EC5A1745C2D600926189 /* NSMD5Utils.h */,
+				7E85EC5B1745C2D600926189 /* NSMD5Utils.m */,
+			);
+			name = MD5;
+			sourceTree = "<group>";
+		};
+		7E85EC60174667B900926189 /* CustomCells */ = {
+			isa = PBXGroup;
+			children = (
+				7E85EC61174667EF00926189 /* BlogPostingCell.h */,
+				7E85EC62174667EF00926189 /* BlogPostingCell.m */,
+			);
+			name = CustomCells;
+			sourceTree = "<group>";
+		};
+		7EDA35CB174861A7006CA470 /* WriteAPI */ = {
+			isa = PBXGroup;
+			children = (
+				7EDA35CF17486B2B006CA470 /* WriteApi.h */,
+				7EDA35D017486B2B006CA470 /* WriteApi.m */,
+			);
+			name = WriteAPI;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -720,6 +834,9 @@
 				7E0C8AF61743E85E00579E10 /* TIstoryConnectionViewController.xib in Resources */,
 				7E0C8AFB1743E8B200579E10 /* AuthViewController.xib in Resources */,
 				7E0C8B03174439D200579E10 /* WritterViewController.xib in Resources */,
+				7E8F38471745118500E5B9AF /* hr.png in Resources */,
+				7E5C68371747882600B61234 /* TagInputViewController.xib in Resources */,
+				7E5C683C1747891800B61234 /* CategoryInputViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -734,7 +851,6 @@
 				7E0C8A231743D74C00579E10 /* AppDelegate.m in Sources */,
 				7E0C8A711743DBF600579E10 /* JSONKit.m in Sources */,
 				7E0C8A741743DC0F00579E10 /* HTTPRequest.m in Sources */,
-				7E0C8A791743DEBE00579E10 /* SettingKeys.m in Sources */,
 				7E0C8A7A1743DEBE00579E10 /* StandardUserSettings.m in Sources */,
 				7E0C8A801743DF5600579E10 /* MyBlogApi.m in Sources */,
 				7E0C8A811743DF5600579E10 /* MyBlogInfo.m in Sources */,
@@ -744,8 +860,6 @@
 				7E0C8A8E1743DFBC00579E10 /* TagManager.m in Sources */,
 				7E0C8A931743E27B00579E10 /* PostingViewController.m in Sources */,
 				7E0C8A9D1743E41600579E10 /* PopoverView.m in Sources */,
-				7E0C8AA41743E71A00579E10 /* MapModuleView.m in Sources */,
-				7E0C8AA71743E72700579E10 /* SearchModuleView.m in Sources */,
 				7E0C8ACA1743E7B700579E10 /* UIBubbleHeaderTableViewCell.m in Sources */,
 				7E0C8ACB1743E7B700579E10 /* UIBubbleTableView.m in Sources */,
 				7E0C8ACC1743E7B700579E10 /* UIBubbleTableViewCell.m in Sources */,
@@ -762,6 +876,20 @@
 				7E0C8AFA1743E8B200579E10 /* AuthViewController.m in Sources */,
 				7E0C8AFE1743E90E00579E10 /* NSBubbleData.m in Sources */,
 				7E0C8B02174439D200579E10 /* WritterViewController.m in Sources */,
+				7E85EC581745A76E00926189 /* NSPosting.m in Sources */,
+				7E85EC5C1745C2D600926189 /* NSMD5Utils.m in Sources */,
+				7E85EC5F1745F84500926189 /* NSPostingIndex.m in Sources */,
+				7E85EC63174667EF00926189 /* BlogPostingCell.m in Sources */,
+				7E85EC6617466A5000926189 /* NSDateUtils.m in Sources */,
+				7E5C68321747668A00B61234 /* TistoryHtmlTagManager.m in Sources */,
+				7E5C68361747882600B61234 /* TagInputViewController.m in Sources */,
+				7E5C683B1747891800B61234 /* CategoryInputViewController.m in Sources */,
+				7E5C684017480D9C00B61234 /* CategoryApi.m in Sources */,
+				7E5C684317481EB500B61234 /* CategoryInfo.m in Sources */,
+				7EDA35C717482283006CA470 /* CRTableViewCell.m in Sources */,
+				7EDA35CA1748538E006CA470 /* NSPostingUpload.m in Sources */,
+				7EDA35D117486B2B006CA470 /* WriteApi.m in Sources */,
+				7EDA35D417487FFB006CA470 /* ApiUtils.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -876,6 +1004,7 @@
 				7E0C8A421743D74C00579E10 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

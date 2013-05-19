@@ -11,7 +11,7 @@
 #import "SettingKeys.h"
 #import "StandardUserSettings.h"
 #import "SwitchCell.h"
-#import "AuthViewController.h";
+#import "AuthViewController.h"
 
 
 @interface TIstoryConnectionViewController : UIViewController

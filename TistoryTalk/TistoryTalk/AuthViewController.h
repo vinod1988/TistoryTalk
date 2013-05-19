@@ -18,6 +18,7 @@
 }
 
 @property(nonatomic, strong) IBOutlet UIWebView *authWebView;
+@property(nonatomic, strong) IBOutlet UINavigationBar *authNavBar; 
 -(IBAction)cancel:(id)sender;
 
 @end

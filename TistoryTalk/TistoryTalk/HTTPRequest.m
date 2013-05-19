@@ -86,11 +86,12 @@
 {
 	// 데이터 전송이 끝났을 때 호출되는 메서드, 전송받은 데이터를 NSString형태로 변환한다.
 	result = [[NSString alloc] initWithData:receivedData encoding:NSUTF8StringEncoding];
-	
+ 
 	// 델리게이트가 설정되어있다면 실행한다.
 	if(target)
-	{
+	{ 
 		[target performSelector:selector withObject:result];
+   
 	}
 }
 

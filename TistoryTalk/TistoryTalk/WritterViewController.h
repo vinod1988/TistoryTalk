@@ -11,20 +11,20 @@
 #import "TagManager.h"
 #import "PostingViewController.h"
 #import "PopoverView.h"
+#import "BlogPostingCell.h"
+#import "NSDateUtils.h"
+#import "TistoryHtmlTagManager.h"
 
 @interface WritterViewController : UIViewController
-<PopoverViewDelegate>
+<PopoverViewDelegate, UITableViewDataSource, UITableViewDelegate>
 {
-    bool isWritingFile;
     NSArray *menuStrArr;
-    
-    IBOutlet UIWebView *webView;
-    IBOutlet UILabel *noBlogData; 
+    NSMutableArray *postingIndexArr;
+    NSMutableArray  *selectedIndexPathArr;
     
 }
-@property(nonatomic, strong) IBOutlet UIWebView *webView;
-@property(nonatomic, strong) IBOutlet UILabel *noBlogData;
-@property bool isWritingFile;
+
+@property(nonatomic, strong) IBOutlet UITableView *savedBlogDataTableView;
 
 -(IBAction)showMenu:(id)sender;
 

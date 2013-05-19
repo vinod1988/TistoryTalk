@@ -9,191 +9,116 @@
 #import "MessengerViewController.h"
 
 
+
 @interface MessengerViewController ()
 
 @end
 
 @implementation MessengerViewController
-@synthesize searchToolbar, mainView, currentMainView;
-@synthesize leftButton, rightButton, titleLabel;
+@synthesize searchToolbar;
+@synthesize closeButton, editButton, titleLabel, bubbleTableView;
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+
+-(id)initWithFile:(NSString*)fileName
 {
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
+    if ( self = [super init] )
+    {
+        loadFileName = fileName;
         
-        // SearchBar Setting
-        searchToolbar = [[SearchToolBar alloc]initWithFrame:CGRectMake(0, 416, 320, 44)];
-        searchToolbar.searchTextField.delegate = self;
-        
-        [self.view addSubview:searchToolbar];
-        
-        // register for keyboard notifications
-        
-        [[NSNotificationCenter defaultCenter] addObserver:self
-         
-                                                 selector:@selector(keyboardWillShow)
-         
-                                                     name:UIKeyboardWillShowNotification
-         
-                                                   object:nil];
-        
-        
-        
-        [[NSNotificationCenter defaultCenter] addObserver:self
-         
-                                                 selector:@selector(keyboardWillHide)
-         
-                                                     name:UIKeyboardWillHideNotification
-         
-                                                   object:nil];
-        
-        
-        // BubbleData Setting
-        
-        bubbleData = [[NSMutableArray alloc] init];
-        
-        
-        DataManager *dm = [DataManager singleTon_GetInstance];
-        
-        NSMutableArray * blogDataFromFile = [dm getDataFromFile:@"tempBlogData"];
-        
-        
-        if(blogDataFromFile.count>0)
+        if(loadFileName !=nil)
         {
-            for(int i=0; i<blogDataFromFile.count; i++)
-            {
-                NSString *json = [blogDataFromFile objectAtIndex:i];
-                
-                NSDictionary *dictFromJson = [json objectFromJSONString];
-                
-                NSString *text = [dictFromJson objectForKey:@"text"];
-                if(text.length>0)
-                {
-                    
-                    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-                    [dateFormatter setDateFormat:@"yyyyMMdd:hh:mm:ss"];
-                    NSDate *dateFromString = [[NSDate alloc] init];
-                    dateFromString = [dateFormatter dateFromString:[dictFromJson objectForKey:@"date"]];
-                    
-                    NSInteger type = [[dictFromJson objectForKey:@"type"] intValue];
-                    
-                    
-                    NSBubbleData *textBubble = [NSBubbleData dataWithText:text date:dateFromString type:type];
-                    textBubble.avatar = nil;
-                    [bubbleData addObject:textBubble];
-                    
-                }
-                
-                NSString *imageUrl =[dictFromJson objectForKey:@"imgUrl"];
-                if(imageUrl.length>0)
-                {
-                    //                    NSBubbleData *photoBubble = [NSBubbleData dataWithImage:[UIImage imageNamed:@"halloween.jpg"] date:[NSDate dateWithTimeIntervalSinceNow:-290] type:BubbleTypeSomeoneElse];
-                    //                    photoBubble.avatar = [UIImage imageNamed:@"avatar1.png"];
-                    //
-                    //                    totalHTMLString = [totalHTMLString stringByAppendingString:[self addTagAtImage:imageUrl]];
-                }
-                
-            }
-            
+            DataManager *dm = [DataManager singleTon_GetInstance];
+            posting = [dm loadPostingFromFile:loadFileName];
+        }
+        else
+        {
+            posting = [[NSPosting alloc]init];
         }
         
-        
-        // BubbleTableView Setting
-        
-        bubbleTableView.bubbleDataSource = self;
-        bubbleTableView.snapInterval = 120;
-        bubbleTableView.showAvatars = NO;
-        bubbleTableView.typingBubble = NSBubbleTypingTypeMe;
-        
-        
-        
-        // add gesture
-        
-        UITapGestureRecognizer *doubleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didDoubleTap:)];
-        doubleTap.numberOfTapsRequired = 2;
-        [bubbleTableView addGestureRecognizer:doubleTap];
-        
-        UISwipeGestureRecognizer *leftSwipegesture = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(didLeftSwipe:)];
-        leftSwipegesture.direction = UISwipeGestureRecognizerDirectionLeft;
-        [bubbleTableView addGestureRecognizer:leftSwipegesture];
-        
-        UISwipeGestureRecognizer *rigthSwipegesture = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(didRightSwipe:)];
-        rigthSwipegesture.direction = UISwipeGestureRecognizerDirectionRight;
-        [bubbleTableView addGestureRecognizer:rigthSwipegesture];
-        
-        //Sub Modules
-        
-        searchModuleView = [[SearchModuleView alloc]initWithFrame:CGRectMake(-320,44, 320, 480-44)];
-        [self.view addSubview:searchModuleView];
-        
-        mapModuleView = [[MapModuleView alloc]initWithFrame:CGRectMake(320, 44, 320,  480-44)];
-        [self.view addSubview:mapModuleView];
-        
-        
-        
-        currentMainView = MainView;
-        prevNSBubbleTypingType = 1; //init
-        
-        
-        
-        
         [bubbleTableView reloadData];
+        
         
     }
     return self;
 }
 
 
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+{
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    if (self)
+    { 
+        
+        // SearchBar Setting
+        [self initSearchBar];
+        
+        
+        // BubbleTableView Setting
+        [self initBubbleTableView];
+        
+        
+        // add gesture
+        [self addGestures];
+        
+        
+        [[UIBarButtonItem appearance] setTintColor:[UIColor colorWithRed:0/255.0 green:102/255.0 blue:153/255.0 alpha:1.0]];
+        
+        
+        
+    }
+    return self;
+}
+
+-(void)initSearchBar
+{//검색창에 대한 기본 설정
+    searchToolbar = [[SearchToolBar alloc]initWithFrame:CGRectMake(0, 505, 320, 44)];
+    searchToolbar.searchTextField.delegate = self;
+    [self.view addSubview:searchToolbar];
+}
+
+-(void)initBubbleTableView
+{//bubbleTableView에 대한 기본 설정
+    bubbleTableView.bubbleDataSource = self;
+    bubbleTableView.snapInterval = 120;
+    bubbleTableView.showAvatars = NO;
+    bubbleTableView.typingBubble = NSBubbleTypingTypeMe;
+}
+
+-(void)addGestures
+{//현재 범위에서 국한된 모든 제스처에 대한 등록
+    
+    UITapGestureRecognizer *doubleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didDoubleTap:)];
+    doubleTap.numberOfTapsRequired = 2;
+    [bubbleTableView addGestureRecognizer:doubleTap];
+    
+}
+
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
-    
     [self registerNotificationCenter];
     
     
 }
 
-
-
 -(void)registerNotificationCenter
 {
     NSNotificationCenter *nc = [NSNotificationCenter defaultCenter];
     [nc addObserver:self selector:@selector(changeBubble:) name:@"CHANGE_BUBBLE" object:nil];
-    [nc addObserver:self selector:@selector(closeMapModule:) name:@"MAPMODULE_CLOSE" object:nil];
     [nc addObserver:self selector:@selector(removeIndex:) name:@"REMOVE_INDEX" object:nil];
     
-}
-
--(void) removeIndex:(NSNotification *)noti
-{
-    NSIndexPath *removeIndexPath=  [noti.userInfo objectForKey:@"removeIndex"];
-    [bubbleData removeObjectAtIndex:removeIndexPath.row];
-    [bubbleTableView reloadData];
     
-}
-
--(void) closeMapModule:(NSNotification *)noti
-{
+    // register for keyboard notifications
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(keyboardWillShow)
+                                                 name:UIKeyboardWillShowNotification
+                                               object:nil];
     
-    
-}
-
--(void) changeBubble:(NSNotification *)noti
-{
-    NSIndexPath *fromIndexPath =  [noti.userInfo objectForKey:@"fromIndexPath"];
-    NSIndexPath *toIndexPath =  [noti.userInfo objectForKey:@"toIndexPath"];
-    
-    
-    NSBubbleData *temp  = [bubbleData objectAtIndex:fromIndexPath.row];
-    
-    [bubbleData removeObjectAtIndex:fromIndexPath.row];
-    [bubbleData insertObject:temp atIndex:toIndexPath.row];
-    
-    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(keyboardWillHide)
+                                                 name:UIKeyboardWillHideNotification
+                                               object:nil];
     
 }
 
@@ -206,41 +131,39 @@
 
 
 
-#pragma mark gesture method
+#pragma mark Notification Handler
+
+-(void) removeIndex:(NSNotification *)noti
+{
+    NSIndexPath *removeIndexPath=  [noti.userInfo objectForKey:@"removeIndex"];
+    [posting removeObjectAtIndex:removeIndexPath.row];
+    [bubbleTableView reloadData];
+    
+}
+
+-(void) changeBubble:(NSNotification *)noti
+{
+    NSIndexPath *fromIndexPath =  [noti.userInfo objectForKey:@"fromIndexPath"];
+    NSIndexPath *toIndexPath =  [noti.userInfo objectForKey:@"toIndexPath"];
+    
+    
+    NSObject *temp  = [posting getDataAtIndex:fromIndexPath.row];
+    
+    [posting removeObjectAtIndex:fromIndexPath.row];
+    [posting insertObject:temp atIndex:toIndexPath.row];
+    
+}
+
+
+
+#pragma mark gesture handler
 
 -(void)didDoubleTap:(UIGestureRecognizer *)gestureRecognizer
 {
-    
     [searchToolbar.searchTextField resignFirstResponder];
 }
 
 
--(void)didLeftSwipe:(UIGestureRecognizer *)gestureRecognizer
-{
-    
-    
-    [UIView beginAnimations:nil context:NULL];
-    [UIView setAnimationDuration:0.2];
-    
-    mapModuleView.frame = CGRectMake(0,mapModuleView.frame.origin.y, mapModuleView.frame.size.width, mapModuleView.frame.size.height);
-    
-    [UIView commitAnimations];
-    
-}
-
-
--(void)didRightSwipe:(UIGestureRecognizer *)gestureRecognizer
-{
-    [UIView beginAnimations:nil context:NULL];
-    [UIView setAnimationDuration:0.2];
-    // mainView.frame = CGRectMake(280,mainView.frame.origin.y, mainView.frame.size.width, mainView.frame.size.height);
-    searchModuleView.frame = CGRectMake(0,searchModuleView.frame.origin.y, searchModuleView.frame.size.width, searchModuleView.frame.size.height);
-    
-    [UIView commitAnimations];
-    
-    
-    
-}
 
 
 
@@ -248,13 +171,26 @@
 
 - (NSInteger)rowsForBubbleTable:(UIBubbleTableView *)tableView
 {
-    
-    return [bubbleData count];
+    return [posting getDataCount];
 }
 
 - (NSBubbleData *)bubbleTableView:(UIBubbleTableView *)tableView dataForRow:(NSInteger)row
 {
-    return [bubbleData objectAtIndex:row];
+    int currentNSBubbleTypingType = BubbleTypeSomeoneElse;
+    
+    if(prevNSBubbleTypingType == BubbleTypeSomeoneElse)
+        currentNSBubbleTypingType = BubbleTypeMine;
+    else
+        currentNSBubbleTypingType = BubbleTypeSomeoneElse;
+    
+    NSString *textPosting = (NSString*)[posting getDataAtIndex:row];
+    
+    NSBubbleData *sayBubble = [NSBubbleData dataWithText:textPosting date:[NSDate dateWithTimeIntervalSinceNow:0] type:currentNSBubbleTypingType];
+    sayBubble.avatar = nil;
+    
+    prevNSBubbleTypingType = currentNSBubbleTypingType;
+    
+    return sayBubble;
 }
 
 
@@ -266,11 +202,10 @@
     //move keyboard up
     [UIView beginAnimations:nil context:NULL];
     [UIView setAnimationDuration:0.2];
-    self.searchToolbar.frame = CGRectMake(0, 200, 320, 44);
+    self.searchToolbar.frame = CGRectMake(0, 285, 320, 44); //검색창 위로 이동
     [UIView commitAnimations];
     
-    //
-    bubbleTableView.frame = CGRectMake(0, bubbleTableView.frame.origin.y, 320,157);
+    bubbleTableView.frame = CGRectMake(0, bubbleTableView.frame.origin.y, 320,284-44);
     
 }
 -(void) keyboardWillHide
@@ -279,66 +214,77 @@
     //move keyboard down
     [UIView beginAnimations:nil context:NULL];
     [UIView setAnimationDuration:0.2];
-    self.searchToolbar.frame = CGRectMake(0, 416, 320, 44);
+    self.searchToolbar.frame = CGRectMake(0, 505, 320, 44); //검색창 아래로 이동
     [UIView commitAnimations];
     
-    //
     bubbleTableView.frame = CGRectMake(0, bubbleTableView.frame.origin.y, 320,480-44-searchToolbar.frame.size.height);
     
 }
 
 
-#pragma mark alter action
-
+#pragma mark UIAlterview action
 
 - (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex
 {
     
-    
     //경고창의 타이틀을 비교해서 경고창을 구별한다.
     if ( [[alertView title] isEqualToString:@"저장할까요?"])
 	{
-        
         if(buttonIndex==0)
-        {
-            //save file using json
+        {//저장,
             
-            NSMutableArray *savedJsonString = [[NSMutableArray alloc]init];
-            for(int i =0;i<bubbleData.count; i++)
-            {
-                NSBubbleData *bbData = [bubbleData objectAtIndex:i];
-                [savedJsonString addObject:[bbData toJson]];
-            }
-            
-            
+            NSString* fileName =@"";
             DataManager *dm = [DataManager singleTon_GetInstance];
-            [dm saveDataToFile:savedJsonString filename:@"tempBlogData"];
+            
+            if(loadFileName== nil)
+            {
+                //제일 첫 데이터를 tempTitle로 지정한다.
+                [posting setTempTitle:(NSString*)[posting getDataAtIndex:0]];
+                
+                //랜덤문자열로 파일 이름을 만든다. (확자자 미포함)
+                fileName = [NSMD5Utils md5: [posting getRandomString]];
+                
+                //save file
+                [dm savePostingToFile:posting filename:fileName];
+                
+                //posting index
+                NSPostingIndex *postingIndex = [[NSPostingIndex alloc]init];
+                [postingIndex setFileName:fileName];
+                [postingIndex setTempTitle: [posting getTempTitle]];
+                [postingIndex setCreateDate: [posting getCreateDate]];
+                
+                //notify
+                NSNotificationCenter *nc = [NSNotificationCenter defaultCenter];
+                [nc postNotificationName:@"NOTIFY_SAVE_POSTING" object:postingIndex userInfo:nil];
+                
+                
+            }
+            else
+            {//이미 저장된 파일을 연 경우, 그 파일에 저장해야 한다.
+                fileName = loadFileName;
+                //save file
+                [dm savePostingToFile:posting filename:fileName];
+                
+            }
         }
         else
-        {
-            [bubbleData removeAllObjects];
+        {//저장하지 않으면, 모든 데이터를 버린다.
+            [posting removeAllObjects];
         }
         
         [self dismissViewControllerAnimated:YES completion:nil];
-        
 	}
-	
-    
-	
 }
 
 
 
 #pragma mark toolbar action
-
--(IBAction)leftBtnClicked
+-(IBAction)closeBtnClicked
 {
-    
-    if(bubbleData.count >0)
+    if([posting getDataCount] >0)
     {
         UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"저장할까요?" message:@"임시로 앱내에 저장됩니다." delegate:self cancelButtonTitle:@"예" otherButtonTitles:@"아니오", nil];
         alert.delegate = self;
-        
         [alert show];
         
     }
@@ -349,28 +295,24 @@
     
 }
 
--(IBAction)rightBtnClicked
+-(IBAction)editBtnClicked
 {
     
     if(bubbleTableView.isEditing==YES)
     {
         [bubbleTableView setEditing:NO];
-        rightButton.title = @"편집";
+        closeButton.title = @"편집";
     }
     else
     {
-        if(bubbleData.count >0)
+        if([posting getDataCount] >0)
         {
             [bubbleTableView setEditing:YES];
-            
-            rightButton.title = @"완료";
-            rightButton.tintColor = [UIColor colorWithRed:47.0/255.0 green:155.0/255.0 blue:203.0/255.0 alpha:1.0];
-            
-            
+            closeButton.title = @"완료";
+            closeButton.tintColor = [UIColor colorWithRed:47.0/255.0 green:155.0/255.0 blue:203.0/255.0 alpha:1.0];
         }
         else
         {
-            
             UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"데이터가 없습니다." message:@"" delegate:self cancelButtonTitle:@"확인" otherButtonTitles:nil, nil];
             [alert show];
         }
@@ -379,42 +321,43 @@
 }
 
 
+#pragma mark Keyboard delegate
+
 -(BOOL)textFieldShouldReturn:(UITextField *)textField
 {//키보드 엔터 delegate
     
     if(textField.text.length != 0)
     {
+        /*
+         int currentNSBubbleTypingType = 0;
+         
+         if(prevNSBubbleTypingType == BubbleTypeSomeoneElse)
+         currentNSBubbleTypingType = BubbleTypeMine;
+         else
+         currentNSBubbleTypingType = BubbleTypeSomeoneElse;
+         
+         
+         NSBubbleData *sayBubble = [NSBubbleData dataWithText:textField.text date:[NSDate dateWithTimeIntervalSinceNow:0] type:currentNSBubbleTypingType];
+         sayBubble.avatar = nil;
+         [bubbleDataArr addObject:sayBubble];
+         
+         textField.text = @"";
+         prevNSBubbleTypingType = currentNSBubbleTypingType;
+         */
         
-        int currentNSBubbleTypingType = 0;
-        
-        if(prevNSBubbleTypingType == BubbleTypeSomeoneElse)
-        {
-            currentNSBubbleTypingType = BubbleTypeMine;
-        }else
-        {
-            currentNSBubbleTypingType = BubbleTypeSomeoneElse;
-        }
-        
-        NSBubbleData *sayBubble = [NSBubbleData dataWithText:textField.text date:[NSDate dateWithTimeIntervalSinceNow:0] type:currentNSBubbleTypingType];
-        sayBubble.avatar = nil;
-        [bubbleData addObject:sayBubble];
-        
+        [posting addData:textField.text];
         textField.text = @"";
-        prevNSBubbleTypingType = currentNSBubbleTypingType;
-        
-        
+        prevNSBubbleTypingType = 1;
         [bubbleTableView reloadData];
     }
     else
     {
-        
         UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"입력해주세요" message:@"" delegate:self cancelButtonTitle:@"확인" otherButtonTitles:nil, nil];
         [alert show];
         
     }
     
     return true;
-    
 }
 
 @end

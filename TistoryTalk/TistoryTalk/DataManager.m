@@ -48,21 +48,72 @@ static DataManager * singleTon = nil;
     NSArray * paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
 	
 	NSString * document_dic = [paths objectAtIndex:0];
-    
 	NSString * path = [document_dic stringByAppendingFormat:@"/%@.plist", fileName];
-  //  NSLog(@"%@", path);
-    
 	return path;
 }
 
-
--(void)saveDataToFile:(NSMutableArray*) dataCollection filename:(NSString*)fileName
-{
+-(void)savePostingIndexToFile:(NSMutableArray*)dataCollection filename:(NSString *)fileName
+{//NSMutalbeArray[NSPostingIndex] 객체 저장을 위함 함수
     
- 	NSString *savedDestPath = [self getFilePath:fileName];
- 
-	[dataCollection writeToFile:savedDestPath  atomically:YES];
+    NSString *savedDestPath = [self getFilePath:fileName];
+    
+    NSMutableData *data = [[NSMutableData alloc] init];
+    NSKeyedArchiver *archiver = [[NSKeyedArchiver alloc] initForWritingWithMutableData:data];
+    
+    [archiver encodeObject:dataCollection forKey:@"posting_index"];
+    [archiver finishEncoding];
+    
+    [data writeToFile:savedDestPath atomically:YES];
 }
+
+
+-(void)savePostingToFile:(NSPosting*)dataCollection filename:(NSString *)fileName
+{//NSPosting 객체 저장을 위한 함수
+    
+    NSString *savedDestPath = [self getFilePath:fileName];
+    
+    NSMutableData *data = [[NSMutableData alloc] init];
+    NSKeyedArchiver *archiver = [[NSKeyedArchiver alloc] initForWritingWithMutableData:data];
+    
+    [archiver encodeObject:dataCollection forKey:@"posting"];
+    [archiver finishEncoding];
+    
+    [data writeToFile:savedDestPath atomically:YES];
+}
+
+
+-(NSMutableArray*)loadPostingIndexFromFile:(NSString*)fileName
+{//파일에서 NSMutalbeArray[NSPostingIndex] 객체 로드를 위한 함수
+    
+    NSData *data = [[NSMutableData alloc] initWithContentsOfFile:[self getFilePath:fileName] ];
+    
+    NSKeyedUnarchiver *unarchiver = [[NSKeyedUnarchiver alloc] initForReadingWithData:data];
+    NSMutableArray *dataCollection = [unarchiver decodeObjectForKey:@"posting_index"];
+    [unarchiver finishDecoding];
+    
+    return dataCollection;
+}
+    
+-(NSPosting*)loadPostingFromFile:(NSString*)fileName
+{//파일에서 NSPosting 객체 로드를 위한 함수
+    
+    NSData *data = [[NSMutableData alloc] initWithContentsOfFile:[self getFilePath:fileName] ];
+    
+    NSKeyedUnarchiver *unarchiver = [[NSKeyedUnarchiver alloc] initForReadingWithData:data];
+    NSPosting *dataCollection = (NSPosting*)[unarchiver decodeObjectForKey:@"posting"];
+    [unarchiver finishDecoding];
+    
+    return dataCollection;
+}
+
+
+-(void)deleteFile:(NSString*)fileName
+{
+    NSFileManager *nsf =[[NSFileManager alloc]init];
+    [nsf removeItemAtPath:[self getFilePath:fileName]  error:nil];
+}
+
+
 
 -(NSMutableArray*) getDataFromFile:(NSString*)fileName
 {

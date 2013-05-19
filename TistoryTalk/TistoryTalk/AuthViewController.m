@@ -20,7 +20,7 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
-        
+        [[UIBarButtonItem appearance] setTintColor:[UIColor colorWithRed:157/255.0 green:46/255.0 blue:36/255.0 alpha:1.0]];
         
     }
     return self;
@@ -31,8 +31,7 @@
     [super viewDidLoad];
     
     
-    self.navigationItem.leftBarButtonItem.tintColor
-    =[UIColor colorWithRed:154.0/255.0 green:45.0/255.0 blue:36.0/255.0 alpha:1.0];
+    [self.authNavBar setBackgroundImage:[UIImage imageNamed:@"red-menuBar"] forBarMetrics:UIBarMetricsDefault];
     
     
     NSURL* urlObj = [[NSURL alloc] initWithString:@"https://www.tistory.com/oauth/authorize?client_id=76f30e50a21087cd8581813762365396&redirect_uri=http://indf.net&response_type=token"];
@@ -76,10 +75,7 @@
             MyBlogApi *myBlogApi = [[MyBlogApi alloc]init];
             NSString *basicBlogUrl = [myBlogApi getMyBasicBlogUrl];
             [StandardUserSettings setValue:MY_BLOG_ADDR value:basicBlogUrl];
-            
-            NSLog(@"accessToken : %@", accessToken);
-            NSLog(@"basicBlogUrl : %@", basicBlogUrl);
-            
+              
             
             [nc postNotificationName:@"NOTIFY_LOGIN" object:nil userInfo:nil];
         }
@@ -90,9 +86,6 @@
 
 -(IBAction)cancel:(id)sender
 {
-//    NSNotificationCenter *nc = [NSNotificationCenter defaultCenter];
-//    [nc postNotificationName:@"NOTIFY_LOGOUT" object:nil userInfo:nil];
-
     [self dismissViewControllerAnimated:YES completion:nil];
     
 }

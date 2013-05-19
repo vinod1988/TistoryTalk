@@ -124,19 +124,14 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    int sectionCount = 1;// [self.bubbleSection count];
-    NSLog(@"SECIONT : %d" ,sectionCount);
+    int sectionCount = 1;
     return sectionCount;
     
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-    
-    int rowCount = [self.bubbleSection count];
-    
-    NSLog(@"%d", rowCount);
-    
+{ 
+    int rowCount = [self.bubbleSection count]; 
     return rowCount;
 }
 
@@ -155,7 +150,14 @@
     NSBubbleData *data = [self.bubbleSection objectAtIndex:indexPath.row];
     
     
-    if (cell == nil) cell = [[UIBubbleTableViewCell alloc] init];
+    if (cell == nil)
+    {
+       //cell = [[UIBubbleTableViewCell alloc] init];
+        cell = [[UIBubbleTableViewCell alloc]
+                initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId];
+    
+    }
+    
     
     cell.data = data;
     

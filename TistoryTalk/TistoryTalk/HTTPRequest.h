@@ -14,7 +14,7 @@
 	NSMutableData *receivedData;
 	NSURLResponse *response;
 	NSString *result;
-	id __weak target;
+	id  target;
 	SEL selector;
 }
 
@@ -28,7 +28,7 @@
 @property (nonatomic, strong) NSMutableData *receivedData;
 @property (nonatomic, strong) NSURLResponse *response;
 @property (nonatomic) NSString *result;
-@property (nonatomic, weak) id target;
+@property (nonatomic, strong) id target;
 @property (nonatomic, assign) SEL selector;
 
 @end
