@@ -16,7 +16,8 @@
 
 
 @interface MessengerViewController : UIViewController
-<UIBubbleTableViewDataSource, UITextFieldDelegate, UIAlertViewDelegate>
+<UIBubbleTableViewDataSource, UITextFieldDelegate, UIAlertViewDelegate, CMTextStylePickerViewControllerDelegate>
+
 {
     SearchToolBar* searchToolbar; 
     NSPosting *posting; 

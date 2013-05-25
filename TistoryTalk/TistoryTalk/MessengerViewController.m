@@ -107,6 +107,7 @@
     NSNotificationCenter *nc = [NSNotificationCenter defaultCenter];
     [nc addObserver:self selector:@selector(changeBubble:) name:@"CHANGE_BUBBLE" object:nil];
     [nc addObserver:self selector:@selector(removeIndex:) name:@"REMOVE_INDEX" object:nil];
+    [nc addObserver:self selector:@selector(showFontView:) name:@"SHOW_FONT_VIEW" object:nil];
     
     
     // register for keyboard notifications
@@ -130,8 +131,66 @@
 }
 
 
+#pragma mark -
+#pragma mark CMTextStylePickerViewControllerDelegate methods
 
+- (void)textStylePickerViewController:(CMTextStylePickerViewController *)textStylePickerViewController userSelectedFont:(UIFont *)font {
+	//mainTextView.font = font;
+}
+
+- (void)textStylePickerViewController:(CMTextStylePickerViewController *)textStylePickerViewController userSelectedTextColor:(UIColor *)textColor {
+	//mainTextView.textColor = textColor;
+}
+
+- (void)textStylePickerViewControllerSelectedCustomStyle:(CMTextStylePickerViewController *)textStylePickerViewController {
+	// Use custom text style
+	//mainTextView.font = textStylePickerViewController.selectedFont;
+	//mainTextView.textColor = textStylePickerViewController.selectedTextColour;
+}
+
+- (void)textStylePickerViewControllerSelectedDefaultStyle:(CMTextStylePickerViewController *)textStylePickerViewController {
+	// Use default text style
+	//mainTextView.font = self.defaultFont;
+	//mainTextView.textColor = self.defaultTextColor;
+}
+
+- (void)textStylePickerViewController:(CMTextStylePickerViewController *)textStylePickerViewController replaceDefaultStyleWithFont:(UIFont *)font textColor:(UIColor *)textColor {
+	//self.defaultFont = font;
+	//self.defaultTextColor = textColor;
+}
+
+- (void)textStylePickerViewControllerIsDone:(CMTextStylePickerViewController *)textStylePickerViewController {
+	[self dismissViewControllerAnimated:YES completion:nil];
+}
+
+
+#pragma mark -
 #pragma mark Notification Handler
+
+-(void) showFontView:(NSNotification *)noti
+{
+    NSLog(@"test");
+    CMTextStylePickerViewController *textStylePickerViewController = [CMTextStylePickerViewController textStylePickerViewController];
+    
+	textStylePickerViewController.delegate = self;
+    
+    
+    /*
+	textStylePickerViewController.selectedTextColour = mainTextView.textColor;
+	textStylePickerViewController.selectedFont = mainTextView.font;
+	if ([mainTextView.textColor isEqual:defaultTextColor] && [mainTextView.font isEqual:defaultFont]) {
+		textStylePickerViewController.defaultSettingsSwitchValue = YES;
+	}
+	else {
+		textStylePickerViewController.defaultSettingsSwitchValue = NO;
+	}
+	*/
+    
+	UINavigationController *actionsNavigationController = [[UINavigationController alloc] initWithRootViewController:textStylePickerViewController];
+    
+	[self presentModalViewController:actionsNavigationController animated:YES];
+
+}
 
 -(void) removeIndex:(NSNotification *)noti
 {
@@ -156,6 +215,7 @@
 
 
 
+#pragma mark -
 #pragma mark gesture handler
 
 -(void)didDoubleTap:(UIGestureRecognizer *)gestureRecognizer
@@ -241,7 +301,7 @@
                 //제일 첫 데이터를 tempTitle로 지정한다.
                 [posting setTempTitle:(NSString*)[posting getDataAtIndex:0]];
                 
-                //랜덤문자열로 파일 이름을 만든다. (확자자 미포함)
+                //랜덤문자열로 파일 이름을 만든다. (확장자 미포함)
                 fileName = [NSMD5Utils md5: [posting getRandomString]];
                 
                 //save file

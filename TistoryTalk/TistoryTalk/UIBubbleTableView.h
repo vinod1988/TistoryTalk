@@ -12,6 +12,7 @@
 
 #import "UIBubbleTableViewDataSource.h"
 #import "UIBubbleTableViewCell.h"
+#import "CMTextStylePickerViewController.h"
 
 typedef enum _NSBubbleTypingType
 {

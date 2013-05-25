@@ -151,11 +151,19 @@
     
     
     if (cell == nil)
-    {
-       //cell = [[UIBubbleTableViewCell alloc] init];
+    { 
         cell = [[UIBubbleTableViewCell alloc]
                 initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId];
     
+        
+        UILongPressGestureRecognizer *longPressGesture = [[UILongPressGestureRecognizer alloc]
+                                                           initWithTarget:self
+                                                           action:@selector(didLongTap:)
+                                                           ];
+        longPressGesture.minimumPressDuration = 1;
+         
+        [cell addGestureRecognizer:longPressGesture];
+      
     }
     
     
@@ -163,6 +171,19 @@
     
     return cell;
 }
+
+
+
+-(void)didLongTap:(UIGestureRecognizer *)gestureRecognizer
+{
+    if(gestureRecognizer.state == UIGestureRecognizerStateEnded)
+    {
+        NSNotificationCenter *nc = [NSNotificationCenter defaultCenter];
+        [nc postNotificationName:@"SHOW_FONT_VIEW" object:nil];
+    }
+    
+}
+
 
 
 // Determine whether a given row is eligible for reordering or not.

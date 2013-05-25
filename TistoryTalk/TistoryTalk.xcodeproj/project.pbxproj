@@ -87,6 +87,16 @@
 		7E5C683C1747891800B61234 /* CategoryInputViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7E5C683A1747891800B61234 /* CategoryInputViewController.xib */; };
 		7E5C684017480D9C00B61234 /* CategoryApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E5C683F17480D9C00B61234 /* CategoryApi.m */; };
 		7E5C684317481EB500B61234 /* CategoryInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E5C684217481EB500B61234 /* CategoryInfo.m */; };
+		7E5F18861750FC3900DDD3D6 /* CMColourBlockView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E5F18771750FC3900DDD3D6 /* CMColourBlockView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		7E5F18871750FC3900DDD3D6 /* CMColourSelectTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E5F18791750FC3900DDD3D6 /* CMColourSelectTableViewController.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		7E5F18881750FC3900DDD3D6 /* CMColourSelectTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7E5F187A1750FC3900DDD3D6 /* CMColourSelectTableViewController.xib */; };
+		7E5F18891750FC3900DDD3D6 /* CMFontSelectTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E5F187C1750FC3900DDD3D6 /* CMFontSelectTableViewController.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		7E5F188A1750FC3900DDD3D6 /* CMFontSelectTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7E5F187D1750FC3900DDD3D6 /* CMFontSelectTableViewController.xib */; };
+		7E5F188B1750FC3900DDD3D6 /* CMFontStyleSelectTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E5F187F1750FC3900DDD3D6 /* CMFontStyleSelectTableViewController.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		7E5F188C1750FC3900DDD3D6 /* CMFontStyleSelectTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7E5F18801750FC3900DDD3D6 /* CMFontStyleSelectTableViewController.xib */; };
+		7E5F188D1750FC3900DDD3D6 /* CMTextStylePickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E5F18821750FC3900DDD3D6 /* CMTextStylePickerViewController.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		7E5F188E1750FC3900DDD3D6 /* CMTextStylePickerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7E5F18831750FC3900DDD3D6 /* CMTextStylePickerViewController.xib */; };
+		7E5F188F1750FC3900DDD3D6 /* CMUpDownControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E5F18851750FC3900DDD3D6 /* CMUpDownControl.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		7E85EC581745A76E00926189 /* NSPosting.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E85EC571745A76E00926189 /* NSPosting.m */; };
 		7E85EC5C1745C2D600926189 /* NSMD5Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E85EC5B1745C2D600926189 /* NSMD5Utils.m */; };
 		7E85EC5F1745F84500926189 /* NSPostingIndex.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E85EC5E1745F84500926189 /* NSPostingIndex.m */; };
@@ -219,6 +229,22 @@
 		7E5C683F17480D9C00B61234 /* CategoryApi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryApi.m; sourceTree = "<group>"; };
 		7E5C684117481EB500B61234 /* CategoryInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryInfo.h; sourceTree = "<group>"; };
 		7E5C684217481EB500B61234 /* CategoryInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryInfo.m; sourceTree = "<group>"; };
+		7E5F18761750FC3900DDD3D6 /* CMColourBlockView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMColourBlockView.h; sourceTree = "<group>"; };
+		7E5F18771750FC3900DDD3D6 /* CMColourBlockView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMColourBlockView.m; sourceTree = "<group>"; };
+		7E5F18781750FC3900DDD3D6 /* CMColourSelectTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMColourSelectTableViewController.h; sourceTree = "<group>"; };
+		7E5F18791750FC3900DDD3D6 /* CMColourSelectTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMColourSelectTableViewController.m; sourceTree = "<group>"; };
+		7E5F187A1750FC3900DDD3D6 /* CMColourSelectTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CMColourSelectTableViewController.xib; sourceTree = "<group>"; };
+		7E5F187B1750FC3900DDD3D6 /* CMFontSelectTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMFontSelectTableViewController.h; sourceTree = "<group>"; };
+		7E5F187C1750FC3900DDD3D6 /* CMFontSelectTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMFontSelectTableViewController.m; sourceTree = "<group>"; };
+		7E5F187D1750FC3900DDD3D6 /* CMFontSelectTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CMFontSelectTableViewController.xib; sourceTree = "<group>"; };
+		7E5F187E1750FC3900DDD3D6 /* CMFontStyleSelectTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMFontStyleSelectTableViewController.h; sourceTree = "<group>"; };
+		7E5F187F1750FC3900DDD3D6 /* CMFontStyleSelectTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMFontStyleSelectTableViewController.m; sourceTree = "<group>"; };
+		7E5F18801750FC3900DDD3D6 /* CMFontStyleSelectTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CMFontStyleSelectTableViewController.xib; sourceTree = "<group>"; };
+		7E5F18811750FC3900DDD3D6 /* CMTextStylePickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMTextStylePickerViewController.h; sourceTree = "<group>"; };
+		7E5F18821750FC3900DDD3D6 /* CMTextStylePickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMTextStylePickerViewController.m; sourceTree = "<group>"; };
+		7E5F18831750FC3900DDD3D6 /* CMTextStylePickerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CMTextStylePickerViewController.xib; sourceTree = "<group>"; };
+		7E5F18841750FC3900DDD3D6 /* CMUpDownControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMUpDownControl.h; sourceTree = "<group>"; };
+		7E5F18851750FC3900DDD3D6 /* CMUpDownControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMUpDownControl.m; sourceTree = "<group>"; };
 		7E85EC561745A76D00926189 /* NSPosting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSPosting.h; sourceTree = "<group>"; };
 		7E85EC571745A76E00926189 /* NSPosting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSPosting.m; sourceTree = "<group>"; };
 		7E85EC5A1745C2D600926189 /* NSMD5Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSMD5Utils.h; sourceTree = "<group>"; };
@@ -380,6 +406,7 @@
 		7E0C8A481743DA0400579E10 /* Library */ = {
 			isa = PBXGroup;
 			children = (
+				7E5F18751750FC3900DDD3D6 /* CMTextStylePicker */,
 				7E85EC6417466A4F00926189 /* NSDateUtils.h */,
 				7E85EC6517466A5000926189 /* NSDateUtils.m */,
 				7E85EC591745C2BC00926189 /* MD5 */,
@@ -706,6 +733,29 @@
 			name = CategoryAPI;
 			sourceTree = "<group>";
 		};
+		7E5F18751750FC3900DDD3D6 /* CMTextStylePicker */ = {
+			isa = PBXGroup;
+			children = (
+				7E5F18761750FC3900DDD3D6 /* CMColourBlockView.h */,
+				7E5F18771750FC3900DDD3D6 /* CMColourBlockView.m */,
+				7E5F18781750FC3900DDD3D6 /* CMColourSelectTableViewController.h */,
+				7E5F18791750FC3900DDD3D6 /* CMColourSelectTableViewController.m */,
+				7E5F187A1750FC3900DDD3D6 /* CMColourSelectTableViewController.xib */,
+				7E5F187B1750FC3900DDD3D6 /* CMFontSelectTableViewController.h */,
+				7E5F187C1750FC3900DDD3D6 /* CMFontSelectTableViewController.m */,
+				7E5F187D1750FC3900DDD3D6 /* CMFontSelectTableViewController.xib */,
+				7E5F187E1750FC3900DDD3D6 /* CMFontStyleSelectTableViewController.h */,
+				7E5F187F1750FC3900DDD3D6 /* CMFontStyleSelectTableViewController.m */,
+				7E5F18801750FC3900DDD3D6 /* CMFontStyleSelectTableViewController.xib */,
+				7E5F18811750FC3900DDD3D6 /* CMTextStylePickerViewController.h */,
+				7E5F18821750FC3900DDD3D6 /* CMTextStylePickerViewController.m */,
+				7E5F18831750FC3900DDD3D6 /* CMTextStylePickerViewController.xib */,
+				7E5F18841750FC3900DDD3D6 /* CMUpDownControl.h */,
+				7E5F18851750FC3900DDD3D6 /* CMUpDownControl.m */,
+			);
+			path = CMTextStylePicker;
+			sourceTree = "<group>";
+		};
 		7E85EC551745A74C00926189 /* DataManager */ = {
 			isa = PBXGroup;
 			children = (
@@ -837,6 +887,10 @@
 				7E8F38471745118500E5B9AF /* hr.png in Resources */,
 				7E5C68371747882600B61234 /* TagInputViewController.xib in Resources */,
 				7E5C683C1747891800B61234 /* CategoryInputViewController.xib in Resources */,
+				7E5F18881750FC3900DDD3D6 /* CMColourSelectTableViewController.xib in Resources */,
+				7E5F188A1750FC3900DDD3D6 /* CMFontSelectTableViewController.xib in Resources */,
+				7E5F188C1750FC3900DDD3D6 /* CMFontStyleSelectTableViewController.xib in Resources */,
+				7E5F188E1750FC3900DDD3D6 /* CMTextStylePickerViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -890,6 +944,12 @@
 				7EDA35CA1748538E006CA470 /* NSPostingUpload.m in Sources */,
 				7EDA35D117486B2B006CA470 /* WriteApi.m in Sources */,
 				7EDA35D417487FFB006CA470 /* ApiUtils.m in Sources */,
+				7E5F18861750FC3900DDD3D6 /* CMColourBlockView.m in Sources */,
+				7E5F18871750FC3900DDD3D6 /* CMColourSelectTableViewController.m in Sources */,
+				7E5F18891750FC3900DDD3D6 /* CMFontSelectTableViewController.m in Sources */,
+				7E5F188B1750FC3900DDD3D6 /* CMFontStyleSelectTableViewController.m in Sources */,
+				7E5F188D1750FC3900DDD3D6 /* CMTextStylePickerViewController.m in Sources */,
+				7E5F188F1750FC3900DDD3D6 /* CMUpDownControl.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

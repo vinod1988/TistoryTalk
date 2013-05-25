@@ -17,7 +17,7 @@
     
     int week = [NSDateUtils getDayOfWeek:year month:month day:day];
     
-NSString* weekStr = @"월요일";
+    NSString* weekStr = @"월요일";
     
     switch (week) {
         case 0:
