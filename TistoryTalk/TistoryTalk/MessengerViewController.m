@@ -188,8 +188,9 @@
     
 	UINavigationController *actionsNavigationController = [[UINavigationController alloc] initWithRootViewController:textStylePickerViewController];
     
-	[self presentModalViewController:actionsNavigationController animated:YES];
-
+    actionsNavigationController.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal; //회전 
+    [self presentViewController:actionsNavigationController animated:YES completion:nil];
+    
 }
 
 -(void) removeIndex:(NSNotification *)noti
