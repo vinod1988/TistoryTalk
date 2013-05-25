@@ -52,7 +52,17 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-	self.fontFamilyNames = [[UIFont familyNames] sortedArrayUsingSelector:@selector(localizedCaseInsensitiveCompare:)];
+	//self.fontFamilyNames = [[UIFont familyNames] sortedArrayUsingSelector:@selector(localizedCaseInsensitiveCompare:)];
+    
+    self.fontFamilyNames = [[NSMutableArray alloc]init];
+    
+    [self.fontFamilyNames addObject:@"Arial"];
+    [self.fontFamilyNames addObject:@"Courier New"];
+    [self.fontFamilyNames addObject:@"Verdana"]; 
+    [self.fontFamilyNames addObject:@"Helvetica"];
+    [self.fontFamilyNames addObject:@"Time New Roman"]; 
+    
+    
 
 }
 

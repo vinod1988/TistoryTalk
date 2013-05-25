@@ -37,7 +37,7 @@
 
 @property (nonatomic, assign)	id<CMFontSelectTableViewControllerDelegate>	delegate;
 
-@property (nonatomic, retain)	NSArray				*fontFamilyNames;
+@property (nonatomic, retain)	NSMutableArray				*fontFamilyNames;
 @property (nonatomic, retain)	UIFont				*selectedFont;
 
 @end
