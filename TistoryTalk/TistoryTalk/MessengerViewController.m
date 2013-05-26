@@ -173,7 +173,15 @@
     CMTextStylePickerViewController *textStylePickerViewController = [CMTextStylePickerViewController textStylePickerViewController];
     
 	textStylePickerViewController.delegate = self;
+    NSIndexPath *selectedIndexPath = [noti.userInfo objectForKey:@"SELECTED_BUBBLE"];
     
+    NSString *text = (NSString*)[posting getDataAtIndex:selectedIndexPath.row];
+    
+    NSLog(@"selectedIndexPath : %@", selectedIndexPath);
+    
+    NSLog(@"TEXT : %@", text);
+    
+    textStylePickerViewController.selectedText = text;
     
     /*
 	textStylePickerViewController.selectedTextColour = mainTextView.textColor;

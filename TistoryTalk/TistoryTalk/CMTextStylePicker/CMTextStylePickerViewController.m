@@ -49,6 +49,7 @@
 @synthesize tableLayout, fontSizeControl;
 @synthesize sizeCell, colourCell, fontCell, defaultSettingsCell, applyAsDefaultCell, fontNameLabel, defaultSettingsSwitch;
 @synthesize colourView, doneButtonItem;
+@synthesize previewCell, previewTextField;
 
 + (CMTextStylePickerViewController *)textStylePickerViewController {
 	CMTextStylePickerViewController *textStylePickerViewController = [[CMTextStylePickerViewController alloc] initWithNibName:@"CMTextStylePickerViewController" bundle:nil];
@@ -149,7 +150,8 @@
 	CGFloat size = (CGFloat)control.value;
 	UIFont *textFont = [UIFont fontWithName:self.selectedFont.fontName size:size];
 	self.selectedFont = textFont;
-	
+	 self.previewTextField.font = textFont;
+    
 	[self notifyDelegateSelectedFontChanged];
 }
 
@@ -160,6 +162,7 @@
 - (void)colourSelectTableViewController:(CMColourSelectTableViewController *)colourSelectTableViewController didSelectColour:(UIColor *)colour {
 	self.selectedTextColour = colour;
 	self.colourView.colour = colour;	// Update the colour swatch
+     self.previewTextField.textColor= colour;
 	[self notifyDelegateSelectedTextColorChanged];
 }
 
@@ -170,6 +173,8 @@
 - (void)fontSelectTableViewController:(CMFontSelectTableViewController *)fontSelectTableViewController didSelectFont:(UIFont *)textFont {
 	self.selectedFont = textFont;
 	self.fontNameLabel.text = [textFont fontName];
+    self.previewTextField.font = textFont;
+    
 	[self notifyDelegateSelectedFontChanged];
 }
 
@@ -186,7 +191,11 @@
 	self.fontSizeControl.maximumAllowedValue = 72;
 	
 	[self updateFontColourSelections];
-	
+
+	self.previewTextField.frame = CGRectMake(10, 10, self.previewCell.frame.size.width-40, self.previewCell.frame.size.height-20);
+    self.previewTextField.userInteractionEnabled = NO; 
+    self.previewCell.backgroundColor = [UIColor whiteColor];
+ 
 	/* self.tableLayout = [NSArray arrayWithObjects:
 						[NSArray arrayWithObjects:
 						 self.defaultSettingsCell,
@@ -208,8 +217,11 @@
 						 self.sizeCell,
 						 self.fontCell,
 						 self.colourCell,
-						 nil], 
-						nil];
+						 nil],
+						[NSArray arrayWithObjects:
+						 self.previewCell, nil],
+                        
+                        nil];
     
     
     
@@ -226,11 +238,19 @@
 	}
 }
 
-/*
+
+
+- (void)setSelectedText:(NSString*)text
+{
+    selectedText = text;
+}
+
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+
+    previewTextField.text = selectedText; 
 }
-*/
+
 /*
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
@@ -422,6 +442,9 @@
 	self.fontNameLabel = nil;
 	self.fontSizeControl = nil;
 	self.sizeCell = nil;
+    self.previewCell = nil;
+    
+    
 }
 
 
@@ -439,6 +462,8 @@
 	[selectedFont release];
 	[sizeCell release];
 	[tableLayout release];
+    [previewCell release];
+    [selectedText release];
 	
     [super dealloc];
 }

@@ -129,6 +129,19 @@
     
 }
 
+
+//셀선택
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSNotificationCenter *nc = [NSNotificationCenter defaultCenter];
+    
+    NSMutableDictionary *userInfo = [[NSMutableDictionary alloc]init];
+    [userInfo setValue:indexPath forKey:@"SELECTED_BUBBLE"]; 
+
+    [nc postNotificationName:@"SHOW_FONT_VIEW" object:nil userInfo:userInfo];
+}
+
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 { 
     int rowCount = [self.bubbleSection count]; 
@@ -155,14 +168,7 @@
         cell = [[UIBubbleTableViewCell alloc]
                 initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId];
     
-        
-        UILongPressGestureRecognizer *longPressGesture = [[UILongPressGestureRecognizer alloc]
-                                                           initWithTarget:self
-                                                           action:@selector(didLongTap:)
-                                                           ];
-        longPressGesture.minimumPressDuration = 1;
-         
-        [cell addGestureRecognizer:longPressGesture];
+   
       
     }
     
@@ -173,16 +179,7 @@
 }
 
 
-
--(void)didLongTap:(UIGestureRecognizer *)gestureRecognizer
-{
-    if(gestureRecognizer.state == UIGestureRecognizerStateEnded)
-    {
-        NSNotificationCenter *nc = [NSNotificationCenter defaultCenter];
-        [nc postNotificationName:@"SHOW_FONT_VIEW" object:nil];
-    }
-    
-}
+ 
 
 
 
