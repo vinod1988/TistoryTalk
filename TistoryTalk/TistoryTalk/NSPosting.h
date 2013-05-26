@@ -19,6 +19,10 @@
     NSDate *createDate; //처음 만든 날짜.
     NSString *tempTitle; //임시 제목
     
+    // 폰트나 이미지 같은 포스팅 데이터에 대한 액세사리, 폰트같은.
+    // data와 1:1 매칭되어야 한다.
+    NSMutableArray *accessory;
+    
     /* 제목, 카테고리, 태그는 올릴때 지정할수 있게 한다.*/
     /* 로컬 저장시에는 저장할 필요가 없다. */ 
 }

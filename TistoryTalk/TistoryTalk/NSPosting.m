@@ -17,35 +17,36 @@
     if ( self = [super init] )
     {
         data = [[NSMutableArray alloc]init];
+        accessory = [[NSMutableArray alloc]init];
         createDate = [NSDate date];
         tempTitle = @"";
-    } 
+    }
     return self;
 }
 
 -(NSMutableArray*)getPostingData
-{
+{//포스팅 데이터 전체를 돌려준다. 
     return data;
 }
 
 -(void)setTempTitle:(NSString*)title
-{
+{//임시제목 세팅 
     tempTitle = title; 
 }
 
 -(NSString*)getTempTitle
-{
+{//임시제목 반환 
     return tempTitle;
 }
 
 
 -(NSDate*)getCreateDate
-{
+{//생성일 반환
     return createDate;
 }
 
 -(NSString*)getRandomString
-{
+{//랜덤 문자열 추출
     int r1 = arc4random() % [data count];
     int r2 = arc4random() % [data count];
     int r3 = arc4random() % [data count];
@@ -59,32 +60,32 @@
 
 
 -(void)insertObject:(NSObject*)obj atIndex:(NSUInteger)index
-{
+{//포스팅 데이터 넣기
     [data insertObject:obj atIndex:index];
 }
 
 -(void)addData:(NSObject*)obj
-{
+{//포스팅 데이터 추가
     [data addObject:obj];
 }
 
 -(void)removeObjectAtIndex:(int)index
-{
+{//포스팅 데이터 지우기
     [data removeObjectAtIndex:index];
 }
 
 -(void)removeAllObjects
-{
+{//포스팅 데이터 전체 지우기
     [data removeAllObjects];
 }
 
 -(NSObject*)getDataAtIndex:(int)index
-{
+{//특정 인덱스의 포스팅 데이터 가져오기
     return [data objectAtIndex:index];
 }
 
 -(int)getDataCount
-{
+{//포스팅 데이터 수 리턴
     return data.count; 
 }
 
