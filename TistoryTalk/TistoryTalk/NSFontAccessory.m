@@ -19,4 +19,25 @@
 }
 
 
+#pragma mark NSCoding
+// 인코딩. 인코딩시 인코더가 이 메소드를 호출한다.
+-(void) encodeWithCoder:(NSCoder *)aCoder
+{
+    [aCoder encodeObject:textColor  forKey:@"textColor"];
+    [aCoder encodeObject:textFont forKey:@"textFont"]; 
+    
+}
+
+// 디코딩. 디코딩시 디코더가 이 메소드를 호출한다.
+-(id) initWithCoder:(NSCoder *)aDecoder
+{
+    if (self = [super init])
+    {
+        textColor        = [aDecoder decodeObjectForKey:@"textColor"];
+        textFont  = [aDecoder decodeObjectForKey:@"textFont"]; 
+    }
+    
+    return self;
+}
+
 @end

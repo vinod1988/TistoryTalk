@@ -175,7 +175,7 @@
 	textStylePickerViewController.delegate = self;
     NSIndexPath *selectedIndexPath = [noti.userInfo objectForKey:@"SELECTED_BUBBLE"];
     
-    NSString *text = (NSString*)[posting getDataAtIndex:selectedIndexPath.row];
+    NSString *text = (NSString*)[posting getPostingDataAtIndex:selectedIndexPath.row];
     
     NSLog(@"selectedIndexPath : %@", selectedIndexPath);
     
@@ -204,7 +204,7 @@
 -(void) removeIndex:(NSNotification *)noti
 {
     NSIndexPath *removeIndexPath=  [noti.userInfo objectForKey:@"removeIndex"];
-    [posting removeObjectAtIndex:removeIndexPath.row];
+    [posting removePostingAtIndex:removeIndexPath.row];
     [bubbleTableView reloadData];
     
 }
@@ -215,10 +215,10 @@
     NSIndexPath *toIndexPath =  [noti.userInfo objectForKey:@"toIndexPath"];
     
     
-    NSObject *temp  = [posting getDataAtIndex:fromIndexPath.row];
+    NSObject *temp  = [posting getPostingDataAtIndex:fromIndexPath.row];
     
-    [posting removeObjectAtIndex:fromIndexPath.row];
-    [posting insertObject:temp atIndex:toIndexPath.row];
+    [posting removePostingAtIndex:fromIndexPath.row];
+    [posting insertPostingData:temp atIndex:toIndexPath.row];
     
 }
 
@@ -240,7 +240,7 @@
 
 - (NSInteger)rowsForBubbleTable:(UIBubbleTableView *)tableView
 {
-    return [posting getDataCount];
+    return [posting getPostingDataCount];
 }
 
 - (NSBubbleData *)bubbleTableView:(UIBubbleTableView *)tableView dataForRow:(NSInteger)row
@@ -252,7 +252,7 @@
     else
         currentNSBubbleTypingType = BubbleTypeSomeoneElse;
     
-    NSString *textPosting = (NSString*)[posting getDataAtIndex:row];
+    NSString *textPosting = (NSString*)[posting getPostingDataAtIndex:row];
     
     NSBubbleData *sayBubble = [NSBubbleData dataWithText:textPosting date:[NSDate dateWithTimeIntervalSinceNow:0] type:currentNSBubbleTypingType];
     sayBubble.avatar = nil;
@@ -308,7 +308,7 @@
             if(loadFileName== nil)
             {
                 //제일 첫 데이터를 tempTitle로 지정한다.
-                [posting setTempTitle:(NSString*)[posting getDataAtIndex:0]];
+                [posting setTempTitle:(NSString*)[posting getPostingDataAtIndex:0]];
                 
                 //랜덤문자열로 파일 이름을 만든다. (확장자 미포함)
                 fileName = [NSMD5Utils md5: [posting getRandomString]];
@@ -338,7 +338,7 @@
         }
         else
         {//저장하지 않으면, 모든 데이터를 버린다.
-            [posting removeAllObjects];
+            [posting removeAllPostings];
         }
         
         [self dismissViewControllerAnimated:YES completion:nil];
@@ -350,7 +350,7 @@
 #pragma mark toolbar action
 -(IBAction)closeBtnClicked
 {
-    if([posting getDataCount] >0)
+    if([posting getPostingDataCount] >0)
     {
         UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"저장할까요?" message:@"임시로 앱내에 저장됩니다." delegate:self cancelButtonTitle:@"예" otherButtonTitles:@"아니오", nil];
         alert.delegate = self;
@@ -374,7 +374,7 @@
     }
     else
     {
-        if([posting getDataCount] >0)
+        if([posting getPostingDataCount] >0)
         {
             [bubbleTableView setEditing:YES];
             editButton.title = @"완료";
@@ -397,7 +397,7 @@
     
     if(textField.text.length != 0)
     {
-        [posting addData:textField.text];
+        [posting addPostingData:textField.text];
         textField.text = @"";
         prevNSBubbleTypingType = 1;
         [bubbleTableView reloadData];

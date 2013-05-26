@@ -16,8 +16,8 @@
 {
     if ( self = [super init] )
     {
-        data = [[NSMutableArray alloc]init];
-        accessory = [[NSMutableArray alloc]init];
+        dataArr = [[NSMutableArray alloc]init];
+        accessoryArr = [[NSMutableArray alloc]init];
         createDate = [NSDate date];
         tempTitle = @"";
     }
@@ -25,17 +25,17 @@
 }
 
 -(NSMutableArray*)getPostingData
-{//포스팅 데이터 전체를 돌려준다. 
-    return data;
+{//포스팅 데이터 전체를 돌려준다.
+    return dataArr;
 }
 
 -(void)setTempTitle:(NSString*)title
-{//임시제목 세팅 
-    tempTitle = title; 
+{//임시제목 세팅
+    tempTitle = title;
 }
 
 -(NSString*)getTempTitle
-{//임시제목 반환 
+{//임시제목 반환
     return tempTitle;
 }
 
@@ -47,56 +47,89 @@
 
 -(NSString*)getRandomString
 {//랜덤 문자열 추출
-    int r1 = arc4random() % [data count];
-    int r2 = arc4random() % [data count];
-    int r3 = arc4random() % [data count];
+    int r1 = arc4random() % [dataArr count];
+    int r2 = arc4random() % [dataArr count];
+    int r3 = arc4random() % [dataArr count];
     
-    NSString *rStr1 = (NSString*)[data objectAtIndex:r1];
-    NSString *rStr2 = (NSString*)[data objectAtIndex:r2];
-    NSString *rStr3 = (NSString*)[data objectAtIndex:r3];
+    NSString *rStr1 = (NSString*)[dataArr objectAtIndex:r1];
+    NSString *rStr2 = (NSString*)[dataArr objectAtIndex:r2];
+    NSString *rStr3 = (NSString*)[dataArr objectAtIndex:r3];
     
     return [NSString stringWithFormat:@"%@%@%@", rStr1, rStr2, rStr3 ];
 }
 
 
--(void)insertObject:(NSObject*)obj atIndex:(NSUInteger)index
+-(void)insertPostingData:(NSObject*)obj atIndex:(NSUInteger)index
 {//포스팅 데이터 넣기
-    [data insertObject:obj atIndex:index];
+    [dataArr insertObject:obj atIndex:index];
 }
 
--(void)addData:(NSObject*)obj
+-(void)addPostingData:(NSObject*)obj
 {//포스팅 데이터 추가
-    [data addObject:obj];
+    [dataArr addObject:obj];
 }
 
--(void)removeObjectAtIndex:(int)index
+-(void)removePostingAtIndex:(int)index
 {//포스팅 데이터 지우기
-    [data removeObjectAtIndex:index];
+    [dataArr removeObjectAtIndex:index];
 }
 
--(void)removeAllObjects
+-(void)removeAllPostings
 {//포스팅 데이터 전체 지우기
-    [data removeAllObjects];
+    [dataArr removeAllObjects];
 }
 
--(NSObject*)getDataAtIndex:(int)index
+-(NSObject*)getPostingDataAtIndex:(int)index
 {//특정 인덱스의 포스팅 데이터 가져오기
-    return [data objectAtIndex:index];
+    return [dataArr objectAtIndex:index];
 }
 
--(int)getDataCount
+-(int)getPostingDataCount
 {//포스팅 데이터 수 리턴
-    return data.count; 
+    return dataArr.count;
 }
+
+
+
+-(void)addAccessory:(NSAccessory*)accessory
+{
+    [accessoryArr addObject:accessory];
+}
+
+-(void)removeAccessoryAtIndex:(int)index
+{
+    [accessoryArr removeObjectAtIndex:index];
+}
+
+-(void)removeAllAccessroy
+{
+    [accessoryArr removeAllObjects];
+}
+-(int)getAccessoryCount
+{
+    return accessoryArr.count;
+}
+
+-(NSMutableArray*)getAccessory
+{
+    return accessoryArr;
+}
+
+-(NSAccessory*)getAccessoryAtIndex:(int)index;
+{
+    return [accessoryArr objectAtIndex:index];
+}
+
+
 
 #pragma mark NSCoding
 // 인코딩. 인코딩시 인코더가 이 메소드를 호출한다.
 -(void) encodeWithCoder:(NSCoder *)aCoder
 {
-    [aCoder encodeObject:data  forKey:@"data"];
+    [aCoder encodeObject:dataArr  forKey:@"dataArr"];
     [aCoder encodeObject:createDate forKey:@"createDate"];
-    [aCoder encodeObject:tempTitle forKey:@"tempTitle"]; 
-     
+    [aCoder encodeObject:tempTitle forKey:@"tempTitle"];
+    [aCoder encodeObject:accessoryArr forKey:@"accessoryArr"];
     
     
 }
@@ -106,9 +139,10 @@
 {
     if (self = [super init])
     {
-        data        = [aDecoder decodeObjectForKey:@"data"];
+        dataArr        = [aDecoder decodeObjectForKey:@"dataArr"];
         createDate  = [aDecoder decodeObjectForKey:@"createDate"];
         tempTitle   = [aDecoder decodeObjectForKey:@"tempTitle"];
+        accessoryArr   = [aDecoder decodeObjectForKey:@"accessoryArr"];
     }
     
     return self;

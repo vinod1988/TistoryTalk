@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface NSPostingAccessory : NSObject
+@interface NSAccessory : NSObject
 
 -(void)decorate:(NSDictionary*)objects;
 

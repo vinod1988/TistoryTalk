@@ -6,8 +6,8 @@
 //  Copyright (c) 2013년 INDF. All rights reserved.
 //
 
-#import "NSPostingAccessory.h"
+#import "NSAccessory.h"
 
-@implementation NSPostingAccessory
+@implementation NSAccessory
 
 @end

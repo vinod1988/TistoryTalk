@@ -7,9 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "NSPostingAccessory.h"
+#import "NSAccessory.h"
 
-@interface NSFontAccessory : NSPostingAccessory
+@interface NSFontAccessory : NSAccessory
+<NSCoding>
 {
     UIColor *textColor;
     UIFont *textFont;
