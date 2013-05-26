@@ -48,5 +48,6 @@
 -(int)getAccessoryCount;
 -(NSMutableArray*)getAccessory;
 -(NSAccessory*)getAccessoryAtIndex:(int)index;
+-(void)insertAccessory:(NSObject*)obj atIndex:(NSUInteger)index;
 
 @end

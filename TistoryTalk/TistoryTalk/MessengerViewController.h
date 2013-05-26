@@ -13,6 +13,7 @@
 #import "NSPosting.h"
 #import "NSPostingIndex.h"
 #import "NSMD5Utils.h"
+#import "NSFontAccessory.h"
 
 
 @interface MessengerViewController : UIViewController

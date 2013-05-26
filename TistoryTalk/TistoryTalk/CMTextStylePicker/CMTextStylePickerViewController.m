@@ -248,7 +248,9 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
 
-    previewTextField.text = selectedText; 
+    previewTextField.text = selectedText;
+    previewTextField.font = selectedFont;
+    previewTextField.textColor = selectedTextColour;
 }
 
 /*

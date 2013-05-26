@@ -176,12 +176,15 @@
     NSIndexPath *selectedIndexPath = [noti.userInfo objectForKey:@"SELECTED_BUBBLE"];
     
     NSString *text = (NSString*)[posting getPostingDataAtIndex:selectedIndexPath.row];
+ 
+    NSFontAccessory *fontAccessory = (NSFontAccessory*)[posting getAccessoryAtIndex:selectedIndexPath.row];
     
-    NSLog(@"selectedIndexPath : %@", selectedIndexPath);
-    
-    NSLog(@"TEXT : %@", text);
     
     textStylePickerViewController.selectedText = text;
+    textStylePickerViewController.selectedFont = [fontAccessory getFont];
+    textStylePickerViewController.selectedTextColour = [fontAccessory getTextColor];
+    
+    
     
     /*
 	textStylePickerViewController.selectedTextColour = mainTextView.textColor;
@@ -205,6 +208,7 @@
 {
     NSIndexPath *removeIndexPath=  [noti.userInfo objectForKey:@"removeIndex"];
     [posting removePostingAtIndex:removeIndexPath.row];
+    [posting removeAccessoryAtIndex:removeIndexPath.row];
     [bubbleTableView reloadData];
     
 }
@@ -215,11 +219,14 @@
     NSIndexPath *toIndexPath =  [noti.userInfo objectForKey:@"toIndexPath"];
     
     
-    NSObject *temp  = [posting getPostingDataAtIndex:fromIndexPath.row];
+    NSObject *tempPosing  = [posting getPostingDataAtIndex:fromIndexPath.row];
+    NSAccessory *tempAccessory = [posting getAccessoryAtIndex:fromIndexPath.row];
     
     [posting removePostingAtIndex:fromIndexPath.row];
-    [posting insertPostingData:temp atIndex:toIndexPath.row];
+    [posting removeAccessoryAtIndex:fromIndexPath.row];
     
+    [posting insertPostingData:tempPosing atIndex:toIndexPath.row];
+    [posting insertAccessory:tempAccessory atIndex:toIndexPath.row];
 }
 
 
@@ -339,6 +346,7 @@
         else
         {//저장하지 않으면, 모든 데이터를 버린다.
             [posting removeAllPostings];
+            [posting removeAllAccessroy];
         }
         
         [self dismissViewControllerAnimated:YES completion:nil];
@@ -398,6 +406,18 @@
     if(textField.text.length != 0)
     {
         [posting addPostingData:textField.text];
+        
+        NSFontAccessory *fontAccessory
+        = [[NSFontAccessory alloc]init];
+        
+        [fontAccessory setFont:[UIFont systemFontOfSize:9.0f]];
+        [fontAccessory setTextColor:[UIColor blackColor]];
+        
+        [posting addAccessory:fontAccessory];
+        
+        
+        
+        
         textField.text = @"";
         prevNSBubbleTypingType = 1;
         [bubbleTableView reloadData];

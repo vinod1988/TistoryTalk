@@ -16,4 +16,9 @@
     UIFont *textFont;
 }
 
+-(UIFont*)getFont;
+-(UIColor*)getTextColor;
+-(void) setFont:(UIFont*)font;  
+
+-(void) setTextColor:(UIColor*)color;
 @end

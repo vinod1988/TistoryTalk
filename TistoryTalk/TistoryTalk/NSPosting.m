@@ -120,6 +120,11 @@
     return [accessoryArr objectAtIndex:index];
 }
 
+-(void)insertAccessory:(NSAccessory*)obj atIndex:(NSUInteger)index
+{
+    [accessoryArr insertObject:obj atIndex:index];
+}
+
 
 
 #pragma mark NSCoding

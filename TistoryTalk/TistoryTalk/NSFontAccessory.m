@@ -18,6 +18,25 @@
     textFont  = [objects objectForKey:@"TEXT_FONT"];
 }
 
+-(void) setFont:(UIFont*)font
+{
+    textFont = font;
+}
+
+-(void) setTextColor:(UIColor*)color
+{
+    textColor = color;
+}
+
+-(UIFont*)getFont
+{
+    return textFont;
+}
+
+-(UIColor*)getTextColor
+{
+    return textColor; 
+}
 
 #pragma mark NSCoding
 // 인코딩. 인코딩시 인코더가 이 메소드를 호출한다.
