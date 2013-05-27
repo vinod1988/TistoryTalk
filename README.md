@@ -25,9 +25,19 @@
 #Screen shots
 <br/>
 <p align = "center">
-    <img src="http://farm3.static.flickr.com/2874/8850143551_e10db0836b.jpg" width="100%" height="100%"/>
+    <img src="http://farm3.static.flickr.com/2874/8850143551_e10db0836b.jpg" />
     <br/>
     내 글 화면
+</p>
+<p align = "center">
+    <img src="http://farm3.static.flickr.com/2814/8850764906_b163702f59.jpg"/>
+    <br/>
+    태그입력 화면
+</p>
+<p align = "center">
+    <img src="http://farm8.static.flickr.com/7322/8850765922_f9f806beb3.jpg"/>
+    <br/>
+    카테고리 선택면
 </p>
 <p align = "center">
     <img src="http://farm4.static.flickr.com/3807/8850724426_0fcbb8a61f.jpg"/>
