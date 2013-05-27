@@ -11,10 +11,29 @@
 - sh84.ahn@indf.net, tost@naver.com
 - Daum DevDay 2013, INDF 자료(http://blog.indf.net/5)
 
+#Version
+### v0.4 Cream(ING) 
+- add font system.
+- add visibility. 
+- redesign myblog tab. 
+
+###v0.3 Plain
+- basic text input system. 
+- save multi posting. 
+- get category. 
 
 #Screen shots
 <br/>
 <p align = "center">
     <img src="http://farm8.static.flickr.com/7291/8741755989_d1ef704212.jpg"/>
+    티스토리 톡 화면
 </p>
+<p align = "center">
+    <img src="http://farm4.static.flickr.com/3807/8850724426_0fcbb8a61f.jpg"/>
+    폰트 화면
+</p>
+
+
+
+
  
