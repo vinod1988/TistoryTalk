@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "SettingKeys.h"
 #import "StandardUserSettings.h"
+#import "PostListApi.h"
 
 @interface MyBlogViewController : UIViewController
 {

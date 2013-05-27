@@ -11,10 +11,14 @@
 #import "StandardUserSettings.h"
 #import "JSONKit.h"
 #import "ApiUtils.h"
+#import "PostListInfo.h"
 
-@interface PostList : NSObject
+@interface PostListApi : NSObject
 {
     NSString* apiUrl;
     
 }
+
+-(NSMutableArray*)getDefaultPostList;
+-(NSMutableArray*)getPostList:(int)page count:(int)countPerPage categoryId:(NSString*)categoryId sort:(int)sort;
 @end
