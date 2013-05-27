@@ -25,11 +25,13 @@
 #Screen shots
 <br/>
 <p align = "center">
-    <img src="http://farm8.static.flickr.com/7291/8741755989_d1ef704212.jpg"/>
+    <img src="http://farm8.static.flickr.com/7291/8741755989_d1ef704212.jpg" width="100%" height="100%"/>
+    <br/>
     티스토리 톡 화면
 </p>
 <p align = "center">
     <img src="http://farm4.static.flickr.com/3807/8850724426_0fcbb8a61f.jpg"/>
+    <br/>
     폰트 화면
 </p>
 
