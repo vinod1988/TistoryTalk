@@ -104,6 +104,7 @@
 		7E85EC63174667EF00926189 /* BlogPostingCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E85EC62174667EF00926189 /* BlogPostingCell.m */; };
 		7E85EC6617466A5000926189 /* NSDateUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E85EC6517466A5000926189 /* NSDateUtils.m */; };
 		7E8F38471745118500E5B9AF /* hr.png in Resources */ = {isa = PBXBuildFile; fileRef = 7E8F38461745118500E5B9AF /* hr.png */; };
+		7EBE76231753929300C51C4F /* PostList.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EBE76221753929300C51C4F /* PostList.m */; };
 		7EDA35C717482283006CA470 /* CRTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EDA35C617482283006CA470 /* CRTableViewCell.m */; };
 		7EDA35CA1748538E006CA470 /* NSPostingUpload.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EDA35C91748538E006CA470 /* NSPostingUpload.m */; };
 		7EDA35D117486B2B006CA470 /* WriteApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EDA35D017486B2B006CA470 /* WriteApi.m */; };
@@ -259,6 +260,8 @@
 		7E85EC6417466A4F00926189 /* NSDateUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSDateUtils.h; sourceTree = "<group>"; };
 		7E85EC6517466A5000926189 /* NSDateUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSDateUtils.m; sourceTree = "<group>"; };
 		7E8F38461745118500E5B9AF /* hr.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hr.png; sourceTree = "<group>"; };
+		7EBE76211753929300C51C4F /* PostList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostList.h; sourceTree = "<group>"; };
+		7EBE76221753929300C51C4F /* PostList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PostList.m; sourceTree = "<group>"; };
 		7EDA35C517482283006CA470 /* CRTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRTableViewCell.h; sourceTree = "<group>"; };
 		7EDA35C617482283006CA470 /* CRTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRTableViewCell.m; sourceTree = "<group>"; };
 		7EDA35C81748538E006CA470 /* NSPostingUpload.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSPostingUpload.h; sourceTree = "<group>"; };
@@ -396,11 +399,11 @@
 		7E0C8A471743D9CC00579E10 /* TistoryAPI */ = {
 			isa = PBXGroup;
 			children = (
+				7EBE76201753927500C51C4F /* PostListApi */,
+				7EBE761F1753926700C51C4F /* Global */,
 				7EDA35CB174861A7006CA470 /* WriteAPI */,
 				7E5C683D17480CA900B61234 /* CategoryAPI */,
 				7E0C8A7B1743DEF200579E10 /* MyBlogAPI */,
-				7EDA35D217487FFB006CA470 /* ApiUtils.h */,
-				7EDA35D317487FFB006CA470 /* ApiUtils.m */,
 			);
 			name = TistoryAPI;
 			sourceTree = "<group>";
@@ -780,6 +783,24 @@
 			name = CustomCells;
 			sourceTree = "<group>";
 		};
+		7EBE761F1753926700C51C4F /* Global */ = {
+			isa = PBXGroup;
+			children = (
+				7EDA35D217487FFB006CA470 /* ApiUtils.h */,
+				7EDA35D317487FFB006CA470 /* ApiUtils.m */,
+			);
+			name = Global;
+			sourceTree = "<group>";
+		};
+		7EBE76201753927500C51C4F /* PostListApi */ = {
+			isa = PBXGroup;
+			children = (
+				7EBE76211753929300C51C4F /* PostList.h */,
+				7EBE76221753929300C51C4F /* PostList.m */,
+			);
+			name = PostListApi;
+			sourceTree = "<group>";
+		};
 		7EDA35CB174861A7006CA470 /* WriteAPI */ = {
 			isa = PBXGroup;
 			children = (
@@ -948,6 +969,7 @@
 				7E5F18921751926400DDD3D6 /* NSAccessory.m in Sources */,
 				7E5F18951751928E00DDD3D6 /* NSFontAccessory.m in Sources */,
 				7E5F18981753148B00DDD3D6 /* NSColor.m in Sources */,
+				7EBE76231753929300C51C4F /* PostList.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

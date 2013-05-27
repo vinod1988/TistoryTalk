@@ -9,6 +9,7 @@
 #import "ApiUtils.h"
 
 @implementation ApiUtils
+
 +(NSString*)getTargetUrl
 {
     NSString *myblogAddr = [StandardUserSettings getValue:MY_BLOG_ADDR];

@@ -15,7 +15,7 @@
     if ( self = [super init] )
     {
         NSString* tistoryApiUrl = @"https:www.tistory.com/apis/";
-        NSString* blogApiUrl = @"category/list";
+        NSString* categoryApiUrl = @"category/list";
         NSString* output = @"output=json";
         NSString* accessToken = @"access_token";
         NSString* targetUrl = @"targetUrl";
@@ -27,7 +27,7 @@
         if(savedAccessToken != nil)
         {
             apiUrl = [NSString stringWithFormat:@"%@%@?%@=%@&%@=%@&%@",
-                      tistoryApiUrl, blogApiUrl, accessToken, savedAccessToken,
+                      tistoryApiUrl, categoryApiUrl, accessToken, savedAccessToken,
                       targetUrl, [ApiUtils getTargetUrl], output];
             
             
