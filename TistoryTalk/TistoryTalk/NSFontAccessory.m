@@ -13,28 +13,22 @@
 
 -(void)decorate:(NSDictionary*)objects
 {
-
     textColor = [objects objectForKey:@"TEXT_COLOR"];
-    textFont  = [objects objectForKey:@"TEXT_FONT"];
+    fontName  = [objects objectForKey:@"FONT_NAME"];
+    fontSize  = [[objects objectForKey:@"FONT_SIZE"] intValue];
 }
 
--(void) setFont:(UIFont*)font
-{
-    textFont = font;
-}
-
--(void) setTextColor:(UIColor*)color
-{
-    textColor = color;
-}
+   
 
 -(UIFont*)getFont
 {
-    return textFont;
+    UIFont *font = [UIFont fontWithName:fontName size:fontSize];
+    return font; 
 }
 
 -(UIColor*)getTextColor
 {
+    
     return textColor; 
 }
 
@@ -43,8 +37,8 @@
 -(void) encodeWithCoder:(NSCoder *)aCoder
 {
     [aCoder encodeObject:textColor  forKey:@"textColor"];
-    [aCoder encodeObject:textFont forKey:@"textFont"]; 
-    
+    [aCoder encodeObject:fontName forKey:@"fontName"];
+    [aCoder encodeInt32:fontSize forKey:@"fontSize"];
 }
 
 // 디코딩. 디코딩시 디코더가 이 메소드를 호출한다.
@@ -53,7 +47,8 @@
     if (self = [super init])
     {
         textColor        = [aDecoder decodeObjectForKey:@"textColor"];
-        textFont  = [aDecoder decodeObjectForKey:@"textFont"]; 
+        fontName  = [aDecoder decodeObjectForKey:@"fontName"];
+        fontSize = [aDecoder decodeInt32ForKey:@"fontSize"];
     }
     
     return self;

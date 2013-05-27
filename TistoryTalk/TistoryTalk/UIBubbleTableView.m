@@ -167,9 +167,6 @@
     { 
         cell = [[UIBubbleTableViewCell alloc]
                 initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId];
-    
-   
-      
     }
     
     

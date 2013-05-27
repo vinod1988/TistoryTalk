@@ -7,6 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "NSFontAccessory.h"
+#import "NSColor.h"
 
 @interface TistoryHtmlTagManager : NSObject
 
@@ -14,6 +16,6 @@
 +(TistoryHtmlTagManager *)singleTon_GetInstance;
 +(bool)isSigleton; 
 
--(NSString*) convertHtmlDocument:(NSMutableArray*) jsonData;
+-(NSString*) convertHtmlDocument:(NSMutableArray*)postingData accessory:(NSMutableArray*)postingAccessory;
 
 @end

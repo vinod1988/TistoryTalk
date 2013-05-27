@@ -10,4 +10,8 @@
 
 @implementation NSAccessory
 
+-(void)decorate:(NSDictionary*)objects
+{
+    //NSAccessory 를 상속받는 모든 클래스는 decorate 를 통해서 필드에 값을 할당한다. 
+}
 @end

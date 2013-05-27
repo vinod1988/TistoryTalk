@@ -104,8 +104,7 @@
 #pragma mark PopOverView
 
 -(void)popoverView:(PopoverView *)popoverView didSelectItemAtIndex:(NSInteger)index
-{
-    //NSLog(@"%s item:%d", __PRETTY_FUNCTION__, index);
+{ 
     NSString *menuStr = [menuStrArr objectAtIndex:index];
     // Dismiss the PopoverView after 0.5 seconds
     [popoverView performSelector:@selector(dismiss) withObject:nil afterDelay:0.3f];
@@ -114,8 +113,7 @@
 }
 
 -(void)popoverViewDidDismiss:(PopoverView *)popoverView
-{
-   /// NSLog(@"%s", __PRETTY_FUNCTION__);
+{ 
 }
 
 -(void)doMenu:(NSString*)_menuStr
@@ -154,14 +152,11 @@
     
     
     DataManager *dm = [DataManager singleTon_GetInstance];
-    
-    
+     
     TistoryHtmlTagManager *htmlTagManager = [TistoryHtmlTagManager singleTon_GetInstance];
     NSPosting *loadPosting = [dm loadPostingFromFile:selectedPostingIndex.getFileName]; 
-    NSString* totalHtml = [htmlTagManager convertHtmlDocument:[loadPosting getPostingData]];
-    
-
-    
+    NSString* totalHtml = [htmlTagManager convertHtmlDocument:[loadPosting getPostingData] accessory:[loadPosting getAccessory]];
+     
     //PostingViewController 
     PostingViewController *postingViewController = [[PostingViewController alloc]initWithPostingTitle:[loadPosting getTempTitle]];
     

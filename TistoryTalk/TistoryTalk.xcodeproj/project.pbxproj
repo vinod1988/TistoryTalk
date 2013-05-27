@@ -38,9 +38,7 @@
 		7E0C8A7A1743DEBE00579E10 /* StandardUserSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E0C8A781743DEBE00579E10 /* StandardUserSettings.m */; };
 		7E0C8A801743DF5600579E10 /* MyBlogApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E0C8A7D1743DF5600579E10 /* MyBlogApi.m */; };
 		7E0C8A811743DF5600579E10 /* MyBlogInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E0C8A7F1743DF5600579E10 /* MyBlogInfo.m */; };
-		7E0C8A8B1743DFBC00579E10 /* CategoryParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E0C8A841743DFBC00579E10 /* CategoryParser.m */; };
 		7E0C8A8C1743DFBC00579E10 /* DataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E0C8A861743DFBC00579E10 /* DataManager.m */; };
-		7E0C8A8D1743DFBC00579E10 /* MyBlogInfoParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E0C8A881743DFBC00579E10 /* MyBlogInfoParser.m */; };
 		7E0C8A8E1743DFBC00579E10 /* TagManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E0C8A8A1743DFBC00579E10 /* TagManager.m */; };
 		7E0C8A931743E27B00579E10 /* PostingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E0C8A911743E27B00579E10 /* PostingViewController.m */; };
 		7E0C8A941743E27B00579E10 /* PostingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7E0C8A921743E27B00579E10 /* PostingViewController.xib */; };
@@ -99,6 +97,7 @@
 		7E5F188F1750FC3900DDD3D6 /* CMUpDownControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E5F18851750FC3900DDD3D6 /* CMUpDownControl.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		7E5F18921751926400DDD3D6 /* NSAccessory.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E5F18911751926400DDD3D6 /* NSAccessory.m */; };
 		7E5F18951751928E00DDD3D6 /* NSFontAccessory.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E5F18941751928E00DDD3D6 /* NSFontAccessory.m */; };
+		7E5F18981753148B00DDD3D6 /* NSColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E5F18971753148900DDD3D6 /* NSColor.m */; };
 		7E85EC581745A76E00926189 /* NSPosting.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E85EC571745A76E00926189 /* NSPosting.m */; };
 		7E85EC5C1745C2D600926189 /* NSMD5Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E85EC5B1745C2D600926189 /* NSMD5Utils.m */; };
 		7E85EC5F1745F84500926189 /* NSPostingIndex.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E85EC5E1745F84500926189 /* NSPostingIndex.m */; };
@@ -153,12 +152,8 @@
 		7E0C8A7D1743DF5600579E10 /* MyBlogApi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyBlogApi.m; sourceTree = "<group>"; };
 		7E0C8A7E1743DF5600579E10 /* MyBlogInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyBlogInfo.h; sourceTree = "<group>"; };
 		7E0C8A7F1743DF5600579E10 /* MyBlogInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyBlogInfo.m; sourceTree = "<group>"; };
-		7E0C8A831743DFBC00579E10 /* CategoryParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryParser.h; sourceTree = "<group>"; };
-		7E0C8A841743DFBC00579E10 /* CategoryParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryParser.m; sourceTree = "<group>"; };
 		7E0C8A851743DFBC00579E10 /* DataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataManager.h; sourceTree = "<group>"; };
 		7E0C8A861743DFBC00579E10 /* DataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataManager.m; sourceTree = "<group>"; };
-		7E0C8A871743DFBC00579E10 /* MyBlogInfoParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyBlogInfoParser.h; sourceTree = "<group>"; };
-		7E0C8A881743DFBC00579E10 /* MyBlogInfoParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyBlogInfoParser.m; sourceTree = "<group>"; };
 		7E0C8A891743DFBC00579E10 /* TagManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TagManager.h; sourceTree = "<group>"; };
 		7E0C8A8A1743DFBC00579E10 /* TagManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TagManager.m; sourceTree = "<group>"; };
 		7E0C8A901743E27B00579E10 /* PostingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostingViewController.h; sourceTree = "<group>"; };
@@ -251,6 +246,8 @@
 		7E5F18911751926400DDD3D6 /* NSAccessory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSAccessory.m; sourceTree = "<group>"; };
 		7E5F18931751928E00DDD3D6 /* NSFontAccessory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSFontAccessory.h; sourceTree = "<group>"; };
 		7E5F18941751928E00DDD3D6 /* NSFontAccessory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSFontAccessory.m; sourceTree = "<group>"; };
+		7E5F18961753148800DDD3D6 /* NSColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSColor.h; sourceTree = "<group>"; };
+		7E5F18971753148900DDD3D6 /* NSColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSColor.m; sourceTree = "<group>"; };
 		7E85EC561745A76D00926189 /* NSPosting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSPosting.h; sourceTree = "<group>"; };
 		7E85EC571745A76E00926189 /* NSPosting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSPosting.m; sourceTree = "<group>"; };
 		7E85EC5A1745C2D600926189 /* NSMD5Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSMD5Utils.h; sourceTree = "<group>"; };
@@ -401,7 +398,6 @@
 			children = (
 				7EDA35CB174861A7006CA470 /* WriteAPI */,
 				7E5C683D17480CA900B61234 /* CategoryAPI */,
-				7E5C682E1747661D00B61234 /* etc */,
 				7E0C8A7B1743DEF200579E10 /* MyBlogAPI */,
 				7EDA35D217487FFB006CA470 /* ApiUtils.h */,
 				7EDA35D317487FFB006CA470 /* ApiUtils.m */,
@@ -418,6 +414,8 @@
 				7E85EC591745C2BC00926189 /* MD5 */,
 				7E0C8A6E1743DBDC00579E10 /* JSON */,
 				7E0C8A6D1743DBCD00579E10 /* HtmlRequest */,
+				7E5F18961753148800DDD3D6 /* NSColor.h */,
+				7E5F18971753148900DDD3D6 /* NSColor.m */,
 			);
 			name = Library;
 			sourceTree = "<group>";
@@ -710,17 +708,6 @@
 			name = CustomCells;
 			sourceTree = "<group>";
 		};
-		7E5C682E1747661D00B61234 /* etc */ = {
-			isa = PBXGroup;
-			children = (
-				7E0C8A831743DFBC00579E10 /* CategoryParser.h */,
-				7E0C8A841743DFBC00579E10 /* CategoryParser.m */,
-				7E0C8A871743DFBC00579E10 /* MyBlogInfoParser.h */,
-				7E0C8A881743DFBC00579E10 /* MyBlogInfoParser.m */,
-			);
-			name = etc;
-			sourceTree = "<group>";
-		};
 		7E5C682F1747665100B61234 /* HTML */ = {
 			isa = PBXGroup;
 			children = (
@@ -918,9 +905,7 @@
 				7E0C8A7A1743DEBE00579E10 /* StandardUserSettings.m in Sources */,
 				7E0C8A801743DF5600579E10 /* MyBlogApi.m in Sources */,
 				7E0C8A811743DF5600579E10 /* MyBlogInfo.m in Sources */,
-				7E0C8A8B1743DFBC00579E10 /* CategoryParser.m in Sources */,
 				7E0C8A8C1743DFBC00579E10 /* DataManager.m in Sources */,
-				7E0C8A8D1743DFBC00579E10 /* MyBlogInfoParser.m in Sources */,
 				7E0C8A8E1743DFBC00579E10 /* TagManager.m in Sources */,
 				7E0C8A931743E27B00579E10 /* PostingViewController.m in Sources */,
 				7E0C8A9D1743E41600579E10 /* PopoverView.m in Sources */,
@@ -962,6 +947,7 @@
 				7E5F188F1750FC3900DDD3D6 /* CMUpDownControl.m in Sources */,
 				7E5F18921751926400DDD3D6 /* NSAccessory.m in Sources */,
 				7E5F18951751928E00DDD3D6 /* NSFontAccessory.m in Sources */,
+				7E5F18981753148B00DDD3D6 /* NSColor.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

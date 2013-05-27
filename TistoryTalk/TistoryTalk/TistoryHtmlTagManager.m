@@ -17,8 +17,8 @@ static TistoryHtmlTagManager * singleTon = nil;
 +(TistoryHtmlTagManager *)singleTon_GetInstance
 {
 	if(singleTon == nil)
-    { 
-		singleTon = [[super allocWithZone:NULL] init]; 
+    {
+		singleTon = [[super allocWithZone:NULL] init];
     }
 	return singleTon;
 }
@@ -43,25 +43,29 @@ static TistoryHtmlTagManager * singleTon = nil;
 
 
 
--(NSString*) convertHtmlDocument:(NSMutableArray*) postingData
+-(NSString*) convertHtmlDocument:(NSMutableArray*)postingData accessory:(NSMutableArray*)postingAccessory
 {
-    NSString *p_stTag = @"<p style=\"lineh-height:2; ";
-    p_stTag = [ p_stTag stringByAppendingFormat:@"%@",@"text-align:justify;\">"];
+    NSString *p_stTag = @"";
+    NSString *p_endTag = @"";
     
-    
-    
-    NSString *p_edTag = @"</p>";
-    
+    //html, body 태그 열기
     NSString* totalHTMLString = [[NSString alloc] initWithFormat:@"<html>"];
     totalHTMLString = [totalHTMLString stringByAppendingString:@"<body>"];
-     
+    
     for(int i=0; i<postingData.count; i++)
-    { 
+    {
+        //하나의 글문단은 <p> ~ </p>로 묶인다.
+         
+        p_stTag = @"<p style=\"lineh-height:2;text-align:justify;\">";
+        p_endTag = @"</p>";
         
         totalHTMLString = [totalHTMLString stringByAppendingString:p_stTag];
         
+        
+        
         NSString *text = [postingData objectAtIndex:i];
         
+        NSFontAccessory *fontAccessoryAtIndex = [postingAccessory objectAtIndex:i];
         
         if(text.length>0)
         {
@@ -69,35 +73,44 @@ static TistoryHtmlTagManager * singleTon = nil;
             NSArray * textNewLine = [text componentsSeparatedByString:@"\n"];
             
             if(textNewLine.count==0)
-            {
-                totalHTMLString = [totalHTMLString stringByAppendingString:[self addTagAtText:text]];
+            {//하나의 문단안에 하나의 문장만 있는 경우 
+                totalHTMLString = [totalHTMLString stringByAppendingString:[self addSpanTagAtText:text fontAccessory:fontAccessoryAtIndex]];
             }
             else
-            { 
+            {//하나의 문단안에 여러개의 문장(newline) 이 있는 경우,
                 for(int j=0; j<textNewLine.count; j++)
                 {
-                    NSString *tt = [textNewLine objectAtIndex:j]; 
-                    totalHTMLString = [totalHTMLString stringByAppendingString:[self addTagAtText:tt]]; 
-                    totalHTMLString = [totalHTMLString stringByAppendingFormat:@"%@", @"<br/>"]; 
-                } 
+                    NSString *tt = [textNewLine objectAtIndex:j];
+                    totalHTMLString = [totalHTMLString stringByAppendingString:[self addSpanTagAtText:tt fontAccessory:fontAccessoryAtIndex]];
+                    totalHTMLString = [totalHTMLString stringByAppendingFormat:@"%@", @"<br/>"];
+                }
             }
         }
         
-        totalHTMLString = [totalHTMLString stringByAppendingString:p_edTag];
+        totalHTMLString = [totalHTMLString stringByAppendingString:p_endTag];
     }
     
+    
+    //body, html 태그 닫기 
     totalHTMLString = [totalHTMLString stringByAppendingString:@"</body>"];
     totalHTMLString = [totalHTMLString stringByAppendingString:@"</html>"];
     
-    return  totalHTMLString; 
+    return  totalHTMLString;
 }
 
 
 
--(NSString*) addTagAtText:(NSString*) text
-{
-    NSString *span_stTag = @"<span style=\"font-size:";
-    span_stTag = [span_stTag stringByAppendingFormat:@"%@",@"11pt; line-height:2;\">"];
+-(NSString*) addSpanTagAtText:(NSString*)text fontAccessory:(NSFontAccessory*)fontAccessory
+{//<span> 태그를 만드는 부분. NSFontAccessory에 대한 부분에서 가져와서 추가해 준다. 
+    
+    
+    NSString *span_stTag = @"<span style=\"";
+     
+    span_stTag = [span_stTag stringByAppendingFormat:@"font-family:%@;",[fontAccessory getFont].fontName];
+    span_stTag = [span_stTag stringByAppendingFormat:@"font-size:%dpt;",(int)([fontAccessory getFont].pointSize)];
+    span_stTag = [span_stTag stringByAppendingFormat:@"color:%@;",[NSColor colorToHexString:[fontAccessory getTextColor]]];
+    span_stTag = [span_stTag stringByAppendingFormat:@"%@", @"\">"];
+    
     
     NSString *span_enTag = @"</span>";
     text = [span_stTag stringByAppendingString:text];

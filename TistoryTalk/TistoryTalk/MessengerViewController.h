@@ -23,7 +23,9 @@
     SearchToolBar* searchToolbar; 
     NSPosting *posting; 
     int prevNSBubbleTypingType;
-    NSString *loadFileName; 
+    NSString *loadFileName;
+    NSIndexPath *selectedIndexPath;
+    
      
 }
 

@@ -35,8 +35,7 @@
 @protocol CMTextStylePickerViewControllerDelegate;
 
 @interface CMTextStylePickerViewController : UITableViewController <CMFontSelectTableViewControllerDelegate, CMColourSelectTableViewControllerDelegate> {
-    
-    NSString* selectedText; 
+     
 
 }
 
@@ -45,6 +44,7 @@
 @property (nonatomic, assign)	BOOL		defaultSettingsSwitchValue;
 @property (nonatomic, retain)	UIColor		*selectedTextColour;
 @property (nonatomic, retain)	UIFont		*selectedFont;
+@property (nonatomic, retain)	NSString	*selectedText;
 
 @property (nonatomic, retain)	IBOutlet	UITableViewCell		*applyAsDefaultCell;
 @property (nonatomic, retain)	IBOutlet	UIBarButtonItem		*doneButtonItem;
@@ -57,7 +57,7 @@
 @property (nonatomic, retain)	IBOutlet	CMUpDownControl		*fontSizeControl;
 @property (nonatomic, retain)	IBOutlet	UITableViewCell		*sizeCell;
 @property (nonatomic, retain)	IBOutlet	UITableViewCell		*previewCell;
-@property (nonatomic, retain)	IBOutlet	UITextField         *previewTextField;
+@property (nonatomic, retain)	IBOutlet	UITextView         *previewTextView;
 
 
 
@@ -66,8 +66,7 @@
 - (IBAction)doneAction;
 - (IBAction)defaultTextSettingsAction:(UISwitch *)defaultSwitch;
 - (IBAction)fontSizeValueChanged:(CMUpDownControl *)control;
-
-- (void)setSelectedText:(NSString*)text;
+ 
 
 @end
 

@@ -11,10 +11,10 @@
 //  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
 //  copies of the Software, and to permit persons to whom the Software is
 //  furnished to do so, subject to the following conditions:
-//  
+//
 //  The above copyright notice and this permission notice shall be included in
 //  all copies or substantial portions of the Software.
-//  
+//
 //  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 //  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
 //  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
@@ -49,7 +49,7 @@
 @synthesize tableLayout, fontSizeControl;
 @synthesize sizeCell, colourCell, fontCell, defaultSettingsCell, applyAsDefaultCell, fontNameLabel, defaultSettingsSwitch;
 @synthesize colourView, doneButtonItem;
-@synthesize previewCell, previewTextField;
+@synthesize previewCell, previewTextView, selectedText;
 
 + (CMTextStylePickerViewController *)textStylePickerViewController {
 	CMTextStylePickerViewController *textStylePickerViewController = [[CMTextStylePickerViewController alloc] initWithNibName:@"CMTextStylePickerViewController" bundle:nil];
@@ -119,7 +119,9 @@
 	self.fontSizeControl.value = selectedFont.pointSize;
 }
 
-- (IBAction)doneAction {
+- (IBAction)doneAction
+{
+    
 	if (delegate && [delegate respondsToSelector:@selector(textStylePickerViewControllerIsDone:)]) {
 		[delegate textStylePickerViewControllerIsDone:self];
 	}
@@ -127,7 +129,7 @@
 
 - (IBAction)defaultTextSettingsAction:(UISwitch *)defaultSwitch {
 	self.defaultSettingsSwitchValue = defaultSwitch.on;
-		
+    
 	if (self.defaultSettingsSwitchValue) {
 		// Use default text style
 		if (delegate && [delegate respondsToSelector:@selector(textStylePickerViewControllerSelectedDefaultStyle:)]) {
@@ -150,7 +152,7 @@
 	CGFloat size = (CGFloat)control.value;
 	UIFont *textFont = [UIFont fontWithName:self.selectedFont.fontName size:size];
 	self.selectedFont = textFont;
-	 self.previewTextField.font = textFont;
+    self.previewTextView.font = textFont;
     
 	[self notifyDelegateSelectedFontChanged];
 }
@@ -162,7 +164,7 @@
 - (void)colourSelectTableViewController:(CMColourSelectTableViewController *)colourSelectTableViewController didSelectColour:(UIColor *)colour {
 	self.selectedTextColour = colour;
 	self.colourView.colour = colour;	// Update the colour swatch
-     self.previewTextField.textColor= colour;
+    self.previewTextView.textColor= colour;
 	[self notifyDelegateSelectedTextColorChanged];
 }
 
@@ -173,7 +175,7 @@
 - (void)fontSelectTableViewController:(CMFontSelectTableViewController *)fontSelectTableViewController didSelectFont:(UIFont *)textFont {
 	self.selectedFont = textFont;
 	self.fontNameLabel.text = [textFont fontName];
-    self.previewTextField.font = textFont;
+    self.previewTextView.font = textFont;
     
 	[self notifyDelegateSelectedFontChanged];
 }
@@ -184,31 +186,31 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
+    
 	self.title = @"폰트 설정하기";
-		
+    
 	self.fontSizeControl.minimumAllowedValue = 8;
 	self.fontSizeControl.maximumAllowedValue = 72;
 	
 	[self updateFontColourSelections];
-
-	self.previewTextField.frame = CGRectMake(10, 10, self.previewCell.frame.size.width-40, self.previewCell.frame.size.height-20);
-    self.previewTextField.userInteractionEnabled = NO; 
+    
+	self.previewTextView.frame = CGRectMake(10, 10, self.previewCell.frame.size.width-40, self.previewCell.frame.size.height-20);
+    self.previewTextView.userInteractionEnabled = NO;
     self.previewCell.backgroundColor = [UIColor whiteColor];
- 
+    
 	/* self.tableLayout = [NSArray arrayWithObjects:
-						[NSArray arrayWithObjects:
-						 self.defaultSettingsCell,
-						 nil],
-						[NSArray arrayWithObjects:
-						 self.sizeCell,
-						 self.fontCell,
-						 self.colourCell,
-						 nil],
-						[NSArray arrayWithObjects:
-						 self.applyAsDefaultCell,
-						 nil],
-						nil];
+     [NSArray arrayWithObjects:
+     self.defaultSettingsCell,
+     nil],
+     [NSArray arrayWithObjects:
+     self.sizeCell,
+     self.fontCell,
+     self.colourCell,
+     nil],
+     [NSArray arrayWithObjects:
+     self.applyAsDefaultCell,
+     nil],
+     nil];
      */
     
     self.tableLayout = [NSArray arrayWithObjects:
@@ -240,34 +242,31 @@
 
 
 
-- (void)setSelectedText:(NSString*)text
+- (void)viewWillAppear:(BOOL)animated
 {
-    selectedText = text;
-}
-
-- (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-
-    previewTextField.text = selectedText;
-    previewTextField.font = selectedFont;
-    previewTextField.textColor = selectedTextColour;
+    
+    
+    previewTextView.text = selectedText;
+    previewTextView.font = selectedFont;
+    previewTextView.textColor = selectedTextColour;
 }
 
 /*
-- (void)viewDidAppear:(BOOL)animated {
-    [super viewDidAppear:animated];
-}
-*/
+ - (void)viewDidAppear:(BOOL)animated {
+ [super viewDidAppear:animated];
+ }
+ */
 /*
-- (void)viewWillDisappear:(BOOL)animated {
-    [super viewWillDisappear:animated];
-}
-*/
+ - (void)viewWillDisappear:(BOOL)animated {
+ [super viewWillDisappear:animated];
+ }
+ */
 /*
-- (void)viewDidDisappear:(BOOL)animated {
-    [super viewDidDisappear:animated];
-}
-*/
+ - (void)viewDidDisappear:(BOOL)animated {
+ [super viewDidDisappear:animated];
+ }
+ */
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
     // Return YES for supported orientations
@@ -294,56 +293,56 @@
 // Customize the appearance of table view cells.
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-//    static NSString *CellIdentifier = @"Cell";
-//    
-//    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-//    if (cell == nil) {
-//        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
-//    }
+    //    static NSString *CellIdentifier = @"Cell";
+    //
+    //    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    //    if (cell == nil) {
+    //        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
+    //    }
     
     UITableViewCell *cell = [[tableLayout objectAtIndex:indexPath.section] objectAtIndex:indexPath.row];
     return cell;
 }
 
 
-/*	
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
+/*
+ // Override to support conditional editing of the table view.
+ - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
+ // Return NO if you do not want the specified item to be editable.
+ return YES;
+ }
+ */
 
 
 /*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    }   
-    else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
+ // Override to support editing the table view.
+ - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+ 
+ if (editingStyle == UITableViewCellEditingStyleDelete) {
+ // Delete the row from the data source
+ [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
+ }
+ else if (editingStyle == UITableViewCellEditingStyleInsert) {
+ // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
+ }
+ }
+ */
 
 
 /*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
-}
-*/
+ // Override to support rearranging the table view.
+ - (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
+ }
+ */
 
 
 /*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
+ // Override to support conditional rearranging of the table view.
+ - (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
+ // Return NO if you do not want the item to be re-orderable.
+ return YES;
+ }
+ */
 
 
 #pragma mark -
@@ -394,7 +393,7 @@
 	if (cell == self.colourCell) {
 		self.colourView.colour = self.selectedTextColour;
 	}
-
+    
 	if (self.defaultSettingsSwitchValue == NO) {
 		// Custom text style is active
 		if (cell == self.defaultSettingsCell) {
@@ -404,7 +403,7 @@
 			cell.contentView.alpha = 1.0;
 			cell.userInteractionEnabled = YES;
 		}
-
+        
 	}
 	else {
 		// Text style is default

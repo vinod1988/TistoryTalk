@@ -13,12 +13,12 @@
 <NSCoding>
 {
     UIColor *textColor;
-    UIFont *textFont;
+    NSString* fontName;
+    int fontSize;
+    
+    
 }
 
 -(UIFont*)getFont;
--(UIColor*)getTextColor;
--(void) setFont:(UIFont*)font;  
-
--(void) setTextColor:(UIColor*)color;
+-(UIColor*)getTextColor;  
 @end

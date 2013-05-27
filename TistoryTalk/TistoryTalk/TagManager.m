@@ -53,7 +53,7 @@ static TagManager * singleTon = nil;
 -(NSString*) convertHtmlDocument:(NSMutableArray*) jsonData
 {
     NSString *p_stTag = @"<p style=\"lineh-height:2; ";
- 
+    
     if([mode isEqualToString:@"preview"])
     {
         p_stTag = [p_stTag stringByAppendingFormat:@"%@",@"\">"];
@@ -62,7 +62,7 @@ static TagManager * singleTon = nil;
     {
         
         p_stTag = [ p_stTag stringByAppendingFormat:@"%@",@"text-align:justify;\">"];
-
+        
     }
     
     
@@ -95,13 +95,13 @@ static TagManager * singleTon = nil;
         
         if(text.length>0)
         {
-         
+            
             NSArray * textNewLine = [text componentsSeparatedByString:@"\n"];
-
+            
             if(textNewLine.count==0)
             {
-            
-              totalHTMLString = [totalHTMLString stringByAppendingString:[self addTagAtText:text]];
+                
+                totalHTMLString = [totalHTMLString stringByAppendingString:[self addTagAtText:text]];
             }
             else
             {
@@ -109,7 +109,7 @@ static TagManager * singleTon = nil;
                 for(int j=0; j<textNewLine.count; j++)
                 {
                     NSString *tt =  [textNewLine objectAtIndex:j];
-                                    
+                    
                     NSRange jpgRange = [tt rangeOfString:@".jpg"];
                     if (jpgRange.location == NSNotFound)
                     {
@@ -121,49 +121,23 @@ static TagManager * singleTon = nil;
                             
                         }
                         else{
-                        totalHTMLString = [totalHTMLString stringByAppendingString:[self addTagAtText:tt]];
+                            totalHTMLString = [totalHTMLString stringByAppendingString:[self addTagAtText:tt]];
                         }
-
+                        
                     }
                     else
                     {//iMAGE TAG
                         
                         totalHTMLString = [totalHTMLString stringByAppendingString:[self addTagAtImage:[tt substringFromIndex:1]]];
-
+                        
                     }
                     
-               
-    /*
-                    NSRange linkRange = [tt rangeOfString:@"홈페이지"];
-                    if (linkRange.location == NSNotFound)
-                    {
-                        totalHTMLString = [totalHTMLString stringByAppendingString:[self addTagAtText:tt]];
-                        
-                    }
-                    else
-                    {//link TAG
-                        
-                        totalHTMLString = [totalHTMLString stringByAppendingString:[self addTagAtLink:tt ]];
-                        
-                    }
-     */
                     
                     totalHTMLString = [totalHTMLString stringByAppendingFormat:@"%@", @"<br/>"];
                 }
-            //totalHTMLString = [totalHTMLString stringByAppendingFormat:@"%@", @"<hr/>"];
-
-            
-                
                 
             }
         }
-        
-//        NSString *imageUrl =[dictFromJson objectForKey:@"imgUrl"];
-//        if(imageUrl.length>0)
-//        {
-//            totalHTMLString = [totalHTMLString stringByAppendingString:[self addTagAtImage:imageUrl]];
-//        }
-        
         
         totalHTMLString = [totalHTMLString stringByAppendingString:p_edTag];
     }
@@ -172,7 +146,6 @@ static TagManager * singleTon = nil;
     
     totalHTMLString = [totalHTMLString stringByAppendingString:@"</html>"];
     
-    //NSLog(@"%@",totalHTMLString);
     
     return  totalHTMLString;
     
@@ -183,7 +156,7 @@ static TagManager * singleTon = nil;
 {
     
     NSString *span_stTag = @"<span style=\"font-size:";
- 
+    
     if([mode isEqualToString:@"preview"])
     {
         
@@ -206,9 +179,9 @@ static TagManager * singleTon = nil;
 
 -(NSString*) addTagAtImage:(NSString*) imgUrl
 {
-     
-
-    /* <img src="asdfas" width="" height=""/> */ 
+    
+    
+    /* <img src="asdfas" width="" height=""/> */
     NSString *span_stTag = @"<img src=\"";
     
     if([mode isEqualToString:@"preview"])
@@ -218,15 +191,14 @@ static TagManager * singleTon = nil;
     }else
     {
         span_stTag = [span_stTag stringByAppendingFormat:@"%@\"",imgUrl];
-
+        
     }
     
     NSString *span_enTag = @"/>";
     
-     
+    
     NSString *imgTag= [NSString stringWithFormat:@"%@%@", span_stTag, span_enTag];
     
-    NSLog(@"img tag : %@", imgTag);
     
     
     return imgTag;
@@ -235,16 +207,14 @@ static TagManager * singleTon = nil;
 
 -(NSString*) addTagAtLink:(NSString*) linkUrl
 {
-     
     
-    NSArray * splitted = [linkUrl componentsSeparatedByString:@":"];
-
     
+    NSArray * splitted = [linkUrl componentsSeparatedByString:@":"]; 
     
     NSString *span_stTag = @"홈페이지:<link href=\"";
     
     
-        
+    
     span_stTag = [span_stTag stringByAppendingFormat:@"%@", [splitted objectAtIndex:1]];
     
     

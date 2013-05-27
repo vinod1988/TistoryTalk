@@ -8,8 +8,6 @@
 
 #import "MessengerViewController.h"
 
-
-
 @interface MessengerViewController ()
 
 @end
@@ -47,7 +45,7 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self)
-    { 
+    {
         
         // SearchBar Setting
         [self initSearchBar];
@@ -73,6 +71,7 @@
 {//검색창에 대한 기본 설정
     searchToolbar = [[SearchToolBar alloc]initWithFrame:CGRectMake(0, 505, 320, 44)];
     searchToolbar.searchTextField.delegate = self;
+    searchToolbar.searchTextField.autocorrectionType = UITextAutocorrectionTypeNo;
     [self.view addSubview:searchToolbar];
 }
 
@@ -159,47 +158,54 @@
 	//self.defaultTextColor = textColor;
 }
 
-- (void)textStylePickerViewControllerIsDone:(CMTextStylePickerViewController *)textStylePickerViewController {
+- (void)textStylePickerViewControllerIsDone:(CMTextStylePickerViewController *)textStylePickerViewController
+{
+    
+    [self setFont:textStylePickerViewController.selectedFont textColor:textStylePickerViewController.selectedTextColour];
+    
 	[self dismissViewControllerAnimated:YES completion:nil];
+    
 }
 
+-(void)setFont:(UIFont*)font textColor:(UIColor*)textColor
+{//NSFontAccessory에 폰트 정보와 텍스트 색을 지정한다.
+    
+    NSFontAccessory *fontAccessory =(NSFontAccessory*)[posting getAccessoryAtIndex:selectedIndexPath.row];
+    
+    NSMutableDictionary *decoratingDict = [[NSMutableDictionary alloc]init];
+    
+    [decoratingDict setObject:textColor forKey:@"TEXT_COLOR"];
+    [decoratingDict setObject:font.fontName forKey:@"FONT_NAME"];
+    [decoratingDict setValue:[NSNumber numberWithFloat:font.pointSize] forKey:@"FONT_SIZE"];
+    
+    [fontAccessory decorate:decoratingDict];
+    
+    
+}
 
 #pragma mark -
 #pragma mark Notification Handler
 
 -(void) showFontView:(NSNotification *)noti
 {
-    NSLog(@"test");
     CMTextStylePickerViewController *textStylePickerViewController = [CMTextStylePickerViewController textStylePickerViewController];
     
 	textStylePickerViewController.delegate = self;
-    NSIndexPath *selectedIndexPath = [noti.userInfo objectForKey:@"SELECTED_BUBBLE"];
+    selectedIndexPath = [noti.userInfo objectForKey:@"SELECTED_BUBBLE"];
     
     NSString *text = (NSString*)[posting getPostingDataAtIndex:selectedIndexPath.row];
- 
+    
     NSFontAccessory *fontAccessory = (NSFontAccessory*)[posting getAccessoryAtIndex:selectedIndexPath.row];
     
-    
-    textStylePickerViewController.selectedText = text;
+    textStylePickerViewController.selectedText = [text copy];
     textStylePickerViewController.selectedFont = [fontAccessory getFont];
     textStylePickerViewController.selectedTextColour = [fontAccessory getTextColor];
     
     
     
-    /*
-	textStylePickerViewController.selectedTextColour = mainTextView.textColor;
-	textStylePickerViewController.selectedFont = mainTextView.font;
-	if ([mainTextView.textColor isEqual:defaultTextColor] && [mainTextView.font isEqual:defaultFont]) {
-		textStylePickerViewController.defaultSettingsSwitchValue = YES;
-	}
-	else {
-		textStylePickerViewController.defaultSettingsSwitchValue = NO;
-	}
-	*/
-    
 	UINavigationController *actionsNavigationController = [[UINavigationController alloc] initWithRootViewController:textStylePickerViewController];
     
-    actionsNavigationController.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal; //회전 
+    actionsNavigationController.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal; //회전
     [self presentViewController:actionsNavigationController animated:YES completion:nil];
     
 }
@@ -275,6 +281,7 @@
 
 -(void) keyboardWillShow
 {
+    
     //move keyboard up
     [UIView beginAnimations:nil context:NULL];
     [UIView setAnimationDuration:0.2];
@@ -284,6 +291,7 @@
     bubbleTableView.frame = CGRectMake(0, bubbleTableView.frame.origin.y, 320,284-44);
     
 }
+
 -(void) keyboardWillHide
 {
     
@@ -410,13 +418,16 @@
         NSFontAccessory *fontAccessory
         = [[NSFontAccessory alloc]init];
         
-        [fontAccessory setFont:[UIFont systemFontOfSize:9.0f]];
-        [fontAccessory setTextColor:[UIColor blackColor]];
+        NSMutableDictionary *mutableDict =
+        [[NSMutableDictionary alloc]init];
         
+        UIFont *defaultFont = [UIFont systemFontOfSize:9.0f];
+        [mutableDict setObject:[UIColor blackColor] forKey:@"TEXT_COLOR"];
+        [mutableDict setObject:defaultFont.fontName forKey:@"FONT_NAME"];
+        [mutableDict setValue:[NSNumber numberWithFloat:defaultFont.pointSize] forKey:@"FONT_SIZE"];
+        
+        [fontAccessory decorate:mutableDict];
         [posting addAccessory:fontAccessory];
-        
-        
-        
         
         textField.text = @"";
         prevNSBubbleTypingType = 1;

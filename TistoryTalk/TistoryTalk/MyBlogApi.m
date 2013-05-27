@@ -66,8 +66,7 @@
     }
     
     if(jsonDict != nil)
-    {
-        NSLog(@"json : %@", jsonDict);
+    { 
         
         
         NSDictionary* blogInfoDict = [jsonDict objectForKey:@"tistory"];

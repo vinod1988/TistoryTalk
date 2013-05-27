@@ -71,8 +71,7 @@
     
     int status = [[result objectForKey:@"status"] integerValue];
     NSNotificationCenter *nc = [NSNotificationCenter defaultCenter];
-    
-    NSLog(@"%@", receivedData);
+     
     
     if(status==200)
         [nc postNotificationName:@"NOTIFY_POST_SUCCESS" object:nil userInfo:nil];

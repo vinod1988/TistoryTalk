@@ -30,13 +30,13 @@
                       tistoryApiUrl, blogApiUrl, accessToken, savedAccessToken,
                       targetUrl, [ApiUtils getTargetUrl], output];
             
-            //NSLog(@"api url : %@", apiUrl);
+            
         }
     }
     return self;
 }
 
- 
+
 
 
 -(NSMutableArray*)getAllCategory
@@ -68,7 +68,7 @@
             }
         }
     }
-     
+    
     
     if(jsonDict != nil)
     {
@@ -78,17 +78,12 @@
         
         if(statusCode == 200)
         {
-            //NSLog(@"200");
             NSDictionary *itemArr = [blogInfoDict objectForKey:@"item"];
-           // NSLog(@"itemArr.count :%d", itemArr.count);
             
             NSDictionary *categories = [itemArr objectForKey:@"categories"];
             
             
             NSArray *categoryArr = [categories objectForKey:@"category"];
-            
-            
-           // NSLog(@"categoryArr : %d", categoryArr.count);
             
             for(int i=0; i<categoryArr.count; i++)
             {
@@ -104,8 +99,7 @@
                 
                 [categoryInfoArr addObject:catInfo];
                 
-            }
-            
+            } 
         }
     }
     
