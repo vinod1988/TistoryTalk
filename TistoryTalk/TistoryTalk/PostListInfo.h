@@ -12,7 +12,7 @@
 {
 }
 
-@property(nonatomic, readwrite) NSString* id;//	포스트 ID
+@property(nonatomic, readwrite) NSString* postId;//	포스트 ID
 @property(nonatomic, readwrite) NSString* title;	//타이틀
 @property(nonatomic, readwrite) NSString* postUrl;	//이 글의 full url
 @property(nonatomic, readwrite) int visibility;	//글보기 권한

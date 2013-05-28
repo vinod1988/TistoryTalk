@@ -118,7 +118,7 @@
                 NSDictionary*post = [postArr objectAtIndex:i];
                  PostListInfo *postListInfo = [[PostListInfo alloc] init];
                 
-                postListInfo.id = [post objectForKey:@"id"];
+                postListInfo.postId = [post objectForKey:@"id"];
                 postListInfo.title = [post objectForKey:@"title"];
                 postListInfo.postUrl = [post objectForKey:@"postUrl"]; 
                 postListInfo.visibility = [[post objectForKey:@"visibility"] integerValue];
