@@ -48,7 +48,7 @@
 
 -(NSMutableArray*)getPostList:(int)page count:(int)countPerPage categoryId:(NSString*)categoryId sort:(int)sort
 {
-    NSLog(@"M2");
+    
     
     apiUrl = [apiUrl stringByAppendingFormat:@"&page=%d", page];
     apiUrl = [apiUrl stringByAppendingFormat:@"&count=%d", countPerPage];

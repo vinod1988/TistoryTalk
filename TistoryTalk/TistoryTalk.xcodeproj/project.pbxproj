@@ -99,6 +99,8 @@
 		7E5F18951751928E00DDD3D6 /* NSFontAccessory.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E5F18941751928E00DDD3D6 /* NSFontAccessory.m */; };
 		7E5F18981753148B00DDD3D6 /* NSColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E5F18971753148900DDD3D6 /* NSColor.m */; };
 		7E6E920217540C010063A9D0 /* PostListInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E6E920117540C010063A9D0 /* PostListInfo.m */; };
+		7E7677021755673800A023F1 /* PostReadApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E7677011755673800A023F1 /* PostReadApi.m */; };
+		7E767705175577EC00A023F1 /* PostInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E767704175577EC00A023F1 /* PostInfo.m */; };
 		7E85EC581745A76E00926189 /* NSPosting.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E85EC571745A76E00926189 /* NSPosting.m */; };
 		7E85EC5C1745C2D600926189 /* NSMD5Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E85EC5B1745C2D600926189 /* NSMD5Utils.m */; };
 		7E85EC5F1745F84500926189 /* NSPostingIndex.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E85EC5E1745F84500926189 /* NSPostingIndex.m */; };
@@ -252,6 +254,10 @@
 		7E5F18971753148900DDD3D6 /* NSColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSColor.m; sourceTree = "<group>"; };
 		7E6E920017540C010063A9D0 /* PostListInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostListInfo.h; sourceTree = "<group>"; };
 		7E6E920117540C010063A9D0 /* PostListInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PostListInfo.m; sourceTree = "<group>"; };
+		7E7677001755673800A023F1 /* PostReadApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostReadApi.h; sourceTree = "<group>"; };
+		7E7677011755673800A023F1 /* PostReadApi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PostReadApi.m; sourceTree = "<group>"; };
+		7E767703175577EC00A023F1 /* PostInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostInfo.h; sourceTree = "<group>"; };
+		7E767704175577EC00A023F1 /* PostInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PostInfo.m; sourceTree = "<group>"; };
 		7E85EC561745A76D00926189 /* NSPosting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSPosting.h; sourceTree = "<group>"; };
 		7E85EC571745A76E00926189 /* NSPosting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSPosting.m; sourceTree = "<group>"; };
 		7E85EC5A1745C2D600926189 /* NSMD5Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSMD5Utils.h; sourceTree = "<group>"; };
@@ -402,7 +408,8 @@
 		7E0C8A471743D9CC00579E10 /* TistoryAPI */ = {
 			isa = PBXGroup;
 			children = (
-				7EBE76201753927500C51C4F /* PostListApi */,
+				7E7676FF1755671600A023F1 /* PostReadAPI */,
+				7EBE76201753927500C51C4F /* PostListAPI */,
 				7EBE761F1753926700C51C4F /* Global */,
 				7EDA35CB174861A7006CA470 /* WriteAPI */,
 				7E5C683D17480CA900B61234 /* CategoryAPI */,
@@ -759,6 +766,17 @@
 			path = CMTextStylePicker;
 			sourceTree = "<group>";
 		};
+		7E7676FF1755671600A023F1 /* PostReadAPI */ = {
+			isa = PBXGroup;
+			children = (
+				7E7677001755673800A023F1 /* PostReadApi.h */,
+				7E7677011755673800A023F1 /* PostReadApi.m */,
+				7E767703175577EC00A023F1 /* PostInfo.h */,
+				7E767704175577EC00A023F1 /* PostInfo.m */,
+			);
+			name = PostReadAPI;
+			sourceTree = "<group>";
+		};
 		7E85EC551745A74C00926189 /* DataManager */ = {
 			isa = PBXGroup;
 			children = (
@@ -795,7 +813,7 @@
 			name = Global;
 			sourceTree = "<group>";
 		};
-		7EBE76201753927500C51C4F /* PostListApi */ = {
+		7EBE76201753927500C51C4F /* PostListAPI */ = {
 			isa = PBXGroup;
 			children = (
 				7EBE76211753929300C51C4F /* PostListApi.h */,
@@ -803,7 +821,7 @@
 				7E6E920017540C010063A9D0 /* PostListInfo.h */,
 				7E6E920117540C010063A9D0 /* PostListInfo.m */,
 			);
-			name = PostListApi;
+			name = PostListAPI;
 			sourceTree = "<group>";
 		};
 		7EDA35CB174861A7006CA470 /* WriteAPI */ = {
@@ -976,6 +994,8 @@
 				7E5F18981753148B00DDD3D6 /* NSColor.m in Sources */,
 				7EBE76231753929300C51C4F /* PostListApi.m in Sources */,
 				7E6E920217540C010063A9D0 /* PostListInfo.m in Sources */,
+				7E7677021755673800A023F1 /* PostReadApi.m in Sources */,
+				7E767705175577EC00A023F1 /* PostInfo.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
